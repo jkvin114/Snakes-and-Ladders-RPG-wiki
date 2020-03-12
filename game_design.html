@@ -145,17 +145,29 @@ table.redTable thead th:first-child {
               <li>Pro tip: dice selection and actual movement might defer depending on additional dice and status effects</li>
              </p>
              <h3>2. What happens Every turn </h3>
-             <li><strong>One turn: 1 cycle of player having their turn.</strong></li> 
+             <li><strong>One turn: 1 cycle of player having their turn.</strong></li>
              <ol>
                <li>Dice button is shown to this turn`s player</li>
+               <ol type="i">
+                <li>Status effect, skill cooltime, and projectile cooltime updates</li>
+               <li>Receives constant damages such as poison and ignite</li>
+               <li>Passive skill updates</li>
+              </ol>
                <li>Throw dice</li>
                <li>Player moves</li>
                <li>If there is a projectile on arriving square, get the effect.</li>
               <li>Get obstacle effect</li>
+              <li>If the obstacle requires player selection(such as god`s hand), waits for it.</li>
+              <ol type="i">
+                <li>Perform activation skill</li>
+                <li>Skill duration updates</li>
+              </ol>
               <li>Perform basic attack</li>
               <li>Skill button is shown</li>
               <li>Player use skill and select the target</li>
-              <li>Player press next turn button</li>
+              <li>8 and 9 repeats until player press next turn button</li>
+              <li>Dice control cooltime and skill effect cooltime updates. HP regenerates</li>
+              <li>Goes to next turn</li>
               </ol>
             <li>These order happens synchronously</li>
               <h3>3. Balancing mechanics</h3>
@@ -174,10 +186,10 @@ table.redTable thead th:first-child {
               <div id=effectlist>
                 <table class="redTable" style="table-layout:fixed;">
                   <colgroup>
-                  <col style="width: 20px">
-                  <col style="width: 40px">
+                  <col style="width: 30px">
+                  <col style="width: 60px">
                   <col style="width: 80px">
-                  <col style="width: 120px">
+                  <col style="width: 100px">
                   </colgroup>
                     <tr>
                       <th class="tg-0lax">Icon</th>
@@ -305,9 +317,24 @@ table.redTable thead th:first-child {
                 <li>Lv2 skill - can use from level 2(pass the first store)</li>
                 <li>Lv3 skill- can use 5 turns after leveling up to 3(pass the second store)</li>
               </p><h4>Types of skill</h4>
-               <p> <li>Passive skill- used immediately after clicking the button</li>
+               <p> 
+                <li>Activation skill- used immediately after clicking the button</li>
+                <ul>
+                  <li>Stays active for its duration</li>
+                  <li>Cooldown starts after the duration ends</li>
+                  <li>Some skills can be deactivated by pressing skill button again.</li>
+                </ul>
                 <li>Targeting skill- need to choose target player</li>
+                <ul>
+                  <li>Only the players in the skill range will be on selection.</li>
+                  <li>Players that has invisibility effect, dead player, and players on store will not be on selection</li>
+                </ul>
                 <li>Non-targeting skill- need to choose a square to place the skill projectile.</li>
+                <ul>
+                  <li>Player can place projectile within skill range.</li>
+                  <li>The projectile won`t be placed on store</li>
+                </ul>
+          
               <h3 id=basicattack>7. Basic attack (auto attack)</h3>
               <p>
                 <li>A player will perform basic attack <strong>after every movement only in their turn.</strong>
@@ -322,7 +349,7 @@ table.redTable thead th:first-child {
                <li> If a player place a projectile by non-target skill, it will remain on the map for 2~3turns.</li>
                <li> If a player other than the owner of the projectile steps on the projectile, it gets designated effect and the projectile disappears.</li>
                <li> The color of edge of projectile represents owner's <strong>turn color</strong>, and the icon represents the kind of projectile.</li>
-               <li> If the owver of projectile dies, the projectile disappers.</li>
+               <li> If the owner of projectile dies, the projectile disappers.</li>
 
               </p>
               <h3 id=kda>9. Kill/Death/Assist</h3>
@@ -336,6 +363,38 @@ table.redTable thead th:first-child {
                <li>Player receiving one more chance of dice by kill</li>
                <img class="bigimg" src="assets/img/tutorial/death.jpg">
               <li>Dead player waiting for respawn</li>
+              <h3 id=damagesystem>10. Damaging System and Order</h3>
+              <h4>Damage types</h4>
+              <h5>Attack damage</h5>
+              <ul>
+                <li>Attack damage is used in physical type skills and basic attack</li>
+                <li>Can be defended by attack resistance</li>
+              </ul>
+              <h5>Magic damage</h5>
+              <ul>
+                <li>Magic damage is used in magic type skills</li>
+                <li>Can be defended by magic resistance</li>
+              </ul>
+              <h5>Fixed damage</h5>
+              <ul>
+                <li>Fixed damage ignores all resistance stats</li>
+                <li>all obstacle damages and additional damages are fixed damage</li>
+              </ul>
+              <h4>Damage calcultaion</h4>
+              <ul>
+               <li>Actual attack damage = attack power * (100/(100 + opponent`s attack resistance - attack penetration))</li>
+               <li>Actual magic damage = magic power * (100/(100 + opponent`s magic resistance - magic penetration))</li>
+             </ul>
+             <h4>Damage calculation order</h4>
+             <ol>
+               <li>Initiate with 3 category:attack damage, magic damage, fixed damage</li>
+               <li>additional magic damage is added to magic damage</li>
+               <li>calculate resistance and penetration to attack and magic damage</li>
+               <li>combine attack damage, magic damage, fixed damage, and additional damage</li>
+               <li>apply skill damage reduction</li>
+               <li>apply radiation effect</li>
+               <li>change HP</li>
+             </ol>
               </div>
     </section><!-- End Our Services Section -->
 
