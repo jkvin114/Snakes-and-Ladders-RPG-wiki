@@ -50,6 +50,10 @@
     line-height: 30px;
     margin:20px;
   }
+  .breadcrumbs a{
+    text-decoration: underline;
+  }
+
 
   table.redTable {
   background-color: white;
@@ -173,7 +177,7 @@ table.redTable thead th:first-child {
               <h3>3. Balancing mechanics</h3>
               <p>
                 <li>If a player left behind too much, it will get <strong>additional dice </strong>depending on how much it left behind.</li>
-                <li>If a player dies too much without level up, <strong>double dice</strong> effect will be given in order to follow up the opponent.
+                <li>If a player dies too much without level up, <strong><a href=#effectlist>double dice effect</a></strong> effect will be given in order to follow up the opponent.
                 <br> This prevents high-level overpowered player killing weaker player over and over again.</li>
               </p>
               <h3 id=statuseffect>4. Status Effects </h3>
@@ -182,8 +186,9 @@ table.redTable thead th:first-child {
               <br>Ex)slow effect for 3 turn= dice -2 for 3 times.</li>
               <li>All status effect will be indicated on the board</li>
               <li>All status effect disappear on death.</li>
+              <h4 id=effectlist></h4>
               <br><h4>List of status effects</h4>
-              <div id=effectlist>
+              <div>
                 <table class="redTable" style="table-layout:fixed;">
                   <colgroup>
                   <col style="width: 30px">
@@ -201,103 +206,108 @@ table.redTable thead th:first-child {
                       <td class="tg-0lax"><img src="assets/img/effects/1.png"></td>
                       <td class="tg-0lax">Slowness</td>
                       <td class="tg-0lax">next dice number -2</td>
-                      <td class="tg-0lax">Snowball, Poison cobweb, Kidnapper, Iceburg, Ghost Lv3 skill, Sniper Lv2 skill</td>
+                      <td class="tg-0lax"><a href="map.html#obs16" target='_blank'>Snowball</a>,
+                        <a href="map.html#obs28" target='_blank'>Poison cobweb</a> ,<a href="map.html#obs33" target='_blank'> Kidnapper</a>
+                        ,<a href="map.html#obs46" target='_blank'>Iceburg</a> , Ghost Lv3 skill, Sniper Lv2 skill</td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/2.png"></td>
                       <td class="tg-0lax">Speed</td>
                       <td class="tg-0lax">next dice number +2</td>
-                      <td class="tg-0lax">Jail, Casino, Whale`s grace, Dinosaur Lv2 skill, Sniper Lv3 skill, Magicial Lv2 skill</td>
+                      <td class="tg-0lax"><a href="map.html#obs35" target='_blank'>Jail</a>,<a href="map.html#obs38" target='_blank'>Casino</a> 
+                        ,<a href="map.html#obs59" target='_blank'>Whale`s grace</a> , Dinosaur Lv2 skill, Sniper Lv3 skill, Magicial Lv2 skill</td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/3.png"></td>
                       <td class="tg-0lax">Stun</td>
                       <td class="tg-0lax">can`t throw dice next turn</td>
-                      <td class="tg-0lax">Cobweb, Poison cobweb, Kidnapper, Casino, Jail, Death trial, Net, Sniper Lv1 skill</td>
+                      <td class="tg-0lax"><a href="map.html#obs13" target='_blank'>Cobweb</a>, <a href="map.html#obs28" target='_blank'>Poison cobweb</a>
+                        ,<a href="map.html#obs33" target='_blank'>Kidnapper</a> ,<a href="map.html#obs38" target='_blank'>Casino</a> ,<a href="map.html#obs35" target='_blank'>Jail</a> 
+                        ,<a href="map.html#obs37" target='_blank'> Death trial</a>,<a href="map.html#obs41" target='_blank'>Net</a> , Sniper Lv1 skill</td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/4.png"></td>
                       <td class="tg-0lax">Silent</td>
                       <td class="tg-0lax">Can`t use skill next turn</td>
-                      <td class="tg-0lax">Drug, Magicial Lv3 skill</td>
+                      <td class="tg-0lax"><a href="map.html#obs10" target='_blank'>Drug</a>, Magicial Lv3 skill</td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/5.png"></td>
                       <td class="tg-0lax">Shield</td>
                       <td class="tg-0lax">Ignores one skill</td>
-                      <td class="tg-0lax">Shield, Shelter</td>
+                      <td class="tg-0lax"><a href="map.html#obs25" target='_blank'>Shield</a>,<a href="map.html#obs24" target='_blank'>Shelter</a> </td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/6.png"></td>
                       <td class="tg-0lax">Poison</td>
                       <td class="tg-0lax">-30 HP for every turn</td>
-                      <td class="tg-0lax">Poison, Jellyfish</td>
+                      <td class="tg-0lax"><a href="map.html#obs29" target='_blank'>Poison</a>, <a href="map.html#obs43" target='_blank'>Jellyfish</a></td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/7.png"></td>
                       <td class="tg-0lax">Radiation</td>
                       <td class="tg-0lax">Doubles every damage</td>
-                      <td class="tg-0lax">Radiation</td>
+                      <td class="tg-0lax"><a href="map.html#obs32" target='_blank'>Radiation</a></td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/8.png"></td>
                       <td class="tg-0lax">Annuity</td>
                       <td class="tg-0lax">+20$ for every turn</td>
-                      <td class="tg-0lax">Annuity</td>
+                      <td class="tg-0lax"><a href="map.html#obs22" target='_blank'>Annuity</a></td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/9.png"></td>
                       <td class="tg-0lax">Slavery</td>
                       <td class="tg-0lax">-80HP for every turn, dies if you reach the end</td>
-                      <td class="tg-0lax">Slavery</td>
+                      <td class="tg-0lax"><a href="map.html#obs34" target='_blank'>Slavery</a></td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/10.png"></td>
                       <td class="tg-0lax">Backdice</td>
                       <td class="tg-0lax">next dice goes back</td>
-                      <td class="tg-0lax">Headwind</td>
+                      <td class="tg-0lax"><a href="map.html#obs40" target='_blank'>Headwind</a></td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/11.png"></td>
                       <td class="tg-0lax">Doubledice</td>
                       <td class="tg-0lax">Next dice doubles</td>
-                      <td class="tg-0lax">Fair wind</td>
+                      <td class="tg-0lax"><a href="map.html#obs39" target='_blank'>Fair wind</a></td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/12.png"></td>
                       <td class="tg-0lax">Blind</td>
                       <td class="tg-0lax">Doesn`t perform basic attack</td>
-                      <td class="tg-0lax">Squid, Ghost Lv1 skill</td>
+                      <td class="tg-0lax"><a href="map.html#obs45" target='_blank'>Squid</a>, Ghost Lv1 skill</td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/13.png"></td>
                       <td class="tg-0lax">Ignite</td>
                       <td class="tg-0lax">-15HP for every player`s turn</td>
-                      <td class="tg-0lax">Vikings, Volcano</td>
+                      <td class="tg-0lax"><a href="map.html#obs50" target='_blank'>Vikings</a>, <a href="map.html#obs60" target='_blank'>Volcano</a></td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/14.png"></td>
                       <td class="tg-0lax">Invisibility</td>
                       <td class="tg-0lax">Ignore every attack and obstacle</td>
-                      <td class="tg-0lax">Dive, Ghost Lv2 skill</td>
+                      <td class="tg-0lax"><a href="map.html#obs51" target='_blank'>Dive</a>, Ghost Lv2 skill</td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/15.png"></td>
                       <td class="tg-0lax">Debt</td>
                       <td class="tg-0lax"> Can`t earn money or sell tokens</td>
-                      <td class="tg-0lax">Debt</td>
+                      <td class="tg-0lax"><a href="map.html#obs64" target='_blank'>Private loan</a></td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/16.png"></td>
                       <td class="tg-0lax">Lottery annuity</td>
                       <td class="tg-0lax"> +50$, +1 token for every turn</td>
-                      <td class="tg-0lax">Lottery annuity</td>
+                      <td class="tg-0lax"><a href="map.html#obs66" target='_blank'>Lottery annuity</a></td>
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/17.png"></td>
                       <td class="tg-0lax">Curse</td>
                       <td class="tg-0lax"> Gets worst result for next dice(overrides dice control)</td>
-                      <td class="tg-0lax">Curse</td>
+                      <td class="tg-0lax"><a href="map.html#obs72" target='_blank'>Curse</a></td>
                     </tr>
                   </table>
               </div>   <!--effectlist-->
