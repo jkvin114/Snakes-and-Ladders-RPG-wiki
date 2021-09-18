@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Moderna - v2.0.1
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+
+  .icon-box{
+    margin-left: 20px;
+  }
+  .hidden{
+    display:none;
+  }
+
+  .breadcrumbs .bigimg{
+    width:60vw;
+    display:block;
+    border:rgb(114, 159, 255) 4px solid;
+    box-shadow: rgb(39, 39, 39,0.5) 4px 4px;
+    margin-top:3vw;
+    margin-bottom:3vw;
+  }
+  .breadcrumbs li{
+    font-size: 18px;
+    line-height: 30px;
+    margin:20px;
+  }
+  .breadcrumbs a{
+    text-decoration: underline;
+  }
+
+
+  table.redTable {
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border:2px solid rgb(219, 255, 190);
+}
+table.redTable td, table.redTable th {
+  padding: 3px 2px;
+}
+table.redTable tbody tr {
+  height:40px;
+}
+table.redTable tbody td {
+  word-wrap: break-word;
+
+  font-size: 13px;
+}
+table.redTable tr:nth-child(even) {
+  background: rgb(228, 255, 245);
+}
+table.redTable thead {
+  background: rgb(255, 244, 83);
+}
+table.redTable thead th {
+  font-size: 19px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid rgb(255, 253, 115);
+}
+table.redTable thead th:first-child {
+  border-left: none;
+}
+
+
+</style>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h3 class="text-light"><a href="index.html"><span>Snakes-and-Ladders RPG Wiki</span></a></h3>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tutorial.html">Tutorial</a></li>
+          <li class="active"><a href="game_design.html">Game Design</a></li>
+          <li><a href="character.html">Characters</a></li>
+          <li><a href="map.html">Maps</a></li>
+          <li><a href="game_item.html">Game Items</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Our Services Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+     
+          <h2>Game Design</h2>
+          <br>
+          <h3>1. Luck and strategic factors </h3>
+          <li>This game is designed to incorporate luck and strategic factors half each.<br></li>
+          <li>The primary luck factor is the <strong>dice number</strong> , which greatly affects the overall game.<br>
+            There are also some random obstacles, which adds some variables to the game.<br></li>
+            <li> For balance, there are various <strong>strategic factors.</strong></li>
+            <h4><strong>A. Skill management</strong></h4>
+            <li>Player can choose the when and where they want to use their skill when the skill is available. </li>
+            <li> Non target skills require players to choose a square to place the skill, by predicting where other players will arrive next turn</li>
+             <h4><strong>B. Buying items in store</strong></h4>
+             <li>Players can choose to increase their stats by purchasing items on the store.</li>
+             <li>It is important to choose items in need in various circumstances</li>
+             <h4><strong>C. Strategic obstacles</strong></h4>
+             <li>Utilizing strategic obstacles such as god's hand and kidnapper can greatly change the tide of the game.
+             </li>
+             <h4 id=dicecontrol><strong>D. Dice control</strong></h4>
+             <img class="bigimg" src="assets/img/tutorial/dc.jpg">
+             <p>
+              <li>Every players will be given a chance to<strong> control their dice once every 5 turn.</strong> </li>
+              <li>Dice control chance<strong> don't accumulate</strong>, so the player need to use it in 5 turns, otherwise the chance will be lost.</li>
+              <li>Player can utilize it to avoid opponents' projectiles, avoid fatal obstacles, or arrive at strategic obstacles.</li>
+              <li>However, players cannot use dice control after they pass the last store.</li>
+              <li>Pro tip: dice selection and actual movement might defer depending on additional dice and status effects, which will be indicated before you throw dice.</li>
+             </p>
+             <h3>2. What happens Every turn </h3>
+             <li><strong>One turn: 1 cycle of player having their turn.</strong></li>
+             <ol>
+               <li>Dice button is shown to this turn`s player</li>
+               <ol type="i">
+                <li>Status effect, skill cooltime, and projectile cooltime updates</li>
+               <li>Receives constant damages such as poison and ignite</li>
+               <li>Passive skill updates</li>
+              </ol>
+               <li>Throw dice</li>
+               <li>Player moves</li>
+               <li>If there is a projectile on arriving square, get the effect.</li>
+              <li>Get obstacle effect</li>
+              <li>If the obstacle requires player selection(such as god`s hand), waits until player enters some input.</li>
+              <ol type="i">
+                <li>Perform activation skill</li>
+                <li>Skill duration updates</li>
+              </ol>
+              <li>Perform basic attack</li>
+              <li>Skill button is shown to this turn`s player</li>
+              <li>Player select skill and select the target</li>
+              <li>8 and 9 repeats until player press next turn button</li>
+              <li>Dice control cooltime and skill effect cooltime updates. HP regenerates</li>
+              <li>Goes to next turn</li>
+              </ol>
+            <li>These orders happen synchronously</li>
+              <h3>3. Balancing mechanics</h3>
+              <p>
+                <li>If a player fell behind too much, it will get <strong>additional dice </strong>depending on how much it left behind.</li>
+                <li>If a player dies too much without level up, <strong><a href=#effectlist>double dice effect</a></strong> effect will be given in order to follow up the opponent.
+                <br> This prevents high-level overpowered player killing weaker player over and over again.</li>
+              </p>      
+              <h3 id=statuseffect>4. Status Effects </h3>
+            <p>
+             <li> Status effect affects the player in a unit of a turn. 
+              <br>Ex)slow effect for 3 turn= dice -2 for 3 times.</li>
+              <li>All status effects will be indicated on the board</li>
+              <li>All status effects disappear on death.</li>
+              <h4 id=effectlist></h4>
+              <br><h4>List of status effects</h4>
+              <div>
+                <table class="redTable" style="table-layout:fixed;">
+                  <colgroup>
+                  <col style="width: 30px">
+                  <col style="width: 60px">
+                  <col style="width: 80px">
+                  <col style="width: 100px">
+                  </colgroup>
+                    <tr>
+                      <th class="tg-0lax">Icon</th>
+                      <th class="tg-0lax">Name</th>
+                      <th class="tg-0lax">Effect</th>
+                      <th class="tg-0lax">Sources</th>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/1.png"></td>
+                      <td class="tg-0lax">Slowness</td>
+                      <td class="tg-0lax">next dice number -2</td>
+                      <td class="tg-0lax"><a href="map.html#obs16" target='_blank'>Snowball</a>,
+                        <a href="map.html#obs28" target='_blank'>Poison cobweb</a> ,<a href="map.html#obs33" target='_blank'> Kidnapper</a>
+                        ,<a href="map.html#obs46" target='_blank'>Iceburg</a> , Ghost Lv3 skill, Sniper Lv2 skill</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/2.png"></td>
+                      <td class="tg-0lax">Speed</td>
+                      <td class="tg-0lax">next dice number +2</td>
+                      <td class="tg-0lax"><a href="map.html#obs35" target='_blank'>Jail</a>,<a href="map.html#obs38" target='_blank'>Casino</a> 
+                        ,<a href="map.html#obs59" target='_blank'>Whale`s grace</a> , Dinosaur Lv2 skill, Sniper Lv3 skill, Magicial Lv2 skill</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/3.png"></td>
+                      <td class="tg-0lax">Stun</td>
+                      <td class="tg-0lax">can`t throw dice next turn</td>
+                      <td class="tg-0lax"><a href="map.html#obs13" target='_blank'>Cobweb</a>, <a href="map.html#obs28" target='_blank'>Poison cobweb</a>
+                        ,<a href="map.html#obs33" target='_blank'>Kidnapper</a> ,<a href="map.html#obs38" target='_blank'>Casino</a> ,<a href="map.html#obs35" target='_blank'>Jail</a> 
+                        ,<a href="map.html#obs37" target='_blank'> Death trial</a>,<a href="map.html#obs41" target='_blank'>Net</a> , Sniper Lv1 skill</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/4.png"></td>
+                      <td class="tg-0lax">Silent</td>
+                      <td class="tg-0lax">Can`t use skill next turn</td>
+                      <td class="tg-0lax"><a href="map.html#obs10" target='_blank'>Drug</a>, Magicial Lv3 skill</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/5.png"></td>
+                      <td class="tg-0lax">Shield</td>
+                      <td class="tg-0lax">Ignores one skill</td>
+                      <td class="tg-0lax"><a href="map.html#obs25" target='_blank'>Shield</a>,<a href="map.html#obs24" target='_blank'>Shelter</a> </td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/6.png"></td>
+                      <td class="tg-0lax">Poison</td>
+                      <td class="tg-0lax">-30 HP for every turn</td>
+                      <td class="tg-0lax"><a href="map.html#obs29" target='_blank'>Poison</a>, <a href="map.html#obs43" target='_blank'>Jellyfish</a></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/7.png"></td>
+                      <td class="tg-0lax">Radiation</td>
+                      <td class="tg-0lax">Doubles every damage</td>
+                      <td class="tg-0lax"><a href="map.html#obs32" target='_blank'>Radiation</a></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/8.png"></td>
+                      <td class="tg-0lax">Annuity</td>
+                      <td class="tg-0lax">+20$ for every turn</td>
+                      <td class="tg-0lax"><a href="map.html#obs22" target='_blank'>Annuity</a></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/9.png"></td>
+                      <td class="tg-0lax">Slavery</td>
+                      <td class="tg-0lax">-80HP for every turn, dies if you reach the end</td>
+                      <td class="tg-0lax"><a href="map.html#obs34" target='_blank'>Slavery</a></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/10.png"></td>
+                      <td class="tg-0lax">Backdice</td>
+                      <td class="tg-0lax">next dice goes back</td>
+                      <td class="tg-0lax"><a href="map.html#obs40" target='_blank'>Headwind</a></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/11.png"></td>
+                      <td class="tg-0lax">Doubledice</td>
+                      <td class="tg-0lax">Next dice doubles</td>
+                      <td class="tg-0lax"><a href="map.html#obs39" target='_blank'>Fair wind</a></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/12.png"></td>
+                      <td class="tg-0lax">Blind</td>
+                      <td class="tg-0lax">Doesn`t perform basic attack</td>
+                      <td class="tg-0lax"><a href="map.html#obs45" target='_blank'>Squid</a>, Ghost Lv1 skill</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/13.png"></td>
+                      <td class="tg-0lax">Ignite</td>
+                      <td class="tg-0lax">-15HP for every player`s turn</td>
+                      <td class="tg-0lax"><a href="map.html#obs50" target='_blank'>Vikings</a>, <a href="map.html#obs60" target='_blank'>Volcano</a></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/14.png"></td>
+                      <td class="tg-0lax">Invisibility</td>
+                      <td class="tg-0lax">Ignore every attack and obstacle</td>
+                      <td class="tg-0lax"><a href="map.html#obs51" target='_blank'>Dive</a>, Ghost Lv2 skill</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/15.png"></td>
+                      <td class="tg-0lax">Debt</td>
+                      <td class="tg-0lax"> Can`t earn money or sell tokens</td>
+                      <td class="tg-0lax"><a href="map.html#obs64" target='_blank'>Private loan</a></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/16.png"></td>
+                      <td class="tg-0lax">Lottery annuity</td>
+                      <td class="tg-0lax"> +50$, +1 token for every turn</td>
+                      <td class="tg-0lax"><a href="map.html#obs66" target='_blank'>Lottery annuity</a></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0lax"><img src="assets/img/effects/17.png"></td>
+                      <td class="tg-0lax">Curse</td>
+                      <td class="tg-0lax"> Gets worst result for next dice(overrides dice control)</td>
+                      <td class="tg-0lax"><a href="map.html#obs72" target='_blank'>Curse</a></td>
+                    </tr>
+                  </table>
+                  <li>Algorithm for the curse effect</li>
+                  <ul>
+                    <li>Every obstacle has numerical weighted value from -7 to 4 based on how harmful the obstacle is</li>
+                    <li>Example: Web(-2), Volcano(-6), Annuity Lottery(4)</li>
+                    <li>calculates dice number that will lead the player to the nearest and the most harmful obstacle. </li>
+                    <li>There`s 70% chance for that worst dice number.</li>
+                    <li>For the other 30% chance, the dice number will be just 1 (6 if the player has backdice effect)</li>
+                  </ul>
+              </div>   <!--effectlist-->
+            </p>
+            <h3 id=playerlevel>5. Player Level </h3>
+            <li>Every player starts with level 1</li>
+             <li> If a player passes designated respawn points, <strong>it levels up, and its respawn point changes.</strong></li>
+             <li> Player will learn more skills as they level up.</li>
+             <li> Also, maximum HP, attack resistance, magic resistance and attack power will increase every level.</li>
+             <li>Increase amount of attack resistance and magic resistance is proportional to total number of players.<br> This prevents excessive deaths in the late game.</li>
+             
+             <h3 id=skill>6. Skills </h3>
+             <li>Each skills have their own cooltime. Players must wait for few turns after you use a skill to use it again.</li>
+             <li>Potion obstacle can reset all cooltime. (reduces by half for Lv3 skill)</li>
+             <li>On/off skills doesn`t have a cooltime.</li>
+             <li>Activation skills remain active for their duration. After duration ends, its cooldown starts.</li>
+             <img class="bigimg" src="assets/img/tutorial/ui6.jpg">
+                <li>Lv1 skill- can use from the start</li>
+                <li>Lv2 skill - can use from level 2(pass the first store)</li>
+                <li>Lv3 skill- can use 5 turns after leveling up to 3(pass the second store)</li>
+              </p><h4>Types of skill</h4>
+               <p> 
+                <li>Activation skill- used immediately after clicking the button</li>
+                <ul>
+                  <li>Stays active for its duration</li>
+                  <li>Cooldown starts after the duration ends</li>
+                  <li>Some skills can be deactivated by pressing skill button again.</li>
+                </ul>
+                <li>Targeting skill- need to choose target player</li>
+                <ul>
+                  <li>Only the players in the skill range will be on selection.</li>
+                  <li>Cannot select players with invisibility effect, dead player, and players on store.</li>
+                </ul>
+                <li>Non-targeting skill- need to choose a square to place the skill projectile.</li>
+                <ul>
+                  <li>Player can place projectile within skill range.</li>
+                  <li>Player needs to predict where other players will arrive next turn</li>
+                  <li>The projectile won`t be placed on store</li>
+                </ul>
+          
+              <h3 id=basicattack>7. Basic attack (auto attack)</h3>
+              <p>
+                <li>A player will perform basic attack <strong>after every movement only in their turn.</strong>
+              This will happen <strong>automatically.</strong> </li>
+              <li>The player will give damage to every player in certain range(normally, players in a same square)</li>
+              <li>After that, other players that had been attacked will<strong> also attack back</strong> the player immediately.</li>
+              <li>Player with blind effect won't perform basic attack.</li>
+              <li>The damage is same with player's<strong> attack power.</strong></li>
+              </p>
+              <h3 id=projectile>8. Projectiles</h3>
+              <p>
+               <li> If a player places a projectile by non-target skill, it will remain on the square for 2~3turns.</li>
+               <li> If a player other than the owner of the projectile steps on the projectile, it gets designated effect and the projectile disappears.</li>
+               <li> The color of edge of projectile represents owner's <strong>turn color</strong>, and the icon represents the type of the projectile.</li>
+               <li> If the owner of the projectile dies, it disappers.</li>
+
+              </p>
+              <h3 id=kda>9. Kill/Death/Assist</h3>
+              <p><li>If a player kills other player, the killer will <strong>receive reward money</strong>, and gets <strong>one more chance to throw dice</strong> with speed effect.</li>
+                <li>The reward money increases if the player killed multiple other players without dying, <br>or if that kill stopped other player from multiple killing.</li>
+                <li> If a player dies, it will respawn at the <strong>last passed respawn point on their returning turn.</strong></li>
+               <li>On death, every status effect and projectiles disapper and all skill duration resets</li>
+               <li>If the player has additional life or guardian angel item, the player will revive on the next turn without returning to respawn point.</li>
+                <li>If dead player`s respawn point is store, player can use store before throwing dice after respawn.</li>
+               <li> Players who damaged or force moved the dead player within 3 turns will count as assist, and receive 50$. This includes players that are killed by obstacles.</li>
+               <li> Kill, death, and assist are used to<strong> rank the players after the first place</strong>. The more a player have kill and assist and less death, the higher rank the player will get.</li></p>
+               <img class="bigimg" src="assets/img/tutorial/kill.jpg">
+               <li>Player receiving one more chance of dice by kill</li>
+               <img class="bigimg" src="assets/img/tutorial/death.jpg">
+              <li>Dead player waiting for respawn</li>
+              <h3 id=damagesystem>10. Damaging System and Order</h3>
+              <h4>Damage types</h4>
+              <h5>Attack damage</h5>
+              <ul>
+                <li>Source of attack damage is physical type skills and basic attack</li>
+                <li>Can reduce damage by attack resistance</li>
+                <li>Attack penetration reduces opponent`s attack resistance</li>
+              </ul>
+              <h5>Magic damage</h5>
+              <ul>
+                <li>Source of magic damage is magic type skills</li>
+                <li>Can reduce damage by magic resistance</li>
+                <li>MAgic penetration reduces opponent`s magic resistance</li>
+              </ul>
+              <h5>Fixed damage</h5>
+              <ul>
+                <li>Fixed damage ignores all resistance stats</li>
+                <li>all obstacle damages and additional damages are fixed damage</li>
+              </ul>
+              <h4>Damage calcultaion</h4>
+              <ul>
+               <li>Actual attack damage = attack power * (100/(100 + opponent`s attack resistance - attack penetration))</li>
+               <li>Actual magic damage = magic power * (100/(100 + opponent`s magic resistance - magic penetration))</li>
+             </ul>
+             <h4>Damage calculation order</h4>
+             <ol>
+               <li>Initiate with 3 category:attack damage, magic damage, fixed damage</li>
+               <li>additional magic damage is added to magic damage</li>
+               <li>calculate resistance and penetration to attack and magic damage</li>
+               <li>merge attack damage, magic damage, fixed damage, and additional damage</li>
+               <li>apply skill damage reduction</li>
+               <li>apply radiation effect</li>
+               <li>change HP</li>
+             </ol>
+              </div>
+    </section><!-- End Our Services Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section class="services hidden">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-pink">
+              <div class="icon"><i class="bx bx-book-open"></i></div>
+              <h4 class="title"><a href="tutorial.html">Tutorial</a></h4>
+              <p class="description">Basic tutorials of the game</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-cyan">
+              <div class="icon"><i class="bx bx-vector"></i></div>
+              <h4 class="title"><a href="game_design.html">Game Design</a></h4>
+              <p class="description">In-depth explanation of game rule, design, and factors</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-blue">
+              <div class="icon"><i class="bx bx-body"></i></div>
+              <h4 class="title"><a href="character.html">Character</a></h4>
+              <p class="description">Detailed description of each character and character types</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-green">
+              <div class="icon"><i class="bx bx-map-alt"></i></div>
+              <h4 class="title"><a href="map.html">Map</a></h4>
+              <p class="description">Detailed description of each map`s design and obstacles</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-pink">
+              <div class="icon"><i class="bx bx-coin"></i></div>
+              <h4 class="title"><a href="game_item.html">Game Item</a></h4>
+              <p class="description">Detailed description of player stats and game items</p>
+            </div>
+          </div>
+         
+          </div>
+
+   
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Why Us Section ======= -->
+ 
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+   
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        Made by Yejoon Jung
+      </div>
+      <div class="credits">
+        Email: yejoonjung@umass.edu
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

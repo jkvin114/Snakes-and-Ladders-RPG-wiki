@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Moderna - v2.0.1
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+    .icon-box{
+    margin-left: 20px;
+  }
+  .hidden{
+    display:none;
+  }
+
+  .breadcrumbs .bigimg, .sqimg{
+    width:60vw;
+    display:block;
+    border:rgb(114, 159, 255) 4px solid;
+    box-shadow: rgb(39, 39, 39,0.5) 4px 4px;
+    margin-top:3vw;
+    margin-bottom:3vw;
+  }
+
+  .sqimg{
+    width: 30vw
+  }
+  .breadcrumbs li{
+    font-size: 18px;
+    line-height: 30px;
+    margin:20px;
+  }
+  .breadcrumbs a{
+    text-decoration: underline;
+  }
+  .toast_itemimg{
+    margin: 30px;
+		width: 100px;
+		overflow: hidden;
+		height: 100px;
+		display: inline-block;
+  }
+
+</style>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container">
+
+
+      <div class="logo float-left">
+        <h3 class="text-light"><a href="index.html"><span>Snakes-and-Ladders RPG Wiki</span></a></h3>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tutorial.html">Tutorial</a></li>
+          <li><a href="game_design.html">Game Design</a></li>
+          <li><a href="character.html">Characters</a></li>
+          <li><a href="map.html">Maps</a></li>
+          <li class="active"><a href="game_item.html">Game Items</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Our Services Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <h2>Items and Stats</h2>
+        <li>Players can buy items in the store</li>
+        <li>Players can possess at most 6 items</li>
+        <img class="bigimg" src="assets/img/tutorial/store4.jpg">
+        <h3>Item levels</h3>
+        <img class="sqimg" src="assets/img/items/level.jpg">
+        <li>Lower level items can be upgraded to certain upper level items.</li>
+        <li>Price for upgrading is original item price discounted by lower level item prices.</li>
+        <li>The prices will be calculated and indicated automatically.</li>
+        <li>Example: The price for rare sword is 80$, but if you have 2 common swords (30$ each),<br> you can upgrade them to rare sword by paying only 20$.</li>
+        <li>Only level 1 items can be bought in the first store.</li>
+        <li>Level 3 items are the highest level items.</li>
+        
+        <p>&#8251; actual price can be differ from the pictures.</p>
+        <h3>Defensive Items (Level 3)</h3>
+        <img class="sqimg" src="assets/img/items/armor.jpg">
+        <h2>Epic Armor</h2>
+          <ul>
+            <li>Price:300</li>
+            <li>Maximum health +90</li>
+            <li>Magic resistance +80</li>
+            <li>Obstacle resistance +10</li>
+          </ul>
+        
+        <img class="sqimg" src="assets/img/items/shield.jpg">
+        <h2>Epic Shield</h2>
+          <ul>
+            <li>Price:300</li>
+            <li>Maximum health +80</li>
+            <li>Attack resistance +60</li>
+            <li>Obstacle resistance +10</li>
+          </ul>
+        <img class="sqimg" src="assets/img/items/ga.jpg">
+        <h2>Guardian Angel</h2>
+          <ul>
+            <li>Price:350</li>
+            <li>Maximum health +60</li>
+            <li>Attack resistance +25</li>
+            <li>Magic resistance +35</li>
+            <li>Skill Haste +1</li>
+            <li>Unique passive: revive when dies (cooltime 15 turn)</li>
+          </ul>
+        <img class="sqimg" src="assets/img/items/fruit.jpg">
+        <h2>Epic Fruit</h2>
+          <ul>
+            <li>Price:360</li>
+            <li>Maximum health +100</li>
+            <li>Health regeneration per turn: 30</li>
+            <li>Unique passive: additionally regenerate 5% of max HP every turn</li>
+          </ul>
+        <img class="sqimg" src="assets/img/items/nature.jpg">
+        <h2>Power of Mother Nature</h2>
+          <ul>
+            <li>Price:300</li>
+            <li>Maximum health +40</li>
+            <li>Skill damage reduction +25%</li>
+            <li>Skill Haste +1</li>
+          </ul>
+
+        <h3>Offensive Items (Level 3) </h3>
+        <img class="sqimg" src="assets/img/items/sword.jpg">
+        <h2>Epic Sword</h2>
+          <ul>
+            <li>Price:300</li>
+            <li>Attack Power +80</li>
+            <li>Armor penetration +15</li>
+          </ul>
+        <img class="sqimg" src="assets/img/items/marble.jpg">
+        <h2>Epic Marble</h2>
+          <ul>
+            <li>Price:320</li>
+            <li>Magic Power +120</li>
+            <li>Magic Penetration +20</li>
+          </ul>
+        <img class="sqimg" src="assets/img/items/bloodsword.jpg">
+        <h2>Sword of Blood</h2>
+          <ul>
+            <li>Price:250</li>
+            <li>Attack power+30</li>
+            <li>Absorb by every damage +12%</li>
+          </ul>
+        <img class="sqimg" src="assets/img/items/spear.jpg">
+        <h2>Ancient Spear</h2>
+        <ul>
+          <li>Price:300</li>
+          <li>Adaptative stat +30</li>
+          <li>Additional Magic damage +15% of opponent`s Health</li>
+          <li>Skill haste +1</li>
+        </ul>
+        <img class="sqimg" src="assets/img/items/whip.jpg">
+        <h2>Epic Whip</h2>
+          <ul>
+            <li>Price:340</li>
+            <li>Adaptative stat +80</li>
+            <li>Basic attack range +2</li>
+          </ul>
+        <img class="sqimg" src="assets/img/items/crossbow.jpg">
+        <h2>Crossbow of Piercing</h2>
+        <ul>
+          <li>Price:330</li>
+          <li>Adaptative stat +20</li>
+          <li>Additional Magic damage +10% of opponent`s Health</li>
+          <li>Unique passive: ignore opponent`s attack and magic resistance by 40%</li>
+        </ul>
+        <h3>Utility Items</h3>
+        <img class="sqimg" src="assets/img/items/boots.jpg">
+        <h2>Boots of Haste (Level 3)</h2>
+        <ul>
+          <li>Price:300</li>
+          <li>Movement speed +1</li>
+          <li>Skill Haste +1</li>
+          <li>Unique passive: ignore slow effect</li>
+        </ul><br><br>
+        <h2>Boots (Level 2)</h2>
+        <ul>
+          <li>Price:120</li>
+          <li>Unique passive: movement speed  +1 when fell behind</li>
+        </ul>
+        <h3>Level 2 Items</h3>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-100px'; > </div>
+        <h2>Rare Sword</h2>
+        <ul>
+          <li>Price:80</li>
+          <li>Attack Power +30</li>
+        </ul>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-400px'; > </div>
+        <h2>Rare Marble</h2>
+        <ul>
+          <li>Price:120</li>
+          <li>Magic Power +50</li>
+        </ul>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-700px'; > </div>
+        <h2>Rare Shield</h2>
+        <ul>
+          <li>Price:80</li>
+          <li>Maximum health +30</li>
+          <li>Attack resistance +20</li>
+        </ul>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1000px'; > </div>
+        <h2>Rare Fruit</h2>
+        <ul>
+          <li>Price:120</li>
+          <li>Maximum health +40</li>
+          <li>Health regeneration per turn +15</li>
+        </ul> 
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1300px'; > </div>
+        <h2>Rare Armor</h2>
+        <ul>
+          <li>Price:100</li>
+          <li>Maximum health +30</li>
+          <li>Magic resistance +30</li>
+        </ul>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1600px'; > </div>
+        <h2>Bloodsucker</h2>
+        <ul>
+          <li>Price:140</li>
+          <li>Absorb by every damage +12%</li>
+        </ul>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1900px'; > </div>
+        <h2>Power of Nature</h2>
+        <ul>
+          <li>Price:70</li>
+          <li>Skill damage reduction +10%</li>
+        </ul>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2100px'; > </div>
+        <h2>Diamond Crystal</h2>
+        <ul>
+          <li>Price:50</li>
+          <li>Maximum health +40</li>
+        </ul>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2400px'; > </div>
+        <h2>Rare Whip</h2>
+        <ul>
+          <li>Price:145</li>
+          <li>Basic attack range +1</li>
+        </ul>        
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2500px'; > </div>
+        <h2>Rare Magic Axe</h2>
+        <ul>
+          <li>Price:135</li>
+          <li>Adaptative stat +50</li>
+        </ul>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2700px'; > </div>
+        <h2>Bamboo Spear</h2>
+        <ul>
+          <li>Price:60</li>
+          <li>Additional Magic damage +5% of opponent`s health</li>
+        </ul>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3000px'; > </div>
+        <h2>Medieval Bow</h2>
+        <ul>
+          <li>Price:120</li>
+          <li>Armor Penetration +15</li>
+          <li>Magic Penetration +15</li>
+        </ul>
+
+        <h3>Level 1 Items</h3>
+        <div class="toast_itemimg popup" ><img src='assets/img/items/items.png' style='margin-left:-200px'; > </div>
+        <span class="popuptext" id="myPopup">Popup text...</span>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-500px'; > </div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-800px'; > </div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1100px'; > </div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1400px'; > </div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2000px'; > </div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2600px'; > </div>
+
+      </div>
+    </section><!-- End Our Services Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section class="services hidden">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-pink">
+              <div class="icon"><i class="bx bx-book-open"></i></div>
+              <h4 class="title"><a href="tutorial.html">Tutorial</a></h4>
+              <p class="description">Basic tutorials of the game</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-cyan">
+              <div class="icon"><i class="bx bx-vector"></i></div>
+              <h4 class="title"><a href="game_design.html">Game Design</a></h4>
+              <p class="description">In-depth explanation of game rule, design, and factors</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-blue">
+              <div class="icon"><i class="bx bx-body"></i></div>
+              <h4 class="title"><a href="character.html">Character</a></h4>
+              <p class="description">Detailed description of each character and character types</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-green">
+              <div class="icon"><i class="bx bx-map-alt"></i></div>
+              <h4 class="title"><a href="map.html">Map</a></h4>
+              <p class="description">Detailed description of each map`s design and obstacles</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-pink">
+              <div class="icon"><i class="bx bx-coin"></i></div>
+              <h4 class="title"><a href="game_item.html">Game Item</a></h4>
+              <p class="description">Detailed description of player stats and game items</p>
+            </div>
+          </div>
+         
+          </div>
+
+   
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Why Us Section ======= -->
+ 
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+   
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        Made by Yejoon Jung
+      </div>
+      <div class="credits">
+        Email: yejoonjung@umass.edu
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
