@@ -38,7 +38,7 @@
   }
 
   .breadcrumbs .bigimg, .sqimg{
-    width:60vw;
+    width:50vw;
     display:block;
     border:rgb(114, 159, 255) 4px solid;
     box-shadow: rgb(39, 39, 39,0.5) 4px 4px;
@@ -112,6 +112,68 @@
         <li>Only level 1 items can be bought in the first store.</li>
         <li>Level 3 items are the highest level items.</li>
         
+        <h3>Explanation of each stats</h3>
+        <br>
+        <h4>Attack Power</h4>
+        <ul>
+          <li>Increases damage of basic attack and attack skills</li>
+        </ul>
+        <h4>Magic Power</h4>
+        <ul>
+          <li>Increases damage of magic skills</li>
+        </ul>
+        <h4>Attack Resistance</h4>
+        <ul>
+          <li>Reduces damage from basic attack and attack skills</li>
+
+        </ul>
+        <h4>Attack Penetration</h4>
+        <ul>
+          <li>Ignores certain amount of opponent`s attack resistance</li>
+        </ul>
+        <h4>Magic Resistance</h4>
+        <ul>
+          <li>Reduces damage from magic skills</li>
+
+        </ul>
+        <h4>Magic Penetration</h4>
+        <ul>
+          <li>Ignores certain amount of opponent`s magic resistance</li>
+        </ul>
+        <li>Actual attack damage = attack power * (100/(100 + opponent`s attack resistance - attack penetration))</li>
+        <li>Actual magic damage = magic power * (100/(100 + opponent`s magic resistance - magic penetration))</li>
+        <h4>Health regeneration per turn</h4>
+        <ul>
+          <li>Regenerate certain amount of health every turn (applies up to 30)</li>
+        </ul>
+        <h4>Absorb by every damage </h4>
+        <ul>
+          <li>Heals on attack proportional to the damage</li>
+        </ul>
+        <h4>Skill damage reduction</h4>
+        <ul>
+          <li>Reduces damage from attack and magic skills (applies up to 75%)</li>
+        </ul>
+        <h4>Additional Magic damage</h4>
+        <ul>
+          <li>When attacking opponent, deals additional damage proportional to opponent`s maximum health as magic damage</li>
+        </ul>
+        <h4>Basic Attack Range</h4>
+        <ul>
+          <li>Increases range of basic attack (applies up to 5 squares)</li>
+        </ul>
+        <h4>Skill haste</h4>
+        <ul>
+          <li>Reduces the cooltime of level 3 skill (applies up to 3 turns)</li>
+        </ul>
+        <h4>Movement Speed</h4>
+        <ul>
+          <li>Moves certain number more than dice number (applies up to 2)</li>
+        </ul>
+        <h4>Adaptative Stat</h4>
+        <ul>
+          <li>Added to higher stat between attack power and magic power</li>
+        </ul>
         <p>&#8251; actual price can be differ from the pictures.</p>
         <h3>Defensive Items (Level 3)</h3>
         <img class="sqimg" src="assets/img/items/armor.jpg">
@@ -164,7 +226,7 @@
           <ul>
             <li>Price:300</li>
             <li>Attack Power +80</li>
-            <li>Armor penetration +15</li>
+            <li>Attack penetration +15</li>
           </ul>
         <img class="sqimg" src="assets/img/items/marble.jpg">
         <h2>Epic Marble</h2>
@@ -291,20 +353,55 @@
         <h2>Medieval Bow</h2>
         <ul>
           <li>Price:120</li>
-          <li>Armor Penetration +15</li>
+          <li>Attack Penetration +15</li>
           <li>Magic Penetration +15</li>
         </ul>
 
         <h3>Level 1 Items</h3>
         <div class="toast_itemimg popup" ><img src='assets/img/items/items.png' style='margin-left:-200px'; > </div>
-        <span class="popuptext" id="myPopup">Popup text...</span>
+        <h2>Common Sword</h2>
+        <ul>
+          <li>Price:30</li>
+          <li>Attack power +10</li>
+        </ul>
         <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-500px'; > </div>
+        <h2>Common Marble</h2>
+        <ul>
+          <li>Price:40</li>
+          <li>Magic power +20</li>
+        </ul>
         <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-800px'; > </div>
+        <h2>Common Shield</h2>
+        <ul>
+          <li>Price:30</li>
+          <li>Maximum health +10</li>
+          <li>Attack resistance +7</li>
+        </ul>
         <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1100px'; > </div>
+        <h2>Common Fruit</h2>
+        <ul>
+          <li>Price:40</li>
+          <li>Health regeneration per turn +5</li>
+        </ul>
         <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1400px'; > </div>
+        <h2>Common Armor</h2>
+        <ul>
+          <li>Price:40</li>
+          <li>Maximum health +10</li>
+          <li>Magic resistance +10</li>
+        </ul>
         <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2000px'; > </div>
+        <h2>Light of Nature</h2>
+        <ul>
+          <li>Price:30</li>
+          <li>Skill damage reduction +3%</li>
+        </ul>
         <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2600px'; > </div>
-
+        <h2>Common Magic Axe</h2>
+        <ul>
+          <li>Price:35</li>
+          <li>Adaptative stat +10</li>
+        </ul>
       </div>
     </section><!-- End Our Services Section -->
 
@@ -380,7 +477,7 @@
         Made by Yejoon Jung
       </div>
       <div class="credits">
-        Email: yejoonjung@umass.edu
+        Email: jkvin114@gmail.com
       </div>
     </div>
   </footer><!-- End Footer -->
