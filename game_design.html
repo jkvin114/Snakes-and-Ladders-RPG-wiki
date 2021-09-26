@@ -55,7 +55,11 @@
     text-decoration: underline;
   }
 
-
+  .widehr{
+    border-top: 2px solid black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
   table.redTable {
   background-color: white;
   width: 100%;
@@ -151,6 +155,7 @@ table.redTable thead th:first-child {
               <li>However, players cannot use dice control after they pass the last store.</li>
               <li>Pro tip: dice selection and actual movement might defer depending on additional dice and status effects, which will be indicated before you throw dice.</li>
              </p>
+             <hr class="widehr">
              <h3>2. What happens Every turn </h3>
              <li><strong>One turn: 1 cycle of player having their turn.</strong></li>
              <ol>
@@ -177,12 +182,14 @@ table.redTable thead th:first-child {
               <li>Goes to next turn</li>
               </ol>
             <li>These orders happen synchronously</li>
+            <hr class="widehr">
               <h3>3. Balancing mechanics</h3>
               <p>
                 <li>If a player fell behind too much, it will get <strong>additional dice </strong>depending on how much it left behind.</li>
                 <li>If a player dies too much without level up, <strong><a href=#effectlist>double dice effect</a></strong> effect will be given in order to follow up the opponent.
                 <br> This prevents high-level overpowered player killing weaker player over and over again.</li>
               </p>      
+              <hr class="widehr">
               <h3 id=statuseffect>4. Status Effects </h3>
             <p>
              <li> Status effect affects the player in a unit of a turn. 
@@ -323,13 +330,14 @@ table.redTable thead th:first-child {
                   </ul>
               </div>   <!--effectlist-->
             </p>
+            <hr class="widehr">
             <h3 id=playerlevel>5. Player Level </h3>
             <li>Every player starts with level 1</li>
              <li> If a player passes designated respawn points, <strong>it levels up, and its respawn point changes.</strong></li>
              <li> Player will learn more skills as they level up.</li>
              <li> Also, maximum HP, attack resistance, magic resistance and attack power will increase every level.</li>
              <li>Increase amount of attack resistance and magic resistance is proportional to total number of players.<br> This prevents excessive deaths in the late game.</li>
-             
+             <hr class="widehr">
              <h3 id=skill>6. Skills </h3>
              <li>Each skills have their own cooltime. Players must wait for few turns after you use a skill to use it again.</li>
              <li>Potion obstacle can reset all cooltime. (reduces by half for Lv3 skill)</li>
@@ -358,7 +366,7 @@ table.redTable thead th:first-child {
                   <li>Player needs to predict where other players will arrive next turn</li>
                   <li>The projectile won`t be placed on store</li>
                 </ul>
-          
+                <hr class="widehr">
               <h3 id=basicattack>7. Basic attack (auto attack)</h3>
               <p>
                 <li>A player will perform basic attack <strong>after every movement only in their turn.</strong>
@@ -367,7 +375,7 @@ table.redTable thead th:first-child {
               <li>After that, other players that had been attacked will<strong> also attack back</strong> the player immediately.</li>
               <li>Player with blind effect won't perform basic attack.</li>
               <li>The damage is same with player's<strong> attack power.</strong></li>
-              </p>
+              </p><hr class="widehr">
               <h3 id=projectile>8. Projectiles</h3>
               <p>
                <li> If a player places a projectile by non-target skill, it will remain on the square for 2~3turns.</li>
@@ -375,7 +383,7 @@ table.redTable thead th:first-child {
                <li> The color of edge of projectile represents owner's <strong>turn color</strong>, and the icon represents the type of the projectile.</li>
                <li> If the owner of the projectile dies, it disappers.</li>
 
-              </p>
+              </p><hr class="widehr">
               <h3 id=kda>9. Kill/Death/Assist</h3>
               <p><li>If a player kills other player, the killer will <strong>receive reward money</strong>, and gets <strong>one more chance to throw dice</strong> with speed effect.</li>
                 <li>The reward money increases if the player killed multiple other players without dying, <br>or if that kill stopped other player from multiple killing.</li>
@@ -388,7 +396,7 @@ table.redTable thead th:first-child {
                <img class="bigimg" src="assets/img/tutorial/kill.jpg">
                <li>Player receiving one more chance of dice by kill</li>
                <img class="bigimg" src="assets/img/tutorial/death.jpg">
-              <li>Dead player waiting for respawn</li>
+              <li>Dead player waiting for respawn</li><hr class="widehr">
               <h3 id=damagesystem>10. Damaging System and Order</h3>
               <h4>Damage types</h4>
               <h5>Attack damage</h5>

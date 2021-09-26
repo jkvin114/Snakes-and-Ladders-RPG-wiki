@@ -37,30 +37,25 @@
   .hidden{
     display:none;
   }
-  .obsimg{
-    width:54px;
-    height:54px;
-    overflow: hidden;
-    margin-bottom: 40px;
-    margin-top: 40px;
-    transform:scale(1.8);
-    border-left:2px solid rgb(61, 0, 102);
-    border-right:2px solid rgb(61, 0, 102);
-  }
-  .obsimg img{
+
+  /* .obsimg img{
     border:2px solid rgb(61, 0, 102);
-  }
+  } */
   .good{
-    color: rgb(0, 124, 21);
-  }
-  .harmful{
-    color:mediumslateblue
+    border:	#2fd524 4px solid;
+    background-color:	#c5ffc1;
   }
   .fatal{
-    color:red;
+    border:		#e11900 4px solid;
+    background-color:		#ffd1cb;
+  }
+  .harmful{
+    border:	#7e00bf 4px solid;
+    background-color:	rgb(244, 219, 255);
   }
   .strategic{
-    color:grey;
+    border:	#585858 4px solid;
+    background-color:	#dfdfdf;
   }
   .breadcrumbs a{
     text-decoration: underline;
@@ -78,6 +73,66 @@
     box-shadow: rgb(39, 39, 39,0.5) 4px 4px;
     margin-top:3vw;
     margin-bottom:3vw;
+  }
+  #obs{
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+  }
+
+  .obs p{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+  }
+  .obs h4{
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 100%;
+  }
+  .effimg{
+    transform:scale(0.8);
+  }
+ 
+  .obsimg{
+    width:54px;
+    height:54px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
+    transform:scale(1.5);
+    border:2px solid rgb(61, 0, 102);
+    background-color:	whitesmoke;
+  }
+  .obs hr{
+    border-top: 2px solid black;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .effect{
+    display: inline;
+    color: rgba(255, 123, 0, 0.877);
+    font-weight: bold;
+  }
+  .widehr{
+    border-top: 2px solid black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+    /* Screen larger than 600px? 2 column */
+  @media (min-width: 400px) {
+    #obs { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Screen larger than 900px? 3 columns */
+  @media (min-width: 700px) {
+    #obs { grid-template-columns: repeat(3, 1fr); }
+  }
+    /* Screen larger than 900px? 3 columns */
+    @media (min-width: 1000px) {
+    #obs { grid-template-columns: repeat(4, 1fr); }
   }
 </style>
 <body>
@@ -113,499 +168,773 @@
       <div class="container">
           <h2>Maps</h2>
           <br>
-          <h3><strong>Structure of a Map</strong></h3><br>
-          <ul>
-            <li>Start position</li>
-            <li>Finish position</li>
-            <li>Stores - Player can buy items on arrive or on death</li>
-            <li>Respawn/Level up points -  Levels up when player pass these points</li>
-            <li>Automatic stop points - Player will be stopped here automatically no matter the dice number is</li>
-          </ul>
-          <h3><strong>Types of Map</strong></h3><br>
-          <div id=maptype>
-          <h4 id=map_d></h4><br><br>
-          <ul>
-          <h4>Default map</h4>
-          <img src="assets/img/map/map1.png">
-          <li>Picture of a whole map </li>
-          <img src="assets/img/map/map1store.jpg">
-          <img src="assets/img/map/map1respawn.jpg">
-          <img src="assets/img/map/map1stop.jpg">
-          <li>Map length:103</li>
-          <li>money given per turn:2$</li>
-          <h5>Concept of a map</h5>
-          <li>This map has a concept of a "default", which contains gereral, mixed types of obstacles <br>and focused on battle between players.</li>
-          <li>The length of map from the last store to finish position is longer than other maps.<br>
-          This makes the last part of map quite battle-intense.</li>
-          <li>Players can also use store when they respawn at the last respawn position.</li>
-          <li>There is casino, on which every player stops and turn roullete. The result is mostly beneficial.</li>
-          
-          <h4 id=map_o></h4><br><br>
-          <h4>Ocean map</h4>
-          <img src="assets/img/map/map2.png">
-          <li>Picture of a whole map </li>
-          <img src="assets/img/map/map2store.jpg">
-          <li>Map length: 89,(79 on shortcut)</li>
-          <li>money given per turn:3</li>
-          <h5>Concept of a map</h5>
-          <li>This map has concept of 'movement'.<br>
-          This map contains various movement obstacles such as <a href=#obs39>Fair wind</a>,<a href=#obs53>Tsunami</a>,<a href=#obs55>Storm</a></li>
-          <h5>Special feature: shortcut</h5>
-          <li>Players can choose where to go between upper and lower way when they arrive first store</li>
-          <li>players on different ways cannot attack each other</li>
-          <li>Upper way is 2 times shorter than lower way, but it has less money and more harmful obstacles<br>Players who can buy enough items on first store or players wants to learn Lv3 skill quickly might want to go this way.</li>
-          <li>Lower way is longer than upper way, but there are more chances for money. <br> Players who want to earn more money might want to go this way.</li>
-          <h5>Special feature: submarine</h5>
-          <img src="assets/img/map/submarine.jpg">
 
-          <li>Submarine randomly appears between the second store and 75th square(right after third store)</li>
-          <li>It randomly changes location every turn.</li>
-          <li>If a player passes or stops at submarine, the player can<strong> move to any position within 16 square.</strong></li>
-          <li>If submarine is used, it disappers and reappear on the returning turn.</li>
+         
+       
 
-          <h4 id=map_c></h4><br><br>
-          <h4>Casino map</h4>
-          <img src="assets/img/map/map3.png">
-          <li>Picture of a whole map </li>
-          <img src="assets/img/map/map3store.jpg">
-          <img src="assets/img/map/map3respawn.jpg">
-          <img src="assets/img/map/map3stop.jpg">
-          <li>Map length:107</li>
-          <li>money given per turn:0</li>
-          <li>This map has a concept of 'money and investment'</li>
-          <li>This map have lots of money related obstacles such as <a href=#obs65>Scam</a>, <a href=#obs68>Street Vendor</a>, and <a href=#obs69>Lottery</a>. </li>
-          <li>This map provides extra strategical feature by <strong>Token system</strong></li>
-          <h5>Special feature:tokens</h5>
-          <li>Token is an investment system to obtain even more money</li>
-          <img src="assets/img/map/token1.jpg">
-          <li>You can buy tokens on any store. the price is randomly decided. </li>
-          <img src="assets/img/map/token2.jpg">
 
-          <li>The only place you can resell tokens is <a href=#obs67>Token store</a></li>
-          <li>The sell price is also randomly decided, but normally it is higher than buying price.</li>
-          <li>Every player has 3 tokens on start.</li>
-
-          <h5>Special feature:tollgate</h5>
-          <img src="assets/img/map/tollgate.png">
-          <li><a href=#obs74>Tollgate</a> only lets players pass if they have certain amount of money and tokens.</li>
-          <li>Every player automatically stops at tollgate. Otherwise the player will die immediately</li>
-          <li>This prevents poor players winning, since they failed to manage their money carefully.</li>
-
-          <h5>Special feature:Additional life</h5>
-          <img src="assets/img/map/life.jpg">
-
-          <li>You can buy additional life at the store. <br> The price is 200$, but the price doubles each time you buy it.</li>
-          <li>If you have additional life, <strong>you will not go back to the respawn point on death.</strong> <br>But the kill/death/assist counts as normal. </li>
-          <li>this provides something to buy for players who has full-item and lots of extra money: it is a price for players that successfully managed their money.</li>
-          <li>Buying additional life is a good way to ignore  <a href=#obs34>Slavery</a> and  <a href=#obs74>Tollgate</a></li>
-        </ul>
-        </div>
           <h3><strong>List of Obstacles</strong></h3><br>
-          <p>Good obstacles are in green, harmful obstacles in purple, fatal obstacles in red, strategic obstacles in gray</p>
-          <p>Permanent effect <strong>doesn`t mean</strong> you will have that effect until the end of the game.<br>Remember that all effects disapper on death.</p>
-          <p><strong>List of obstacles that works only when you arrive by throwing dice:<a href=#obs21>god`s hand</a>, 
+          <li><b style="color: #2fd524;">Good obstacles are in green, </b><b style="color: #7e00bf;">harmful obstacles in purple, </b> 
+            <b style="color: #e11900;">fatal obstacles in red, </b><b style="color: #585858;">strategic obstacles in gray</b>
+           </li>
+          <li>Permanent effect <strong>doesn`t mean</strong> you will have that effect until the end of the game.<br>Remember that all effects disapper on death.</li>
+          <li><strong>Some obstacles are effective only when you arrive by throwing dice:<a href=#obs21>god`s hand</a>, 
             <a href=#obs33>Kidnapper</a>, <a href=#obs63>Threaten</a>, <a href=#obs67>Token store</a>, <a href=#obs38>Casino</a>
-            , <a href=#obs37>Death trial</a></strong></p>
+            , <a href=#obs37>Death trial</a></strong></li>
           <ul>
-            <h4 id=obs1></h4><br><br>
-            <h4 class="good">Money(1)</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -52px' ></div>
-            <li><strong>Effect:obtain 10~30$(fixed value)</strong></li>
-            <li>Apperance:All maps</li>
+            <div id=obs>
+              <div class="obs good">
+              
+                <h4 id=obs1></h4>
+                  <h4 class="">Money(1)</h4>
+                  <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -50px' ></div>  
+                  <hr>
+               <p>
+                 <strong>Effect:obtain 10~30$(fixed value)</strong><br>
+                Apperance:All maps
+               </p>
+              </div>
+              <div class="obs good">
+                <h4 id=obs2></h4>
+                <h4 class="" >Money(2)</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -100px' ></div>
+                <hr>
+                <p>
+                  <strong>Effect:obtain 40~60$(fixed value)</strong><br>
+                  Apperance:All maps  
+                </p>
+              </div>
+              <div class="obs good">
+                <h4 id=obs3></h4>
+                <h4 class="">Money(3)</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -150px' ></div><hr>
+                <p>
+                <strong>Effect:obtain 70~100$(fixed value)</strong><br>
+                Apperance:All maps                  
+                </p>
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs4></h4>
+                <h4 class="">Trap</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -200px' ></div><hr>
+                <p>
+                  <strong>Effect:HP -10</strong><br>
+                  Apperance:All maps
+                </p>
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs5></h4>
+                <h4 class="">Robbery</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -250px' ></div><hr>
+                <p>
+                <strong>Effect:-30$</strong><br>
+                Apperance:All maps                  
+                </p>
+              </div>
+              <div class="obs good">
+                <h4 id=obs7></h4>  
+                <h4 class="">Mine</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -350px' > </div><hr>
+                <p>
+                 <strong>Effect:HP -30 on step out </strong><br> 
+                 Apperance:Default map <br>   
+                (If you die, your turn ends immediately)
+                </p>
 
-            <h4 id=obs2></h4><br><br>
-            <h4 class="good" >Money(2)</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -102px' ></div>
-            <li><strong>Effect:obtain 40~60$(fixed value)</strong></li>
-            <li>Apperance:All maps</li>
 
-            <h4 id=obs3></h4><br><br>
-            <h4 class="good">Money(3)</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -152px' ></div>
-            <li><strong>Effect:obtain 70~100$(fixed value)</strong></li>
-            <li>Apperance:All maps</li>
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs8></h4>  
+                <h4 class="" >Knife</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -400px' > </div><hr>
+                <p>
+                 <strong>Effect:HP -20 </strong><br> 
+                 Apperance:Default map                   
+                </p>
 
-            <h4 id=obs4></h4><br><br>
-            <h4 class="harmful">Trap</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -202px' ></div>
-            <li><strong>Effect:HP -10</strong></li>
-            <li>Apperance:All maps</li>
 
-            <h4 id=obs5></h4><br><br>
-            <h4 class="harmful">Robbery</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -252px' ></div>
-            <li><strong>Effect:-30$</strong></li>
-            <li>Apperance:All maps</li>
+              </div>
+              <div class="obs good">
+                <h4 id=obs9></h4>  
+                <h4 class="" >Fruit</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -450px' > </div><hr>
+                <p>
+                 <strong>Effect:HP +50 </strong><br> 
+                 Apperance:All maps                   
+                </p>
 
-            <h4 id=obs7></h4><br><br>
-            <h4 class="good">Mine</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -352px' ></div>
-            <li><strong>Effect:HP -30 on step out</strong></li>
-            <li>Apperance:Default map</li>
-            <li>If you die, your turn ends immediately</li>
 
-            <h4 id=obs8></h4><br><br>
-            <h4 class="harmful" >Knife</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -402px' ></div>
-            <li><strong>Effect:HP -20</strong></li>
-            <li>Apperance:Default map</li>
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs10></h4>  
+                <h4 class="">Drug</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -500px' > </div><hr>
+                <p>
+                 <strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/4.png">Silent </b> effect  for 1 turn </strong><br> 
+                 Apperance:All maps
+                </p>
 
-            <h4 id=obs9></h4><br><br>
-            <h4 class="good" >Fruit</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -452px' ></div>
-            <li><strong>Effect:HP +50</strong></li>
-            <li>Apperance:All maps</li>
 
-            <h4 id=obs10></h4><br><br>
-            <h4 class="harmful">Drug</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -502px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>Silent effect</a> for 1 turn</strong></li>
-            <li>Apperance:All maps</li>
+              </div>
+              <div class="obs good">
+                <h4 id=obs11></h4>  
+                <h4 class="" >Potion</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -550px' > </div><hr>
+                <p>
+                 <strong>Effect:All skill cooltime reset </strong><br> 
+                 Apperance:All maps                   
+                </p>
 
-            <h4 id=obs11></h4><br><br>
-            <h4 class="good" >Potion</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -552px' ></div>
-            <li><strong>Effect:All skill cooltime reset</strong></li>
-            <li>Apperance:All maps</li>
 
-            <h4 id=obs12></h4><br><br>
-            <h4 class="good">Magic castle</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -602px' ></div>
-            <li><strong>Effect:Skill range x3,+30 damage for skill/basicattack for this turn</strong></li>
-            <li>Apperance:All maps</li>
+              </div>
+              <div class="obs good">
 
-            <h4 id=obs13></h4><br><br>
-            <h4 class="harmful">Cobweb</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -652px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>Stun effect</a> for 1 turn</strong></li>
-            <li>Apperance:Default map</li>
+                <h4 id=obs12></h4>  
+                <h4 class="">Magic castle</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -600px' > </div><hr>
+                <p>
+                 <strong>Effect:Skill range x3,+30 damage for skill/basicattack for this turn </strong><br> 
+                 Apperance:All maps
+                </p>
 
-            <h4 id=obs14></h4><br><br>
-            <h4 class="good" >Gamble</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -702px' ></div>
-            <li><strong>Effect:obtain between 10~60$ randomly</strong></li>
-            <li>Apperance:Default map, Casino map</li>
 
-            <h4 id=obs15></h4><br><br>
-            <h4 class="harmful" >Snatcher</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -752px' ></div>
-            <li><strong>Effect:Other players take 10% of money each</strong></li>
-            <li>Apperance:Default map, Casino map</li>
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs13></h4>  
+                <h4 class="">Cobweb</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -650px' > </div><hr>
+                <p>
+                 <strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/3.png">Stun</b> effect for 1 turn </strong><br> 
+                 Apperance:Default map                   
+                </p>
 
-            <h4 id=obs16></h4><br><br>
-            <h4 class="harmful" >Snowball</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -802px' ></div>
-            <li><strong>Effect:HP -20, <a href="game_design.html#effectlist" target='_blank'>slowness effect</a> for 1 turn</strong></li>
-            <li>Apperance:Default map</li>
 
-            <h4 id=obs17></h4><br><br>
-            <h4 class="harmful" >Vampire</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -852px' ></div>
-            <li><strong>Effect:Other players take away 20 HP each</strong></li>
-            <li>Apperance:Default map,Ocean map</li>
+              </div>
+              <div class="obs good">
+                <h4 id=obs14></h4>  
+                <h4 class="" >Gamble</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -700px' > </div><hr>
+                <p>
+                 <strong>Effect:obtain between 10~60$ randomly </strong><br> 
+                 Apperance:Default map, Casino map                   
+                </p>
 
-            <h4 id=obs18></h4><br><br>
-            <h4 class="harmful" >Pickpocket</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -902px' ></div>
-            <li><strong>Effect:Other players take away 30$ each</strong></li>
-            <li>Apperance:Default map, Casino map</li>
 
-            <h4 id=obs19></h4><br><br>
-            <h4 class="strategic" >Summon</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -952px' ></div>
-            <li><strong>Effect:Summon every player in range of 20</strong></li>
-            <li>Apperance:All maps</li>
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs15></h4>  
+                <h4 class="" >Snatcher</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -750px' > </div><hr>
+                <p><strong>Effect:Other players take 10% of money each </strong><br> 
+                 Apperance:Default map, Casino map </p>
 
-            <h4 id=obs20></h4><br><br>
-            <h4 class="strategic" >Change</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1002px' ></div>
-            <li><strong>Effect:Change position with nearest player</strong></li>
-            <li>Apperance:All maps</li>
-            <h4 id=obs21></h4><br><br>
-            <h4 class="strategic">God`s hand</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1052px' ></div>
-            <li><strong>Effect:Force move one player to desired position in range of 5</strong></li>
-            <li>Apperance:All maps</li>
-            <h5>How to use</h5>
-            <ol type=1>
-              <li>Choose a target player.(dead, invisible, and players on store can`t be a target) </li>
-              <li>Choose where to move the player within 5 square.</li>
-            </ol>
+    
 
-            <h4 id=obs22></h4><br><br>
-            <h4 class="good" >Annuity</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1102px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>annuity effect</a> permanently</strong></li>
-            <li>Apperance:All maps</li>
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs16></h4>  
+                <h4 class="" >Snowball</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -800px' > </div><hr><p>
+                  <strong>Effect:HP -20, <b class=effect><img class="effimg" src="assets/img/effects/1.png">slowness</b> effect
 
-            <h4 id=obs23></h4><br><br>
-            <h4 class="harmful">Daylight Robbery</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1152px' ></div>
-            <li><strong>Effect:HP -30, -30$, -3tokens(Casino map only)</strong></li>
-            <li>Apperance:Default map, Casino map</li>
-            <h4 id=obs24></h4><br><br>
-            <h4 class="good" >Shelter</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1202px' ></div>
-            <li><strong>Effect:HP +70, <a href="game_design.html#effectlist" target='_blank'>Invisibility effect</a> 1turn, get <a href="game_design.html#effectlist">shield effect</a> permanently</strong></li>
-            <li>Apperance:Default map</li>
-            <h4 id=obs25></h4><br><br>
-            <h4 class="good">Shield</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1252px' ></div>
-            <li><strong>Effect:get <a href="game_design.html#effectlist" target='_blank'>shield effect</a> permanently</strong></li>
-            <li>Apperance:Default map</li>
-            <h4 id=obs26></h4><br><br>
-            <h4 class="harmful" >Big mine</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1302px' ></div>
-            <li><strong>Effect:HP -70 on step out</strong></li>
-            <li>Apperance:Default map</li>
-            <h4 id=obs27></h4><br><br>
-            <h4 class="fatal">Murderer</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1352px' ></div>
-            <li><strong>Effect:HP -100</strong></li>
-            <li>Apperance:All maps</li>
-            <h4 id=obs28></h4><br><br>
-            <h4 class="harmful">Poison cobweb</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1402px' ></div>
-            <li><strong>Effect:stun 1 turn and slowness 1 turn afterwards</strong></li>
-            <li>Apperance:All maps</li>
-            <h4 id=obs29></h4><br><br>
-            <h4 class="harmful">Poison</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1452px' ></div>
-            <li><strong>Effect:get <a href="game_design.html#effectlist" target='_blank'>poison effect</a> permanently</strong></li>
-            <li>Apperance:Default map</li>
-            <h4 id=obs30></h4><br><br>
-            <h4 class="fatal">Bomb</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1502px' ></div>
-            <li><strong>Effect: HP -1/3 of current HP</strong></li>
-            <li>Apperance:Default map</li>
-            <h4 id=obs31></h4><br><br>
-            <h4 class="fatal">Nuclear bomb</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1552px' ></div>
-            <li><strong>Effect:HP -1/2 of lost HP, <a href="game_design.html#effectlist" target='_blank'>radiation effect</a> for 1 turn</strong></li>
-            <li>Apperance:Default map</li>
-            <h4 id=obs32></h4><br><br>
-            <h4 class="harmful">Radiation</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1602px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>radiation effect</a> for 1 turn</strong></li>
-            <li>Apperance:Default map</li>
-            <h4 id=obs33></h4><br><br>
-            <h4 class="fatal">Kidnapper</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1652px' ></div>
-            <li><strong>Effect:choose between -300 HP or stun for 2 turns</strong></li>
-            <li>Apperance:Default map,Casino map</li>
-            <h4 id=obs34></h4><br><br>
-            <h4 class="fatal" >Slavery</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1702px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>Slavery effect</a> permanently</strong></li>
-            <li>Apperance:Default map,Casino map</li>
-            <li>This means you must die as quickly as possible since you can`t end the game in this life. </li>
-            <h4 id=obs35></h4><br><br>
-            <h4 class="harmful" >Jail</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1752px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>speed effect</a> after stun for 3 turns</strong></li>
-            <li>Apperance:Default map,Casino map</li>
-            <h4 id=obs36></h4><br><br>
-            <h4 class="strategic">Hurricane</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1802px' ></div>
-            <li><strong>Effect:Move back to original position</strong></li>
-            <li>Apperance:All maps</li>
-            <h4 id=obs37></h4><br><br>
-            <h4 class="fatal" >Death Court</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1852px' ></div>
-            <li><strong>Effect:???</strong></li>
-            <li>Apperance:All maps</li>
-            <li>You will have to roll a roullete</li>
-            <h4 id=obs38></h4><br><br>
-            <h4 class="good">Casino</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1902px' ></div>
-            <li><strong>Effect:???</strong></li>
-            <li>Apperance:Default map</li>
-            <li>You will have to roll a roullete</li>
+                    for 1 turn </strong><br> 
+                 Apperance:Default map </p>
+                 
 
-            <h4 id=obs39></h4><br><br>
-            <h4 class="good" >fair wind</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1952px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>doubledice effect</a> for 1 turn</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs40></h4><br><br>
-            <h4 class="harmful" >headwind</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2002px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>backdice effect</a> for 1 turn</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs41></h4><br><br>
-            <h4 class="harmful">Net</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2052px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>stun effect</a> for 1 turn</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs42></h4><br><br>
-            <h4 class="good" >Fish</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2102px' ></div>
-            <li><strong>Effect:HP +50</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs43></h4><br><br>
-            <h4 class="harmful">Jellyfish</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2152px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>poison effect</a> for 3 turns</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs44></h4><br><br>
-            <h4 class="harmful" >Shark attack</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2202px' ></div>
-            <li><strong>Effect:HP -40</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs45></h4><br><br>
-            <h4 class="good" >Squid</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2252px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>Blind effect</a> for 1 turn</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs46></h4><br><br>
-            <h4 class="harmful" >Iceburg</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2302px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>slowness effect</a> for 1 turn, HP -30</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs47></h4><br><br>
-            <h4 class="good" >Gold</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2352px' ></div>
-            <li><strong>Effect:obtain 100~150$(fixed value)</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs48></h4><br><br>
-            <h4 class="good" >Treasure box</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2402px' ></div>
-            <li><strong>Effect:TBA</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs49></h4><br><br>
-            <h4 class="harmful" >Pirate</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2452px' ></div>
-            <li><strong>Effect:HP -30, -50$</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs50></h4><br><br>
-            <h4 class="harmful" >Vikings</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2502px' ></div>
-            <li><strong>Effect:HP -30,<a href="game_design.html#effectlist" target='_blank'>ignite effect</a> for 3 turn</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs51></h4><br><br>
-            <h4 class="good" >Dive</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2552px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>invisibility effect</a> for 1 turn</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs52></h4><br><br>
-            <h4 class="harmful" >Lightning</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2602px' ></div>
-            <li><strong>Effect:HP -75 for every player in range of 3</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs53></h4><br><br>
-            <h4 class="harmful" >Tsunami</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2652px' ></div>
-            <li><strong>Effect:Every player move back by 3, HP -30</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs54></h4><br><br>
-            <h4 class="strategic">Blue hole</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2702px' ></div>
-            <li><strong>Effect:Summon every player in range of 20</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs55></h4><br><br>
-            <h4 class="strategic">Storm</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2752px' ></div>
-            <li><strong>Effect:Randomly move to a square in range of 5</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs56></h4><br><br>
-            <h4 class="strategic" >Tornado</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2802px' ></div>
-            <li><strong>Effect:move to random player in range of 30</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs57></h4><br><br>
-            <h4 class="harmful">Underwater mine</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2852px' ></div>
-            <li><strong>Effect:HP -70 on step out</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs58></h4><br><br>
-            <h4 class="fatal">Torpedo</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2902px' ></div>
-            <li><strong>Effect:HP -120</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs59></h4><br><br>
-            <h4 class="good" >Whale`s grace</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2952px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>speed effect</a> for 3 turns</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs60></h4><br><br>
-            <h4 class="fatal">Volcano</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3002px' ></div>
-            <li><strong>Effect:HP -1/4 of max HP, <a href="game_design.html#effectlist" target='_blank'>ignite effect</a> for 3 turn</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs61></h4><br><br>
-            <h4 class="fatal" >SLBM</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3052px' ></div>
-            <li><strong>Effect:HP -175</strong></li>
-            <li>Apperance:Ocean map</li>
-            <h4 id=obs62></h4><br><br>
-            <h4 class="strategic">Loan</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3102px' ></div>
-            <li><strong>Effect:get 10 tokens, -400$ after 5 turns</strong></li>
-            <li>Apperance:</li>
-            <h4 id=obs63></h4><br><br>
-            <h4 class="harmful">Threaten</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3152px' ></div>
-            <li><strong>Effect:Choose between -50$ or -3 tokens</strong></li>
-            <li>Apperance:Casino map</li>
-            <h4 id=obs64></h4><br><br>
-            <h4 class="harmful">Private loan</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3202px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>debt effect</a> for 2 turns</strong></li>
-            <li>Apperance:Casino map</li>
-            <h4 id=obs65></h4><br><br>
-            <h4 class="fatal">Scam</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3252px' ></div>
-            <li><strong>Effect:take away half of your money and tokens</strong></li>
-            <li>Apperance:Casino map</li>
-            <h4 id=obs66></h4><br><br>
-            <h4 class="good" >Lottery annuity</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3302px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>lottery annuity effect</a> permanently</strong></li>
-            <li>Apperance:Casino map</li>
-            <h4 id=obs67></h4><br><br>
-            <h4 class="good" >Token store</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3352px' ></div>
-            <li><strong>Effect:can sell tokens</strong></li>
-            <li>Apperance:Casino map</li>
-            <li>Only place to sell token on casino map</li>
-            <h4 id=obs68></h4><br><br>
-            <h4 class="good" >Street vendor</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3402px' ></div>
-            <li><strong>Effect:can use store with 20% higher price</strong></li>
-            <li>Apperance:Casino map</li>
-            <li>Store button will show up</li>
-            <h4 id=obs69></h4><br><br>
-            <h4 class="good" >Lottery</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3452px' ></div>
-            <li><strong>Effect:get huge amount of money by 7% chance</strong></li>
-            <li>Apperance:Casino map</li>
-            <h4 id=obs70></h4><br><br>
-            <h4 class="good" >Commision</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3502px' ></div>
-            <li><strong>Effect:obtain 2$ each for every player`s total tokens</strong></li>
-            <li>Apperance:Casino map</li>
-            <h4 id=obs71></h4><br><br>
-            <h4 class="harmful">Thief</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3552px' ></div>
-            <li><strong>Effect:Randomly take away one of your common items</strong></li>
-            <li>Apperance:Casino map, Default map</li>
-            <h4 id=obs72></h4><br><br>
-            <h4 class="fatal">Curse</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3602px' ></div>
-            <li><strong>Effect:<a href="game_design.html#effectlist" target='_blank'>curse effect</a> for 2 turns</strong></li>
-            <li>Apperance:Casino map,Ocean map</li>
-            <h4 id=obs73></h4><br><br>
-            <h4 class="fatal">Grief</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3652px' ></div>
-            <li><strong>Effect:damage by 50% of your money you have</strong></li>
-            <li>Apperance:Casino map</li>
-            <h4 id=obs74></h4><br><br>
-            <h4 class="fatal">Tollgate</h4>
-            <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3702px' ></div>
-            <li><strong>Effect:can pass only if you have more than 150$ or 10 tokens</strong></li>
-            <li>Apperance:Casino map</li>
-            <li>Player will be stopped here automatically</li>
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs17></h4>  
+                <h4 class="" >Vampire</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -850px' > </div><hr>
+                <p><strong>Effect:Other players take away 20 HP each </strong><br> 
+                 Apperance:Default map,Ocean map </p>
+                 
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs18></h4>  
+                <h4 class="" >Pickpocket</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -900px' > </div><hr>
+                <p><strong>Effect:Other players take away 30$ each </strong><br> 
+                 Apperance:Default map, Casino map </p>
+                 
+
+              </div>
+              <div class="obs strategic">
+                <h4 id=obs19></h4>  
+                <h4 class="" >Summon</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -950px' > </div><hr>
+                <p><strong>Effect:Summon every player in range of 20 </strong><br> 
+                 Apperance:All maps </p>
+                 
+
+              </div>
+              <div class="obs strategic">
+                <h4 id=obs20></h4>  
+                <h4 class="" >Change</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1000px' > </div><hr>
+                <p><strong>Effect:Change position with nearest player </strong><br> 
+                 Apperance:All maps </p>
+                 
+
+              </div>
+              <div class="obs strategic">
+                <h4 id=obs21></h4>  
+                <h4 class="">God`s hand</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1050px' > </div><hr>
+                <p><strong>Effect:Force move one player to desired position in range of 5 </strong><br> 
+                 Apperance:All maps 
+                <!-- <h5>How to use</h5>
+                <ol type=1>
+                   Choose a target player.(dead, invisible, and players on store can`t be a target)  
+                   Choose where to move the player within 5 square. 
+                </ol></p> -->
+                 
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs22></h4>  
+                <h4 class="" >Annuity</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1100px' > </div><hr>
+                <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/8.png">annuity</b> effect permanently </strong><br> 
+                 Apperance:All maps </p>
+                 
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs23></h4>  
+                <h4 class="">Daylight Robbery</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1150px' > </div><hr>
+                <p><strong>Effect:HP -30, -30$, -3tokens(Casino map only) </strong><br> 
+                 Apperance:Default map, Casino map </p>
+                 
+
+              </div>
+              <div class="obs good">
+
+
+                <h4 id=obs24></h4>  
+                <h4 class="" >Shelter</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1200px' > </div><hr>
+                <p><strong>Effect:HP +70, <b class=effect><img class="effimg" src="assets/img/effects/4.png">Invisibility</b> effect 1turn
+                  , get <b class=effect><img class="effimg" src="assets/img/effects/5.png">shield</b> effect permanently </strong><br> 
+                 Apperance:Default map </p>
+                 
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs25></h4>  
+                <h4 class="">Shield</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1250px' > </div><hr>
+                <p><strong>Effect:get <b class=effect><img class="effimg" src="assets/img/effects/5.png">shield</b> effect permanently </strong><br> 
+                 Apperance:Default map </p>
+                 
+
+              </div>
+              <div class="obs harmful">
+
+
+                <h4 id=obs26></h4>  
+                <h4 class="" >Big mine</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1300px' > </div><hr>
+                <p> <strong>Effect:HP -70 on step out </strong><br> 
+                 Apperance:Default map </p>
+                
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs27></h4>  
+                <h4 class="">Murderer</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1350px' > </div><hr>
+                <p> <strong>Effect:HP -100 </strong><br> 
+                 Apperance:All maps </p>
+                
+
+              </div>
+              <div class="obs harmful">
+   
+                <h4 id=obs28></h4>  
+                <h4 class="">Poison cobweb</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1400px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/3.png">stun</b> 1 turn and<b class=effect><img class="effimg" src="assets/img/effects/1.png"> slowness</b> 1 turn afterwards </strong><br> 
+                 Apperance:All maps </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs29></h4>  
+                <h4 class="">Poison</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1450px' > </div><hr> 
+                  <p><strong>Effect:get <b class=effect><img class="effimg" src="assets/img/effects/6.png">poison</b> effect permanently </strong><br> 
+                 Apperance:Default map </p>
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs30></h4>  
+                <h4 class="">Bomb</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1500px' > </div><hr> 
+                  <p><strong>Effect: HP -1/3 of current HP </strong><br> 
+                 Apperance:Default map </p>
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs31></h4>  
+                <h4 class="">Nuclear bomb</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1550px' > </div><hr> 
+                  <p><strong>Effect:HP -1/2 of lost HP, <b class=effect><img class="effimg" src="assets/img/effects/7.png">radiation</b> effect  for 1 turn </strong><br> 
+                 Apperance:Default map </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs32></h4>  
+                <h4 class="">Radiation</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1600px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/7.png">radiation</b> effect  for 1 turn </strong><br> 
+                 Apperance:Default map </p>
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs33></h4>  
+                <h4 class="">Kidnapper</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1650px' > </div><hr> 
+                  <p><strong>Effect:choose between -300 HP or <b class=effect><img class="effimg" src="assets/img/effects/3.png">stun</b> for 2 turns </strong><br> 
+                 Apperance:Default map,Casino map </p>
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs34></h4>  
+                <h4 class="" >Slavery</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1700px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/9.png">Slavery</b> effect  permanently </strong><br> 
+                 Apperance:Default map,Casino map <br>
+                (This means you must die as quickly as possible since you can`t end the game in this life.)</p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs35></h4>  
+                <h4 class="" >Jail</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1750px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/2.png">speed</b> effect after <b class=effect><img class="effimg" src="assets/img/effects/3.png">stun</b> for 3 turns </strong><br> 
+                 Apperance:Default map,Casino map </p>
+
+              </div>
+              <div class="obs strategic">
+                <h4 id=obs36></h4>  
+                <h4 class="">Hurricane</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1800px' > </div><hr> 
+                  <p><strong>Effect:Move back to original position </strong><br> 
+                 Apperance:All maps </p>
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs37></h4>  
+                <h4 class="" >Death Court</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1850px' > </div><hr> 
+                  <p><strong>Effect:??? </strong><br> 
+                 Apperance:All maps <br> 
+                 You will have to roll a roullete </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs38></h4>  
+                <h4 class="">Casino</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1900px' > </div><hr> 
+                  <p><strong>Effect:??? </strong><br> 
+                 Apperance:Default map <br> 
+                 You will have to roll a roullete </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs39></h4>  
+                <h4 class="" >fair wind</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1950px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/10.png">doubledice</b> effect  for 1 turn </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs40></h4>  
+                <h4 class="" >headwind</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2000px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/11.png">backdice</b> effect  for 1 turn </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs41></h4>  
+                <h4 class="">Net</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2050px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/3.png">stun</b> effect  for 1 turn </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs42></h4>  
+                <h4 class="" >Fish</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2100px' > </div><hr> 
+                  <p><strong>Effect:HP +50 </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs43></h4>  
+                <h4 class="">Jellyfish</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2150px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/6.png">poison</b> effect  for 3 turns </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs44></h4>  
+                <h4 class="" >Shark attack</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2200px' > </div><hr> 
+                  <p><strong>Effect:HP -40 </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs45></h4>  
+                <h4 class="" >Squid</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2250px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/12.png">Blind</b> effect  for 1 turn </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs46></h4>  
+                <h4 class="" >Iceburg</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2300px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/1.png">slowness</b> effect  for 1 turn, HP -30 </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs47></h4>  
+                <h4 class="" >Gold</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2350px' > </div><hr> 
+                  <p><strong>Effect:obtain 100~150$(fixed value) </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <!-- <div class="obs ">
+                <h4 id=obs48></h4>  
+                <h4 class="good" >Treasure box</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2400px' > </div><hr> 
+                  <p><strong>Effect:TBA </strong><br> 
+                 Apperance:Ocean map </p>
+              </div> -->
+              <div class="obs harmful">
+                <h4 id=obs49></h4>  
+                <h4 class="" >Pirate</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2450px' > </div><hr> 
+                  <p><strong>Effect:HP -30, -50$ </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs50></h4>  
+                <h4 class="" >Vikings</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2500px' > </div><hr> 
+                  <p><strong>Effect:HP -30,<b class=effect><img class="effimg" src="assets/img/effects/13.png">ignite</b> effect  for 3 turn </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs51></h4>  
+                <h4 class="" >Dive</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2550px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/14.png">invisibility</b> effect  for 1 turn </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs52></h4>  
+                <h4 class="" >Lightning</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2600px' > </div><hr> 
+                  <p><strong>Effect:HP -75 for every player in range of 3 </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs harmful">
+
+                <h4 id=obs53></h4>  
+                <h4 class="" >Tsunami</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2650px' > </div><hr> 
+                  <p><strong>Effect:Every player move back by 3, HP -30 </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs strategic">
+                <h4 id=obs54></h4>  
+                <h4 class="">Blue hole</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2700px' > </div><hr> 
+                  <p><strong>Effect:Summon every player in range of 20 </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs strategic">
+                <h4 id=obs55></h4>  
+                <h4 class="">Storm</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2750px' > </div><hr> 
+                  <p><strong>Effect:Randomly move to a square in range of 5 </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs strategic">
+                <h4 id=obs56></h4>  
+                <h4 class="" >Tornado</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2800px' > </div><hr> 
+                  <p><strong>Effect:move to random player in range of 30 </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs57></h4>  
+                <h4 class="">Underwater mine</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2850px' > </div><hr> 
+                  <p><strong>Effect:HP -70 on step out </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs58></h4>  
+                <h4 class="">Torpedo</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2900px' > </div><hr> 
+                  <p><strong>Effect:HP -120 </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs59></h4>  
+                <h4 class="" >Whale`s grace</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2950px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/1.png">speed</b> effect  for 3 turns </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs60></h4>  
+                <h4 class="">Volcano</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3000px' > </div><hr> 
+                  <p><strong>Effect:HP -1/4 of max HP,<b class=effect><img class="effimg" src="assets/img/effects/13.png">ignite</b> effect  for 3 turn </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs61></h4>  
+                <h4 class="" >SLBM</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3050px' > </div><hr> 
+                  <p><strong>Effect:HP -175 </strong><br> 
+                 Apperance:Ocean map </p>
+
+              </div>
+              <div class="obs strategic">
+                <h4 id=obs62></h4>  
+                <h4 class="">Loan</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3100px' > </div><hr> 
+                  <p><strong>Effect:get 10 tokens, -400$ after 5 turns </strong><br> 
+                 Apperance: </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs63></h4>  
+                <h4 class="">Threaten</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3150px' > </div><hr> 
+                  <p><strong>Effect:Choose between -50$ or -3 tokens </strong><br> 
+                 Apperance:Casino map </p>
+
+              </div>
+              <div class="obs harmful">
+
+                <h4 id=obs64></h4>  
+                <h4 class="">Private loan</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3200px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/15.png">debt</b> effect  for 2 turns </strong><br> 
+                 Apperance:Casino map </p>
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs65></h4>  
+                <h4 class="">Scam</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3250px' > </div><hr> 
+                  <p><strong>Effect:take away half of your money and tokens </strong><br> 
+                 Apperance:Casino map </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs66></h4>  
+                <h4 class="" >Lottery annuity</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3300px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/16.png">lottery annuity </b>effect  permanently </strong><br> 
+                 Apperance:Casino map </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs67></h4>  
+                <h4 class="" >Token store</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3350px' > </div><hr> 
+                  <p><strong>Effect:can sell tokens </strong><br> 
+                 Apperance:Casino map <br>
+                 (Only place to sell token on casino map) </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs68></h4>  
+                <h4 class="" >Street vendor</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3400px' > </div><hr> 
+                  <p><strong>Effect:can use store with 20% higher price </strong><br> 
+                 Apperance:Casino map <br>
+                 (Store button will show up) </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs69></h4>  
+                <h4 class="" >Lottery</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3450px' > </div><hr> 
+                  <p><strong>Effect:get huge amount of money by 7% chance </strong><br> 
+                 Apperance:Casino map </p>
+
+              </div>
+              <div class="obs good">
+                <h4 id=obs70></h4>  
+                <h4 class="" >Commision</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3500px' > </div><hr> 
+                  <p><strong>Effect:obtain 2$ each for every player`s total tokens </strong><br> 
+                 Apperance:Casino map </p>
+
+              </div>
+              <div class="obs harmful">
+                <h4 id=obs71></h4>  
+                <h4 class="">Thief</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3550px' > </div><hr> 
+                  <p><strong>Effect:Randomly take away one of your common items </strong><br> 
+                 Apperance:Casino map, Default map </p>
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs72></h4>  
+                <h4 class="">Curse</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3600px' > </div><hr> 
+                  <p><strong>Effect:<b class=effect><img class="effimg" src="assets/img/effects/17.png">curse</b> effect  for 2 turns </strong><br> 
+                 Apperance:Casino map,Ocean map </p>
+
+              </div>
+              <div class="obs fatal">
+                <h4 id=obs73></h4>  
+                <h4 class="">Grief</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3650px' > </div><hr> 
+                  <p><strong>Effect:damage by 50% of your money you have </strong><br> 
+                 Apperance:Casino map </p>
+
+              </div>
+              <div class="obs fatal">
+
+                <h4 id=obs74></h4>  
+                <h4 class="">Tollgate</h4>
+                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -3700px' > </div><hr> 
+                  <p><strong>Effect:can pass only if you have more than 150$ or 10 tokens </strong><br> 
+                 Apperance:Casino map <br>
+                 (Player will be stopped here automatically) </p>
+
+              </div>
+              
       
+
+
+
+              
+
+
+            </div>
+            <hr class="widehr">
+            <h3><strong>Structure of a Map</strong></h3><br>
+            <ul>
+              <li>Start position</li>
+              <li>Finish position</li>
+              <li>Stores - Player can buy items on arrive or on death</li>
+              <li>Respawn/Level up points -  Levels up when player pass these points</li>
+              <li>Automatic stop points - Player will be stopped here automatically no matter the dice number is</li>
+            </ul>
+
+            <hr class="widehr">
+            <h3><strong>Types of Map</strong></h3><br>
+            <div id=maptype>
+              <h4 id=map_d></h4><br><br>
+              <ul>
+              <h1>Default map</h1>
+              <img src="assets/img/map/map1.png">
+              <li>Picture of a whole map </li>
+              <img src="assets/img/map/map1store.jpg">
+              <img src="assets/img/map/map1respawn.jpg">
+              <img src="assets/img/map/map1stop.jpg">
+              <li>Map length:103</li>
+              <li>money given per turn:2$</li>
+              <h5>Concept of a map</h5>
+              <li>This map has a concept of a "default", which contains gereral, mixed types of obstacles <br>and focused on battle between players.</li>
+              <li>The length of map from the last store to finish position is longer than other maps.<br>
+              This makes the last part of map quite battle-intense.</li>
+              <li>Players can also use store when they respawn at the last respawn position.</li>
+              <li>There is casino, on which every player stops and turn roullete. The result is mostly beneficial.</li>
+              <hr class="widehr">
+              <h4 id=map_o></h4><br><br>
+              <h1>Ocean map</h1>
+              <img src="assets/img/map/map2.png">
+              <li>Picture of a whole map </li>
+              <img src="assets/img/map/map2store.jpg">
+              <li>Map length: 89,(79 on shortcut)</li>
+              <li>money given per turn:3</li>
+              <h5>Concept of a map</h5>
+              <li>This map has concept of 'movement'.<br>
+              This map contains various movement obstacles such as <a href=#obs39>Fair wind</a>,<a href=#obs53>Tsunami</a>,<a href=#obs55>Storm</a></li>
+              <h5>Special feature: shortcut</h5>
+              <li>Players can choose where to go between upper and lower way when they arrive first store</li>
+              <li>players on different ways cannot attack each other</li>
+              <li>Upper way is 2 times shorter than lower way, but it has less money and more harmful obstacles<br>Players who can buy enough items on first store or players wants to learn Lv3 skill quickly might want to go this way.</li>
+              <li>Lower way is longer than upper way, but there are more chances for money. <br> Players who want to earn more money might want to go this way.</li>
+              <h5>Special feature: submarine</h5>
+              <img src="assets/img/map/submarine.jpg">
+    
+              <li>Submarine randomly appears between the second store and 75th square(right after third store)</li>
+              <li>It randomly changes location every turn.</li>
+              <li>If a player passes or stops at submarine, the player can<strong> move to any position within 16 square.</strong></li>
+              <li>If submarine is used, it disappers and reappear on the returning turn.</li>
+              <hr class="widehr">
+              <h4 id=map_c></h4><br><br>
+              <h1>Casino map</h1>
+              <img src="assets/img/map/map3.png">
+              <li>Picture of a whole map </li>
+              <img src="assets/img/map/map3store.jpg">
+              <img src="assets/img/map/map3respawn.jpg">
+              <img src="assets/img/map/map3stop.jpg">
+              <li>Map length:107</li>
+              <li>money given per turn:0</li>
+              <li>This map has a concept of 'money and investment'</li>
+              <li>This map have lots of money related obstacles such as <a href=#obs65>Scam</a>, <a href=#obs68>Street Vendor</a>, and <a href=#obs69>Lottery</a>. </li>
+              <li>This map provides extra strategical feature by <strong>Token system</strong></li>
+              <h5>Special feature:tokens</h5>
+              <li>Token is an investment system to obtain even more money</li>
+              <img src="assets/img/map/token1.jpg">
+              <li>You can buy tokens on any store. the price is randomly decided. </li>
+              <img src="assets/img/map/token2.jpg">
+    
+              <li>The only place you can resell tokens is <a href=#obs67>Token store</a></li>
+              <li>The sell price is also randomly decided, but normally it is higher than buying price.</li>
+              <li>Every player has 3 tokens on start.</li>
+    
+              <h5>Special feature:tollgate</h5>
+              <img src="assets/img/map/tollgate.png">
+              <li><a href=#obs74>Tollgate</a> only lets players pass if they have certain amount of money and tokens.</li>
+              <li>Every player automatically stops at tollgate. Otherwise the player will die immediately</li>
+              <li>This prevents poor players winning, since they failed to manage their money carefully.</li>
+    
+              <h5>Special feature:Additional life</h5>
+              <img src="assets/img/map/life.jpg">
+    
+              <li>You can buy additional life at the store. <br> The price is 200$, but the price doubles each time you buy it.</li>
+              <li>If you have additional life, <strong>you will not go back to the respawn point on death.</strong> <br>But the kill/death/assist counts as normal. </li>
+              <li>this provides something to buy for players who has full-item and lots of extra money: it is a price for players that successfully managed their money.</li>
+              <li>Buying additional life is a good way to ignore  <a href=#obs34>Slavery</a> and  <a href=#obs74>Tollgate</a></li>
+              </ul>
+              </div>
 
 
 
