@@ -14,7 +14,9 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,91 +35,268 @@
   ======================================================== -->
 </head>
 <style>
- .hidden{
-    display:none;
+  @font-face {
+    font-family: "nanumB";
+    src: url("assets/font/NanumSquareB.ttf");
   }
 
-  .breadcrumbs .bigimg, .sqimg{
-    width:50vw;
-    display:block;
-    border:	#7e00bf 4px solid;
-    box-shadow: rgb(39, 39, 39,0.5) 4px 4px;
-    margin-top:3vw;
-    margin-bottom:3vw;
+  .hidden {
+    display: none;
   }
 
-  .sqimg{
+  .breadcrumbs .bigimg,
+  .sqimg {
+    width: 50vw;
+    display: block;
+    border: #7e00bf 4px solid;
+    box-shadow: rgb(39, 39, 39, 0.5) 4px 4px;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+  }
+
+  .sqimg {
     width: 120px;
     display: inline;
   }
-  .skimg{
+
+  .skimg {
     display: inline;
     width: 80px;
     margin-left: 1vw;
     margin-top: 1vw;
   }
-  .breadcrumbs li{
+
+  .breadcrumbs li {
     font-size: 18px;
     line-height: 30px;
-    margin:20px;
+    margin: 20px;
   }
-  .breadcrumbs a{
+
+  .breadcrumbs a {
     text-decoration: underline;
   }
-  h3{
+
+  h3 {
     font-size: 40px;
   }
 
-  .magicdamage{
+  .magicdamage {
     display: inline;
-    color: rgb(0, 140, 255);  
-     font-weight: bold;
+    color: rgb(0, 140, 255);
+    font-weight: bold;
 
   }
-  .attackdamage{
+
+  .attackdamage {
     display: inline;
 
     color: rgb(255, 81, 0);
-        font-weight: bold;
+    font-weight: bold;
 
   }
-  .fixeddamage{
+
+  .fixeddamage {
     display: inline;
     color: rgba(192, 0, 166, 0.877);
     font-weight: bold;
 
   }
-  .effect{
+
+  .effect {
     display: inline;
     color: rgba(255, 123, 0, 0.877);
     font-weight: bold;
   }
-  .skill{
-    border:	#7e00bf 4px solid;
+
+  .skill {
+    border: #7e00bf 4px solid;
     margin-top: 1vw;
     margin-bottom: 1vw;
-    background-color:	rgb(244, 219, 255); 
+    background-color: rgb(244, 219, 255);
   }
-  .skill h2, .skill li{
+
+  .skill h2,
+  .skill li {
     margin-left: 1vw;
     margin-top: 1vw;
   }
-  
-  .skill h2{
+
+  .skill h2 {
     font-weight: bold;
   }
-  img{
+
+  img {
     display: inline-block;
   }
-  .effimg{
+
+  .effimg {
     transform: scale(0.8);
   }
-  h2{display: inline;}
 
-  .skill li{
-    margin: 10px;;
+  h2 {
+    display: inline;
+  }
+
+  .skill li {
+    margin: 10px;
+    ;
+  }
+
+  .skillinfowindow {
+    background-color: rgb(37, 37, 37);
+    padding: 10px;
+    font-family: "nanumB";
+    display: grid;
+    grid-template-columns: 100px auto;
+  }
+
+  .skillinfowindow .skillinfo {
+    /* color: #e0c9ff; */
+    color: rgb(153, 153, 153);
+    font-size: 1.5vw;
+    opacity: 1.0;
+    margin-bottom: 20px;
+    font-weight: normal;
+    font-family: "nanumB";
+    line-height: 2vw;
+    word-break: keep-all;
+  }
+
+  .skillinfo>img {
+    display: inline;
+    height: 2vw;
+    margin: 0;
+    vertical-align: bottom;
+    border: 1px solid gray;
+  }
+
+  .skillinfo>i img {
+    display: inline;
+    height: 2vw;
+    margin: 0;
+    vertical-align: bottom;
+    clear: both;
+  }
+
+  .skillinfo i {
+    word-wrap: none;
+    display: inline-block;
+    text-decoration: none;
+    font-style: normal;
+  }
+
+  .skillinfo .info_skillimg {
+    border: 1px solid gray;
+  }
+
+  .skillinfo>i.braket {
+    color: white;
+  }
+
+  .skillinfo>i.skill_name {
+    font-size: 1.7vw;
+    font-family: "cookierun";
+    color: rgb(226, 211, 0);
+
+  }
+
+  .skillinfo>i>b {
+    font-family: 'nanumEB';
+  }
+
+  .skillinfo>i.cooltime {
+    color: rgb(147, 255, 250);
+  }
+
+  .skillinfo>i.emphasize_simple {
+    color: rgb(192, 192, 192);
+  }
+
+  .skillinfo>i.skill_name_desc {
+    color: rgb(226, 211, 0);
+    font-family: "cookierun";
+  }
+
+  .skillinfo>i.down {
+    color: rgb(255, 122, 122);
+  }
+
+  .skillinfo>i.up {
+    color: rgb(83, 152, 255);
+  }
+
+  .skillinfo>i.stat {
+    color: rgb(253, 255, 152);
+  }
+
+  .skillinfo>i.emphasize {
+    color: rgb(242, 176, 255);
+  }
+
+  .skillinfo>i.range {
+    color: rgb(252, 234, 255);
+  }
+
+  .skillinfo>i.mdmg {
+    color: rgb(24, 209, 255);
+  }
+
+  .skillinfo>i.pdmg {
+    color: rgb(218, 87, 0);
+  }
+
+  .skillinfo>i.tdmg {
+    color: rgb(255, 252, 233);
+  }
+
+  .skillinfo i.health {
+    color: rgb(255, 169, 169);
+  }
+
+  .skillinfo i.money {
+    color: #FFBD00;
+  }
+
+  .skillinfo>i.heal {
+    color: rgb(129, 255, 139);
+  }
+
+  .skillinfo>i.shield {
+    color: rgb(187, 187, 187);
+  }
+
+  .skillinfo>i.badeffect {
+    color: rgb(255, 41, 41);
+  }
+
+  .skillinfo>i.goodeffect {
+    color: rgb(0, 199, 33);
+  }
+
+  .skillinfo i.scaled_value {
+    font-style: normal;
+
+  }
+
+  .skillinfo>i.basicattack {
+    color: rgb(255, 207, 152);
+  }
+
+  .skillinfo>hr {
+    margin: 0;
+    margin-right: 10px;
+    margin-bottom: 3px;
+    border: 1px solid #555555;
+  }
+
+  .skilltitleimg {
+    width: 90px;
+    height: 90px;
+    opacity: 1.0;
+    /* border: 2px solid #e0c9ff; */
   }
 </style>
+
 <body>
 
   <!-- ======= Header ======= -->
@@ -135,7 +314,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="tutorial.html">Tutorial</a></li>
           <li><a href="game_design.html">Game Design</a></li>
-          <li  class="active"><a href="character.html">Characters</a></li>
+          <li class="active"><a href="character.html">Characters</a></li>
           <li><a href="map.html">Maps</a></li>
           <li><a href="game_item.html">Game Items</a></li>
         </ul>
@@ -151,124 +330,194 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          
+
         </div>
         <div style="display: inline;"></div>
-          <h3>Reaper [Warrior]</h3>
-          <img class="sqimg" src="assets/img/character/reaper.png">
-        <div class=skill>
-          <h2>Scythe Strike[Lv1 skill]</h2>
-          <img class="skimg" src="assets/img/character/1-1.jpg">
-          
-          <li>Cooltime: 3 turns</li>
-          <li>Range:5</li>
-          <li>Damage a player by scythe, deals <p class="attackdamage">20+(1.0 x attack power) attack damage</p></li>
-          <li>Can use 2 times, second attack deals 50% less damage</li>
+        <h3>Reaper [Warrior]</h3>
+        <img class="sqimg" src="assets/img/character/reaper.png">
+        <div class="skillinfowindow">
+          <img class=skilltitleimg src='assets/img/character/skills/1-1.jpg'>
+          <div class="skillinfo">
+            <i class='skill_name'>[Scythe Strike]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b> 3</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>7</b> </i><br>Deals <i class='pdmg'><img
+                src='assets/img/character/skillinfo/pdamage.png'><i class='scaled_value' value=Q><b>40</b></i> attack
+              damage</i> to a <i class='emphasize'><img src='assets/img/character/skillinfo/target.svg'>target</i>.
+            .Can use <i class='emphasize_simple'>two times</i>, On second use, deals <i class='down'><img
+                src='assets/img/character/skillinfo/down.png'>half</i> of the damage
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/1-2.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Reaping Wind]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b>4</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>30</b> </i><br><i class='emphasize'><img
+                src='assets/img/character/skillinfo/pos.png'>Places </i> a Wind with <i class='emphasize'><img
+                src='assets/img/character/skillinfo/size.png'> size <b>3</b></i> that blows away enemies who step on it
+            by <i class='down'><img src='assets/img/character/skillinfo/down.png'><b>4</b> squares backwards</i>
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/1-3.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Grave Delivery]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b> 9</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>20</b> </i><br><i
+              class='emphasize_simple'>Teleports</i> to a <i class='emphasize'><img
+                src='assets/img/character/skillinfo/target.svg'>target</i> and deals <i class='pdmg'><img
+                src='assets/img/character/skillinfo/pdamage.png'><i class='scaled_value' value=R><b>40</b></i> attack
+              damage</i>.
+            Damage decreases by <b>30</b>% if the target is <i class='emphasize_simple'>in front</i> of you.
+          </div>
         </div>
-        <div class=skill> 
-          <h2>Reaping Wind[Lv2 skill]</h2>
-          <img class="skimg" src="assets/img/character/1-2.jpg">
-          <li>Cooltime:4 turns </li>
-          <li>Range:30,Size:3</li>
-          <li>Places a projectile that sends a player who steps on it to 4 squares back</li>
-        </div>
-        <div class=skill>
-          <h2>Grave Delivery[Lv3 skill]</h2>
-          <img class="skimg" src="assets/img/character/1-3.jpg">
-          <li>Cooltime:10 turns</li>
-          <li>Range:20</li>
-          <li>Move to a player and deals <p class=attackdamage>70+(0.8 x attack power) attack damage</p></li>          
-        </div>
-       
+
+
 
 
 
         <h3>Elephant [Tanker]</h3>
         <img class="sqimg" src="assets/img/character/elephant.png">
-        <div class=skill>  
-          <h2>Tusk Attack[Lv1 skill]</h2>
-          <img class="skimg" src="assets/img/character/2-1.jpg">
-          
-          <li>Cooltime: 2 turns</li>
-          <li>Range:3 (7 to players that have mark of ivory)</li>
-          <li>Damage a player by ivory, deals<p class="magicdamage"> 10+(0.3 x attack power+0.45*(armor resistance + magic resistance))</p>  magic damage</li>
-          <li>Deals 30 more damage if the target has a mark of ivory </li>
-        </div>
-        <div class=skill> 
-          <h2>Curse of Ivory[Lv2 skill]</h2>
-          <img class="skimg" src="assets/img/character/2-2.jpg">
-          <li>Cooltime:5 turns </li>
-          <li>Range:15</li>
-          <li>Leaves mark of ivory to a player and gives <p class=effect><img class="effimg" src="assets/img/effects/17.png">curse effect</p></li>
-          
-        </div>
-        <div class=skill> 
-          <h2>Strengthen[Lv3 skill]</h2>
-          <img class="skimg" src="assets/img/character/2-3.jpg">
-          <li>Cooltime:10 turns</li>
-          <li>Passive effect: attack and magic resistance increase based on missing health</li>
-          <li> Attack and magic resistance increases by 80~150 (based on current health)</li>
+        <div class="skillinfowindow">
+          <img class=skilltitleimg src='assets/img/character/skills/2-1.jpg'>
+          <div class="skillinfo">
+
+            <i class='skill_name'>[Tusk Attack]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b>2</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>3</b> </i><br>
+            Deals <i class='mdmg'><img src='assets/img/character/skillinfo/mdamage.png'><i class='scaled_value'
+                value=Q><b>34</b></i> magic damage</i> to a <i class='emphasize'><img
+                src='assets/img/character/skillinfo/target.svg'>target</i> and heals <i class='heal'><img
+                src='assets/img/character/skillinfo/heal.png'><b>10</b></i> HP
+            , If the target has <i class='emphasize_simple'>mark</i> of <i class='skill_name_desc'><img
+                class='info_skillimg' src='assets/img/character/skills/2-2.jpg'>Curse of Ivory</i>, <i
+              class='range'>&ensp;<img src='assets/img/character/skillinfo/range.png'>Range: <b>7</b> </i>
+            and deals additional <i class='tdmg'><img src='assets/img/character/skillinfo/fdamage.png'><i
+                class='scaled_value' value=w_qdamage><b>30</b></i> fixed damage</i>
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/2-2.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Curse of Ivory]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b>4</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>15</b> </i><br>Leaves a <i
+              class='emphasize_simple'>mark</i> to a <i class='emphasize'><img
+                src='assets/img/character/skillinfo/target.svg'>target</i> and applies <i class='badeffect info_effect'
+              value='16'>Curse <b>1</b> turn </i>
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/2-3.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Strengthen]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b>9</b> turns</i><br><i class='braket'>[Passive]</i>: <i class='stat'>Attack and magic
+              resistance</i> <i class='up'><img src='assets/img/character/skillinfo/up.png'>increases by
+              <b>0</b>~<b>60</b></i> based on your <i class='health'><img
+                src='assets/img/character/skillinfo/missinghp.png'> missing HP</i>
+            <br><i class='braket'>[Active]</i>: For <i class='emphasize'><img
+                src='assets/img/character/skillinfo/duration.png'><b>4
+
+              </b> turns</i>, <i class='stat'>Attack and magic resistance</i> <i class='up'><img
+                src='assets/img/character/skillinfo/up.png'>
+              increases by <b>80</b></i>, gains <i class='shield'><img src='assets/img/character/skillinfo/shield.svg'>
+              <b>62</b></i> shield,and heal amount of <i class='skill_name_desc'><img class='info_skillimg'
+                src='assets/img/character/skills/2-1.jpg'>Tusk Attack</i> <i class='up'><img
+                src='assets/img/character/skillinfo/up.png'>doubles</i>
+          </div>
         </div>
 
 
-      
-         <h3>Ghost [Mage]</h3>        
+        <h3>Ghost [Mage]</h3>
         <img class="sqimg" src="assets/img/character/ghost.png">
-        <div class=skill> 
-          <h2>Blind Curse[Lv1 skill]</h2>
-          <img class="skimg" src="assets/img/character/3-1.jpg">
-          
-          <li>Cooltime: 3 turns</li>
-          <li>Range:18</li>
-          <li>Damage a player by curse, deals <p class="magicdamage">20 + (1.0 x magic power) magic damage</p>, and <p class=effect><img class="effimg" src="assets/img/effects/12.png">blinds </p>the target</li>
-        
-        </div>
-        <div class=skill> 
-          <h2>Phantom Menace[Lv2 skill]</h2>
-          <img class="skimg" src="assets/img/character/3-2.jpg">
-          <li>Cooltime:5 turns </li>
-          <li>Gains <p class=effect><img class="effimg" src="assets/img/effects/14.png">invisibility effect</p> for 1 turn. <br>On invisibility, deals additional (15% of target`s missing health) magic damage on use of lv1 skill </li>
-          
-        </div>
-        <div class=skill> 
-        <h2>Poison Bomb[Lv3 skill]</h2>
-        <img class="skimg" src="assets/img/character/3-3.jpg">
-        <li>Cooltime:6 turns</li>
-        <li>Range:30, Size:4</li>
-        <li>Places a projectile, <br>If a player steps on it, it receives <p class=effect>
-          <img class="effimg" src="assets/img/effects/1.png">slowness effect</p> and total
-          <p class="magicdamage"> 90+(1.5 x magic power) magic damage</p>  for 3 turns</li>
-        </div>
-       
 
-        
-        
+        <div class="skillinfowindow">
+          <img class=skilltitleimg src='assets/img/character/skills/3-1.jpg'>
+          <div class="skillinfo">
+            <i class='skill_name'>[Blind Curse]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime<b>3</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>18</b> </i><br>Deals <i class='mdmg'><img
+                src='assets/img/character/skillinfo/mdamage.png'><i class='scaled_value' value=Q><b>44</b></i> magic
+              damage</i> to a <i class='emphasize'><img src='assets/img/character/skillinfo/target.svg'>target</i> ,
+            applies <i class='badeffect info_effect' value='11'>Blind <b>1</b> turn </i>
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/3-2.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Phantom Menace]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime <b>6</b> turns</i><br><i class='braket'>[Passive]</i>: If you have<i
+              class='goodeffect info_effect' value='13'>Invisibility</i> effect, deals additional (<b>30</b>% of
+            target`s <i class='health'><img src='assets/img/character/skillinfo/missinghp.png'> missing HP</i>) <i
+              class='mdmg'><img src='assets/img/character/skillinfo/mdamage.png'> magic damage</i> for <i
+              class='skill_name_desc'><img class='info_skillimg' src='assets/img/character/skills/3-1.jpg'>Blind
+              Curse</i>.
+            <br><i class='braket'>[Active]</i>: Receives <i class='goodeffect info_effect' value='13'>Invisibility
+              <b>1</b> turn </i>.
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/3-3.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Poison Bomb]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime <b>6</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>30</b> </i><br><i class='emphasize'><img
+                src='assets/img/character/skillinfo/pos.png'>Places </i> a Poison bomb of <i class='emphasize'><img
+                src='assets/img/character/skillinfo/size.png'> size <b>4</b></i>. Enemy who step on it gets
+            <i class='badeffect info_effect' value='0'>Slowness</i> and receives <i class='mdmg'><img
+                src='assets/img/character/skillinfo/mdamage.png'><b>135</b> magic damage</i> for <i
+              class='emphasize'><img src='assets/img/character/skillinfo/duration.png'><b>3</b> turns</i>.
+          </div>
+        </div>
+
+
+
         <h3>Dinosaur [Warrior]</h3>
         <img class="sqimg" src="assets/img/character/dinosaur.png">
-        <div class=skill>
-        <h2>Claw[Lv1 skill]</h2>
-         <img class="skimg" src="assets/img/character/4-1.jpg">        
-        <li>On/Off skill</li>
-        <li>When activated, damage all players within 4 sqares with claw, deals <p class="attackdamage">5 + (0.5 x attack power) attack damage</p><br> (The damage is reduced if there are more than 2 players in range)</li>
-        <li>Health deacreases by 5 every turn when activated. </li>
-        <li>Can be deactivated by pressing skill button again</li>          
-        </div> 
-        <div class=skill>
-        <h2>Regeneration[Lv2 skill]</h2>
-        <img class="skimg" src="assets/img/character/4-2.jpg">
-        <li>Cooltime:5 turns </li>
-        <li>Passive effect: movement speed +1 when fall behind</li>
-        <li>Heals total 90 + (0.4 x attack power + 0.2 x missing health) for 3 turns.</li>
-        <li>Cannot throw dice during the heal, can halt on pressing skill button again.</li>
-        <li>Gains <p class=effect><img class="effimg" src="assets/img/effects/2.png">speed effect</p> after use</li>          
-        </div> 
-        <div class=skill>
-        <h2>Burning at the stake[Lv3 skill]</h2>
-        <img class="skimg" src="assets/img/character/4-3.jpg">
-        <li>Cooltime:8 turns</li>
-        <li>Range:20</li>
-        <li>Damage a player with fire, deals <p class="attackdamage">40 + (0.7 x attack power + 50% of target`s missing health)</p></li>
-        <li>Cooltime resets if the target dies.</li>          
+        <div class="skillinfowindow">
+          <img class=skilltitleimg src='assets/img/character/skills/4-1.jpg'>
+          <div class="skillinfo">
+            <i class='skill_name'>[Claw Strike]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b>1</b> turns</i><br>deals <i class='pdmg'><img
+                src='assets/img/character/skillinfo/pdamage.png'><i class='scaled_value' value=Q><b>39</b></i> attack
+              damage</i> to enemies <i class='emphasize'><img src='assets/img/character/skillinfo/around.svg'>within
+              <b>4</b> squares</i>.
+            ( Damage decreases if there are multiple targets. You <i class='down'><img
+                src='assets/img/character/skillinfo/down.png'>spend <b>5</b>%</i> of <i class='health'><img
+                src='assets/img/character/skillinfo/currhp.svg'> current HP</i>,
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/4-2.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Regeneration]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b>7</b> turns</i><br><i class='braket'>[Passive]</i>: <i class='up'><img
+                src='assets/img/character/skillinfo/up.png'>Movement speed +<b>1</b></i> if you are in behind of all
+            players
+            <br><i class='braket'>[Active]</i>: heals <i class='heal'><img
+                src='assets/img/character/skillinfo/heal.png'><i class='scaled_value' value=wheal><b>138</b></i></i> HP
+            total for <i class='emphasize'><img src='assets/img/character/skillinfo/duration.png'><b>3</b> turns</i> ,
+            receives <i class='badeffect info_effect' value='0'>Slowness</i> effect while healing.
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/4-3.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Burning at the Stake]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b>8</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>20</b> </i><br>Deals <i class='pdmg'><img
+                src='assets/img/character/skillinfo/pdamage.png'><i class='scaled_value' value=R><b>68</b>(+ <b>50</b>%
+                of targets <i class='health'><img src='assets/img/character/skillinfo/missinghp.png'> missing
+                  HP</i>)</i> attack damage</i> to a <i class='emphasize'><img
+                src='assets/img/character/skillinfo/target.svg'>target</i>.
+            <i class='cooltime'><img src='assets/img/character/skillinfo/cooltime.svg'>cooltime</i> of <i
+              class='skill_name_desc'><img class='info_skillimg' src='assets/img/character/skills/4-3.jpg'>Burning at
+              the Stake</i> <i class='emphasize_simple'>resets</i> if you killed the enemy.
+          </div>
         </div>
 
 
@@ -276,64 +525,97 @@
 
         <h3>Sniper [Warrior]</h3>
         <img class="sqimg" src="assets/img/character/sniper.png">
-
-        <div class=skill>
-        <h2>Gunfire[Lv1 skill]</h2>
-          <img class="skimg" src="assets/img/character/5-1.jpg">
-          
-          <li>Cooltime: 3 turns</li>
-          <li>Range:20</li>
-          <li>Damage a player by gunfire, deals <p class="attackdamage">10 + (1.0 x attack power) attack damage</p>
-            , <br>and stuns if the target was hit by lv2 skill within 3 turns</li>          
-        </div> 
-        <div class=skill>
-          <h2>Net Trap[Lv2 skill]</h2>
-          <img class="skimg" src="assets/img/character/5-2.jpg">
-          <li>Cooltime:5 turns </li>
-          <li>Range:20,Size:3</li>
-          <li>Places a projectile, If a player steps on it, it gains<p class=effect>
-            <img class="effimg" src="assets/img/effects/10.png">backdice effect</p> </li>          
+        <div class="skillinfowindow">
+          <img class=skilltitleimg src='assets/img/character/skills/5-1.jpg'>
+          <div class="skillinfo">
+            <i class='skill_name'>[Gunfire]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b>3</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>20</b> </i><br>Fires a gun and deals <i
+              class='pdmg'><img src='assets/img/character/skillinfo/pdamage.png'><i class='scaled_value'
+                value=Q><b>38</b></i> attack damage</i> to a <i class='emphasize'><img
+                src='assets/img/character/skillinfo/target.svg'>target</i>,If the target has <i
+              class='badeffect info_effect' value='2'>Root</i>
+            effect, gets back <i class='emphasize_simple'><b>2</b> turns of </i><i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>cooltime</i> for <i class='skill_name_desc'><img
+                class='info_skillimg' src='assets/img/character/skills/5-1.jpg'>Gunfire</i>
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/5-2.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Net Trap]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b>4</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>40</b> </i><br> <i class='emphasize'><img
+                src='assets/img/character/skillinfo/pos.png'>Places </i> a trap of <i class='emphasize'><img
+                src='assets/img/character/skillinfo/size.png'> size <b>3</b></i> that applies <i
+              class='badeffect info_effect' value='2'>Root <b>1</b> turn </i>
+            to the enemy who steps on it
+          </div> <img class=skilltitleimg src='assets/img/character/skills/5-3.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Target Locked]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>9</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>40</b> </i><br> Selects a <i
+              class='emphasize'><img src='assets/img/character/skillinfo/target.svg'>target</i>, Automatically attacks
+            the target <i class='emphasize_simple'><b>3</b> times</i> for <i class='emphasize'><img
+                src='assets/img/character/skillinfo/duration.png'><b>3</b> turns</i>,
+            dealing <i class='pdmg'><img src='assets/img/character/skillinfo/pdamage.png'><i class='scaled_value'
+                value=R><b>86</b></i> attack damage</i> each
+            (Deals <i class='tdmg'><img src='assets/img/character/skillinfo/fdamage.png'><b>86</b> fixed damage</i> for
+            <b>3</b>rd attack, can`t move while shooting)<br>
+            After use, you gains <i class='goodeffect info_effect' value='10'>Rapidness
+          </div>
         </div>
-        <div class=skill>
-          <h2>Target Locked[Lv3 skill]</h2>
-          <img class="skimg" src="assets/img/character/5-3.jpg">
-          <li>Cooltime:10 turns</li>
-          <li>Range:25</li>
-          <li>Lock up a target and deals <p class="attackdamage">50 + (0.6 x attack power) attack damage</p> for 3 turns. 3rd attack deals fixed damage.</li>
-          <li>Cannot throw dice when a target has locked up. Can unlock the target by pressing the skill button again.</li>
-          <li>Gains<p class=effect><img class="effimg" src="assets/img/effects/2.png">speed effect</p> after use</li>          
-        </div> 
+
 
 
 
 
         <h3>Magician [Mage]</h3>
         <img class="sqimg" src="assets/img/character/magician.png">
-
-        <div class=skill>
-          <h2>Spell Attack[Lv1 skill]</h2>
-          <img class="skimg" src="assets/img/character/6-1.jpg">
-          
-          <li>Cooltime: 3 turns</li>
-          <li>Damage all players within 3~15 squares front, 3~8 squares back, deals
-            <p class="magicdamage"> 10 + (0.8 x magic power) magic damage</p></li>          
-        </div>
-        <div class=skill>
-          <h2>Burning Spellbook[Lv2 skill]</h2>
-          <img class="skimg" src="assets/img/character/6-2.jpg">
-          <li>Cooltime:5 turns </li>
-          <li>Doubles the range for all skills for 1 turn, Applies <p class=effect>
-            <img class="effimg" src="assets/img/effects/13.png">ignite effect </p>to target on lv1 skill use.</li>
-          <li>Cannot throw dice for 1 turn, gains <p class=effect><img class="effimg" src="assets/img/effects/2.png">
-            speed effect</p> after use</li>          
-        </div>
-        <div class=skill>
-          <h2>Dark Sorcery[Lv3 skill]</h2>
-          <img class="skimg" src="assets/img/character/6-3.jpg">
-          <li>Cooltime:5 turns</li>
-          <li>Range:30, Size:3</li>
-          <li>Places a projectile. If a players steps on it, it receives <p class="magicdamage">60 + (0.5 x magic power) magic damage</p> and gets <p class=effect><img class="effimg" src="assets/img/effects/4.png">silence effect.</p></li>
-          <li>Can use skill 3 times</li>          
+        <div class="skillinfowindow">
+          <img class=skilltitleimg src='assets/img/character/skills/6-1.jpg'>
+          <div class="skillinfo">
+            <i class='skill_name'>[Chain Lightning]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime:<b>3</b> turns</i><br>Deals <i class='mdmg'><img
+                src='assets/img/character/skillinfo/mdamage.png'><i class='scaled_value' value=Q><b>50</b></i> magic
+              damage</i> to all players <i class='emphasize'><img src='assets/img/character/skillinfo/around.svg'>within
+              front <b>3</b>~<b>15</b>,
+              back <b>3</b>~<b>8</b> squares</i>
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/6-2.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Burning Spellbook]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>4</b> turns</i><br> <i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range</i> of <i class='skill_name_desc'><img
+                class='info_skillimg' src='assets/img/character/skills/6-1.jpg'>Chain Lightning</i> and <i
+              class='skill_name_desc'><img class='info_skillimg' src='assets/img/character/skills/6-3.jpg'>Dark Magic
+              Circle</i> <i class='up'><img src='assets/img/character/skillinfo/up.png'>doubles</i>, after gaining <i
+              class='badeffect info_effect' value='2'>Root <b>1</b> turn </i>.
+            Applies <i class='badeffect info_effect' value='12'>Ignite <b>2</b> turns </i> if you use <i
+              class='skill_name_desc'><img class='info_skillimg' src='assets/img/character/skills/6-1.jpg'>Chain
+              Lightning</i>. It damages targets by <i class='emphasize_simple'><b>4</b>%</i> of <i class='health'><img
+                src='assets/img/character/skillinfo/maxhp.png'> maximum HP</i> as <i class='tdmg'><img
+                src='assets/img/character/skillinfo/fdamage.png'> fixed damage</i> for every player turn,
+          </div> <img class=skilltitleimg src='assets/img/character/skills/6-3.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Dark Magic Circle]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>7</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>30</b> </i><br><i class='emphasize'><img
+                src='assets/img/character/skillinfo/pos.png'>Places </i> a Magic circle of <i class='emphasize'><img
+                src='assets/img/character/skillinfo/size.png'> size <b>3</b></i> that deals <i class='mdmg'><img
+                src='assets/img/character/skillinfo/mdamage.png'><i class='scaled_value' value=R><b>72</b></i> magic
+              damage</i> and applies
+            <i class='badeffect info_effect' value='3'>Silent <b>1</b> turn </i> to enemy who step on it. Can use <i
+              class='emphasize_simple'><b>3</b> times</i>.
+          </div>
         </div>
 
 
@@ -341,28 +623,153 @@
         <h3>Kraken [Tanker]</h3>
         <img class="sqimg" src="assets/img/character/kraken.png">
 
-        <div class=skill>
-          <h2>Tenacle Strike[Lv1 skill]</h2>
-          
-          <li>Cooltime: 2 turns</li>
-          <li>Range:15, Size:2</li>
-          <li>Places a projectile. If a players steps on it, it receives <p class="magicdamage">
-            10 +(0.5 x magic power + 0.15 x current health) magic damage</p></li>          
-        </div> 
-        <div class=skill>
-          <h2>Mucus Shower[Lv2 skill]</h2>
-          <li>Cooltime:5 turns </li>
-          <li>Damage all players within 10 squares, dealing <p class="magicdamage">30 + (0.4 x magic power) magic damage</p></li>
-          <li>Also gains shield of 10% maximum health</li>          
+        <div class="skillinfowindow">
+          <img class=skilltitleimg src='assets/img/character/skills/7-1.jpg'>
+          <div class="skillinfo">
+            <i class='skill_name'>[Tenacle Strike]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>2</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>15</b> </i><br><i class='emphasize'><img
+                src='assets/img/character/skillinfo/pos.png'>Places </i> a tenacle of <i class='emphasize'><img
+                src='assets/img/character/skillinfo/size.png'> size <b>2</b></i>,
+            deals <i class='mdmg'><img src='assets/img/character/skillinfo/mdamage.png'><i class='scaled_value'
+                value=Q><b>94</b></i> magic damage</i> to enemy who step on it
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/7-2.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Protective Water]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>4</b> turns</i><br>Deals <i class='mdmg'><img
+                src='assets/img/character/skillinfo/mdamage.png'><i class='scaled_value' value=W><b>50</b></i> magic
+              damage</i> and applies <i class='badeffect info_effect' value='0'>Slowness <b>1</b> turn </i> to enemies
+            <i class='emphasize'><img src='assets/img/character/skillinfo/around.svg'>within <b>3</b> squares</i>.
+            and you gains <i class='shield'><img src='assets/img/character/skillinfo/shield.svg'><i class='scaled_value'
+                value=wshield><b>33</b></i></i> shield
+          </div> <img class=skilltitleimg src='assets/img/character/skills/7-3.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Predation]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>6</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>20</b> </i><br>Deals <i class='tdmg'><img
+                src='assets/img/character/skillinfo/fdamage.png'><i class='scaled_value' value=R><b>97</b></i> fixed
+              damage</i> to a <i class='emphasize'><img src='assets/img/character/skillinfo/target.svg'>target</i>,
+            Your <i class='health'><img src='assets/img/character/skillinfo/maxhp.png'> maximum HP</i><i class='up'><img
+                src='assets/img/character/skillinfo/up.png'>increases by <b>50</b></i> if you killed the target.
+          </div>
         </div>
-        <div class=skill>
-          <h2>Predation[Lv3 skill]</h2>
-          <li>Cooltime:7 turns</li>
-          <li>Range:20</li>
-          <li>Try to devour a player, dealing <p class="fixeddamage">80 + (0.5 x attack power + 0.15 x maximum health) fixed damage.</p></li>
-          <li>If the target dies, maximum health increases permanently by 50.</li>          
-        </div> 
+        <h3>Bird [Mage,Warrior]</h3>
+        <img class="sqimg" src="assets/img/character/bird.png">
 
+        <div class="skillinfowindow">
+          <img class=skilltitleimg src='assets/img/character/skills/8-1.jpg'>
+          <div class="skillinfo">
+            <i class='skill_name'>[Beak Attack]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>3</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>20</b> </i><br>Deals
+            <i class='mdmg'><img src='assets/img/character/skillinfo/mdamage.png'><i class='scaled_value'
+                value=Q><b>80</b></i> magic damage</i> to a <i class='emphasize'><img
+                src='assets/img/character/skillinfo/target.svg'>target</i> and take away <i class='money'><img
+                src='assets/img/character/skillinfo/money.png'><b>20</b>$</i>.
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/8-2.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Baby Birds]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>5</b> turns</i><br><i class='emphasize_simple'>Duration</i>: <i class='emphasize'><img
+                src='assets/img/character/skillinfo/duration.png'><b>2</b> turns</i>, Receives <i
+              class='goodeffect info_effect' value='1'>Speed <b>1</b> turn </i> on use.
+            <i class='basicattack'><img src='assets/img/character/skillinfo/basicattack.png'>basic attack</i> deals
+            additional <i class='mdmg'><img src='assets/img/character/skillinfo/mdamage.png'><i class='scaled_value'
+                value=w_aa_adamage><b>25</b></i> magic damage</i>,
+            <i class='skill_name_desc'><img class='info_skillimg' src='assets/img/character/skills/8-1.jpg'>Beak
+              Attack</i> deals additional <i class='mdmg'><img src='assets/img/character/skillinfo/mdamage.png'><i
+                class='scaled_value' value=w_q_adamage><b>19</b></i> magic damage</i>
+            and applies <i class='badeffect info_effect' value='2'>Root <b>1</b> turn </i>
+          </div> <img class=skilltitleimg src='assets/img/character/skills/8-3.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Phenix Transform]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>10</b> turns</i><br><i class='emphasize_simple'>Duration</i>: <i class='emphasize'><img
+                src='assets/img/character/skillinfo/duration.png'><b>4</b> turns</i>, <i class='stat'>Basic attack
+              range</i> <i class='up'><img src='assets/img/character/skillinfo/up.png'>+<b>2</b></i>,
+            <i class='basicattack'><img src='assets/img/character/skillinfo/basicattack.png'>basic attack</i> deals
+            additional <i class='pdmg'><img src='assets/img/character/skillinfo/pdamage.png'><i class='scaled_value'
+                value=r_aa_adamage><b>19</b></i> attack damage</i>.
+            Additional damage of <i class='skill_name_desc'><img class='info_skillimg'
+                src='assets/img/character/skills/8-2.jpg'>Baby Birds</i> <i class='up'><img
+                src='assets/img/character/skillinfo/up.png'>doubles</i>, and
+            <i class='skill_name_desc'><img class='info_skillimg' src='assets/img/character/skills/8-1.jpg'>Beak
+              Attack</i> creates an area of <i class='emphasize'><img src='assets/img/character/skillinfo/size.png'>
+              size <b>3</b></i>. If enemy step on it,
+            they receive <i class='badeffect info_effect' value='12'>Ignite <b>2</b> turns </i>
+          </div>
+        </div>
+
+        <h3>Tree [Mage,Supporter]</h3>
+        <img class="sqimg" src="assets/img/character/tree.png">
+
+        <div class="skillinfowindow">
+          <img class=skilltitleimg src='assets/img/character/skills/9-1.jpg'>
+          <div class="skillinfo">
+            <i class='skill_name'>[Sweet Fruit]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>2</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>25</b> </i><br><i class='braket'>[Passive]</i>:
+            If HP is <i class='down'><img src='assets/img/character/skillinfo/lower.png'>lower than <b>40</b>%</i>, you
+            becomes <i class='emphasize_simple'>Withered Tree</i>,
+            On <i class='emphasize_simple'>Withered Tree</i> state, you can`t heal ally with <i
+              class='skill_name_desc'><img class='info_skillimg' src='assets/img/character/skills/9-1.jpg'>Sweet
+              Fruit</i>, but
+            <i class='stat'>damage absorbtion</i> <i class='up'><img
+                src='assets/img/character/skillinfo/up.png'><b>15</b>% increases</i> <br><i class='braket'>[Active]</i>:
+            <i class='emphasize'><img src='assets/img/character/skillinfo/area.png'>Select <b>3</b> Squares</i>. Deals
+            <i class='mdmg'><img src='assets/img/character/skillinfo/mdamage.png'><i class='scaled_value'
+                value=Q><b>44</b></i> magic damage</i> to enemies inside. For allies, heals <i class='heal'><img
+                src='assets/img/character/skillinfo/heal.png'><i class='scaled_value' value=qheal><b>24</b></i></i> HP
+            and gains <i class='shield'><img src='assets/img/character/skillinfo/shield.svg'><i class='scaled_value'
+                value=qshield><b>32</b></i></i> shield
+          </div>
+          <img class=skilltitleimg src='assets/img/character/skills/9-2.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Vine Trap]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>5</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>30</b> </i><br><i class='emphasize'><img
+                src='assets/img/character/skillinfo/pos.png'>Places </i> a vine of <i class='emphasize'><img
+                src='assets/img/character/skillinfo/size.png'> size <b>1</b></i> that <i
+              class='emphasize_simple'>stops</i> player who passes it,
+            allies will receive <i class='goodeffect info_effect' value='1'>Speed <b>1</b> turn </i>
+          </div> <img class=skilltitleimg src='assets/img/character/skills/9-3.jpg'>
+          <div class="skillinfo">
+            <hr>
+            <i class='skill_name'>[Root Prison]&emsp; </i> <i class='cooltime'><img
+                src='assets/img/character/skillinfo/cooltime.svg'>
+              cooltime: <b>9</b> turns</i><i class='range'>&ensp;<img
+                src='assets/img/character/skillinfo/range.png'>Range: <b>25</b> </i><br><i class='braket'>[Passive]</i>:
+            Summons <i class='emphasize_simple'>Plant monster</i> on every skill use.
+            <i class='emphasize_simple'>Plant monster</i> lives for <i class='emphasize'><img
+                src='assets/img/character/skillinfo/duration.png'><b>3</b> turns</i> and deals
+            <i class='mdmg'><img src='assets/img/character/skillinfo/mdamage.png'><i class='scaled_value'
+                value=plantdamage><b>16</b></i> magic damage</i> to enemies <i class='emphasize'><img
+                src='assets/img/character/skillinfo/around.svg'>within <b>1</b> squares</i>. Enemy <i
+              class='basicattack'><img src='assets/img/character/skillinfo/basicattack.png'>basic attack</i> will kill
+            the <i class='emphasize_simple'>Plant monster</i>s.<br><i class='braket'>[Active]</i>: Deals <i
+              class='mdmg'><img src='assets/img/character/skillinfo/mdamage.png'><i class='scaled_value'
+                value=R><b>69</b></i> magic damage</i> to a <i class='emphasize'><img
+                src='assets/img/character/skillinfo/target.svg'>target</i> and applies
+            <i class='badeffect info_effect' value='2'>Root <b>1</b> turn </i>.(<b>2</b> turns if you are <i
+              class='emphasize_simple'>Withered Tree</i> state)
+            ,and increases all incoming damage by <i class='up'><img
+                src='assets/img/character/skillinfo/up.png'><b>20</b>%</i>,
+            Also, all <i class='emphasize_simple'>Plant monster</i>s move toward a target.
+          </div>
+        </div>
 
       </div>
     </section><!-- End Our Services Section -->
@@ -407,19 +814,19 @@
               <p class="description">Detailed description of player stats and game items</p>
             </div>
           </div>
-         
-          </div>
-
-   
-          </div>
 
         </div>
+
+
+      </div>
+
+      </div>
 
       </div>
     </section><!-- End Services Section -->
 
     <!-- ======= Why Us Section ======= -->
- 
+
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -431,17 +838,17 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-links">
-   
-    </div>
 
-    <div class="container">
-      <div class="copyright">
-        Made by Yejoon Jung
-      </div>
-      <div class="credits">
-        Email: jkvin114@gmail.com
-      </div>
-    </div>
+          </div>
+
+          <div class="container">
+            <div class="copyright">
+              Made by Yejoon Jung
+            </div>
+            <div class="credits">
+              Email: jkvin114@gmail.com
+            </div>
+          </div>
   </footer><!-- End Footer -->
 
 

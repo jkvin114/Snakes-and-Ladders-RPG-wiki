@@ -30,7 +30,7 @@
   ======================================================== -->
 </head>
 <style>
-
+  
   .icon-box{
     margin-left: 20px;
   }
@@ -38,32 +38,39 @@
     display:none;
   }
 
+ 
   /* .obsimg img{
     border:2px solid rgb(61, 0, 102);
   } */
-  .good{
+  .good h4{
     /* border:	#2fd524 4px solid; */
     background-color:	#c5ffc1;
-    border-radius: 25px;
   }
-  .fatal{
+  .fatal h4{
     /* border:		#e11900 4px solid; */
     background-color:		#ffd1cb;
-    border-radius: 25px;
 
   }
-  .harmful{
+  .harmful h4{
     /* border:	#7e00bf 4px solid; */
     background-color:	rgb(244, 219, 255);
-    border-radius: 25px;
 
   }
-  .strategic{
+  .strategic h4{
     /* border:	#585858 4px solid; */
     background-color:	#dfdfdf;
-    border-radius: 25px;
 
   }
+
+  .obs{
+    background-color: rgb(240, 240, 240);
+    box-shadow: #bdbdbd 2px 2px 3px 3px ;
+    border-radius: 0;
+    border:none;
+    width: 200px;
+    margin: 25px;
+    flex-grow: 1;
+}
   .breadcrumbs a{
     text-decoration: underline;
   }
@@ -82,9 +89,10 @@
     margin-bottom:3vw;
   }
   #obs{
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 1rem;
+    display: flex;
+    justify-content:space-evenly;
+    align-items:stretch;
+    flex-wrap: wrap;
   }
 
   .obs p{
@@ -97,6 +105,10 @@
     font-size: 25px;
     font-weight: bold;
     line-height: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 3px;
+    margin-top: 3px;
   }
   .effimg{
     transform:scale(0.8);
@@ -133,19 +145,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
   }
-    /* Screen larger than 600px? 2 column */
-  @media (min-width: 400px) {
-    #obs { grid-template-columns: repeat(2, 1fr); }
-  }
 
-  /* Screen larger than 900px? 3 columns */
-  @media (min-width: 780px) {
-    #obs { grid-template-columns: repeat(3, 1fr); }
-  }
-    /* Screen larger than 900px? 3 columns */
-    @media (min-width: 1000px) {
-    #obs { grid-template-columns: repeat(4, 1fr); }
-  }
 </style>
 <body>
 
