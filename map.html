@@ -67,8 +67,8 @@
     box-shadow: #bdbdbd 2px 2px 3px 3px ;
     border-radius: 0;
     border:none;
-    width: 200px;
-    margin: 25px;
+    /* width: 200px; */
+    margin: 10px;
     flex-grow: 1;
 }
   .breadcrumbs a{
@@ -81,10 +81,11 @@
   }
 
   #maptype img{
-    width:50vw;
+    /* width:50vw; */
     display:block;
-    border:rgb(114, 159, 255) 4px solid;
-    box-shadow: rgb(39, 39, 39,0.5) 4px 4px;
+    /* border:rgb(114, 159, 255) 4px solid; */
+   
+  box-shadow: 0 0 3px 1px rgba(46, 46, 46,0.8);
     margin-top:3vw;
     margin-bottom:3vw;
   }
@@ -112,9 +113,10 @@
   }
   .effimg{
     transform:scale(0.8);
+    width: auto;
   }
  
-  .obsimg{
+  /* .obsimg{
     width:51px;
     height:51px;
     overflow: hidden;
@@ -126,6 +128,9 @@
     background-color:	whitesmoke;
     border-radius: 5px;
 
+  } */
+ #obs img{
+    width: auto;
   }
   .obs h4{
     color: rgb(104, 104, 104);
@@ -136,6 +141,7 @@
     margin-right: 15px;
   }
   .effect{
+    width: auto;
     display: inline;
     color: rgba(255, 123, 0, 0.877);
     font-weight: bold;
@@ -146,6 +152,89 @@
     margin-bottom: 30px;
   }
 
+
+  .obs {
+  width: 200px;
+  height: fit-content;
+  min-height: 80px;
+  /* background: linear-gradient(to top, rgb(17, 17, 17, 0.7) 0%, rgba(95, 95, 95, 0.7) 100%); */
+  /* background: linear-gradient(to top, rgba(252, 252, 252, 0.7) rgba(181, 181, 181, 0.7) 100%); */
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  display: grid;
+  grid-template-columns: 10px 80px auto ;
+  border-radius: 3px;
+  /* border: 2px solid rgb(64, 189, 36); */
+  box-shadow: 0 0 3px 1px rgba(46, 46, 46,0.8);
+  text-align: center;
+  user-select: none;
+
+}
+.obs .obs_color{
+  border-radius: 3px;
+  margin: 6px;
+  width: 2px;
+  background-color: gray;
+  border: 2px solid gray;
+}
+.obs.good .obs_color{
+
+  background-color: rgb(31, 167, 121);
+  border: 2px solid rgb(31, 167, 121);
+}
+.obs.bad .obs_color{
+  background-color: #ea4e2c;
+  border: 2px solid #ea4e2c;
+}
+.obs.bad{
+  background-color: #fce2db;
+}
+.obs.good{
+  background-color: #ddffe7;
+}
+.obs .obs_text{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+.obs p {
+  margin-top: 1px;
+
+  font-size: 12px;
+  /* color: rgb(219, 218, 218); */
+  color: gray;
+
+  vertical-align: middle;
+  word-break: keep-all;
+  font-family: "nanumB";
+  padding-left: 5px;
+}
+
+.obs hr {
+  margin: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #969696;
+}
+
+.obs b {
+  font-size: 17px;
+  /* color: greenyellow; */
+  font-family: "nanumEB";
+
+  color: black;
+  margin-left: 5px;
+}
+.toast_obsimg{
+  margin: -35px;
+  width: 50px;
+  overflow: hidden;
+  height: 50px;
+  display: inline-block;
+  transform: scale(1.1);
+  vertical-align: bottom;
+}
 </style>
 <body>
 
@@ -186,15 +275,16 @@
 
 
           <h3><strong>List of Obstacles</strong></h3><br>
-          <li><b style="color: #2fd524;">Good obstacles are in green, </b><b style="color: #7e00bf;">harmful obstacles in purple, </b> 
+          <!-- <li><b style="color: #2fd524;">Good obstacles are in green, </b><b style="color: #7e00bf;">harmful obstacles in purple, </b> 
             <b style="color: #e11900;">fatal obstacles in red, </b><b style="color: #585858;">strategic obstacles in gray</b>
-           </li>
+           </li> -->
           <li>Permanent effect <strong>doesn`t mean</strong> you will have that effect until the end of the game.<br>Remember that all effects disapper on death.</li>
-          <li><strong>Some obstacles are effective only when you arrive by throwing dice:<a href=#obs21>god`s hand</a>, 
+          <li><strong>Some obstacles are effective only in your turn:<a href=#obs21>god`s hand</a>, 
             <a href=#obs33>Kidnapper</a>, <a href=#obs63>Threaten</a>, <a href=#obs67>Token store</a>, <a href=#obs38>Casino</a>
             , <a href=#obs37>Death trial</a></strong></li>
           <ul>
             <div id=obs>
+              <!--
               <div class="obs good">
               
                 <h4 id=obs1></h4>
@@ -396,11 +486,11 @@
                 <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -1050px' > </div><hr>
                 <p><strong>Effect:Force move one player to desired position in range of 5 </strong><br> 
                  Apperance:All maps 
-                <!-- <h5>How to use</h5>
+              <h5>How to use</h5>
                 <ol type=1>
                    Choose a target player.(dead, invisible, and players on store can`t be a target)  
                    Choose where to move the player within 5 square. 
-                </ol></p> -->
+                </ol></p> 
                  
 
               </div>
@@ -627,13 +717,6 @@
                  Apperance:Ocean map </p>
 
               </div>
-              <!-- <div class="obs ">
-                <h4 id=obs48></h4>  
-                <h4 class="good" >Treasure box</h4>
-                <div class=obsimg><img src='assets/img/map/obstacles.png' style='margin-left: -2400px' > </div><hr> 
-                  <p><strong>Effect:TBA </strong><br> 
-                 Apperance:Ocean map </p>
-              </div> -->
               <div class="obs harmful">
                 <h4 id=obs49></h4>  
                 <h4 class="" >Pirate</h4>
@@ -851,7 +934,7 @@
               
       
 
-
+            -->
 
               
 
@@ -1040,7 +1123,29 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/obstacles.js"></script>
+<script>
+let str=""
+OBSTACLES.forEach((obs,i)=>{
+  let type=""
+  if(obs.val>0) type="good"
+  if(obs.val<0) type="bad"
 
+  str+=`<div class="obs ${type}">
+          <div class="obs_color"></div>
+          <div class=obs_img>
+            <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:${-1 * (i+1) * 50}px'; > </div>
+          </div>
+          <div class=obs_text>
+            <b>${obs.name}</b>
+            <p>${obs.desc}</p>
+          </div>
+        </div>`
+})
+document.getElementById("obs").innerHTML=str
+
+
+</script>
 </body>
 
 </html>

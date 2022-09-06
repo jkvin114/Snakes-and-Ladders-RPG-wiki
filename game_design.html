@@ -39,10 +39,11 @@
   }
 
   .breadcrumbs .bigimg{
-    width:60vw;
+    width:min(90%,600px);
     display:block;
-    border:rgb(114, 159, 255) 4px solid;
-    box-shadow: rgb(39, 39, 39,0.5) 4px 4px;
+    /* border:rgb(114, 159, 255) 2px solid; */
+   
+  box-shadow: 0 0 3px 1px rgba(46, 46, 46,0.8);
     margin-top:3vw;
     margin-bottom:3vw;
   }
@@ -65,7 +66,7 @@
   width: 100%;
   text-align: center;
   border-collapse: collapse;
-  border:2px solid rgb(219, 255, 190);
+  /* border:2px solid rgb(219, 255, 190); */
 }
 table.redTable td, table.redTable th {
   padding: 3px 2px;
@@ -79,10 +80,13 @@ table.redTable tbody td {
   font-size: 13px;
 }
 table.redTable tr:nth-child(even) {
-  background: rgb(228, 255, 245);
+  background: rgb(230, 230, 230);
 }
 table.redTable thead {
   background: rgb(255, 244, 83);
+}
+table.redTable img{
+  width: 50px;
 }
 table.redTable thead th {
   font-size: 19px;
@@ -320,7 +324,7 @@ table.redTable thead th:first-child {
                       <td class="tg-0lax"><a href="map.html#obs72" target='_blank'>Curse</a></td>
                     </tr>
                   </table>
-                  <li>Algorithm for the curse effect</li>
+                  <li>Mechanism for the curse effect</li>
                   <ul>
                     <li>Every obstacle has numerical weighted value from -7 to 4 based on how harmful the obstacle is</li>
                     <li>Example: Web(-2), Volcano(-6), Annuity Lottery(4)</li>

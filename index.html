@@ -34,13 +34,14 @@
 </head>
 <style>
   #sal_img {
-    width: 40%;
+    width: min(90%,600px);
   }
 
   .screenshot_img {
-    width: 90%;
+    width: min(90%,600px);
     /* border:rgb(114, 159, 255) 4px solid; */
-    box-shadow: rgb(39, 39, 39, 0.5) 2px 2px;
+   
+  box-shadow: 0 0 3px 1px rgba(46, 46, 46,0.8);
     margin: 10px;
 
   }
@@ -78,8 +79,8 @@
   }
 
   #img_grid {
-    display: grid;
-    grid-template-columns: 50% 50%;
+    /* display: grid;
+    grid-template-columns: 50% 50%; */
   }
 
   .widehr {
@@ -92,6 +93,12 @@
     display: block;
     text-align: center;
     width: 90%;
+  }
+  .gridimg{
+    width: min(90%,600px);
+  }
+  iframe{
+    max-width: 90%;;
   }
 </style>
 
@@ -243,7 +250,11 @@
         between players.</li>
       <hr class="widehr">
       <br>
-      <h2>Some Recent Patch Lists</h2><br>
+
+      <h2>Some Recent Patch Lists</h2><button id="toggle-patch-notes-btn">Toggle</button><br>
+      <div id="patch-notes"> 
+
+     
       <h2>2021-06-25</h2>
       <a href="https://github.com/jkvin114/SALR_Server/commit/5854894bc5e2ed4894a5d2468717f0ab59cb100c"> Github
         Commit(server)</a>
@@ -385,6 +396,7 @@
       <li>If player enters nothing for room name or nickname, they are randomly selected</li>
       <p> .... and much more before. (see history page)</p>
       </div>
+      </div>
 
 
     </section><!-- End Our Services Section -->
@@ -471,7 +483,12 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script>
+    $("#patch-notes").hide()
+    $("#toggle-patch-notes-btn").click(function(){
+      $("#patch-notes").toggle()
+    })
+  </script>
 </body>
 
 </html>
