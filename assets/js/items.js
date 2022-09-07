@@ -811,4 +811,8 @@ $(document).ready(function(){
         $("#overlay").hide()
         $("#item-tooltip").hide()
     })
+	$("#item-tooltip").click(()=>{
+        $("#overlay").hide()
+        $("#item-tooltip").hide()
+    })
 })

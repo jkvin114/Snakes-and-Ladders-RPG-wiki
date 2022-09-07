@@ -67,7 +67,7 @@
     transform: scale(0.5);
     margin: -17px;
     cursor: pointer;
-
+    transition: transform 0.3s;
   }.toast_itemimg img,.inline-itemimg img{
     width: auto;
   }
@@ -161,7 +161,7 @@ color: gold;
 
 
       <div class="logo float-left">
-        <h3 class="text-light"><a href="index.html"><span>Snakes-and-Ladders RPG Wiki</span></a></h3>
+        <h3 class="text-light"><a href="index.html"><span>SaL RPG Wiki</span></a></h3>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -170,10 +170,10 @@ color: gold;
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="tutorial.html">Tutorial</a></li>
-          <li><a href="game_design.html">Game Design</a></li>
           <li><a href="character.html">Characters</a></li>
           <li><a href="map.html">Maps</a></li>
           <li class="active"><a href="game_item.html">Game Items</a></li>
+          <li><a href="game_design.html">Game Design</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -203,9 +203,9 @@ color: gold;
       <div class="container">
 
         <h2>Items and Stats</h2>
-        <li>Players can buy items in the store</li>
-        <img src="assets/img/sc (9).png">
-        <img src="assets/img/sc (10).png">
+        <li>Players can buy items on the store</li>
+        <img class='largeimg'src="assets/img/sc (9).png">
+        <img class='largeimg'src="assets/img/sc (10).png">
         <br>
         <br>
         <h3>List of Items</h3><hr>
@@ -227,7 +227,7 @@ color: gold;
 
 
         <h3>Item levels</h3><hr>
-        <img src="assets/img/items/level.jpg">
+        <img src="assets/img/items/level.jpg" class="largeimg">
         <li>Lower level items can be upgraded to certain upper level items.</li>
         <li>Price for upgrading is original item price discounted by lower level item prices.</li>
         <li>The prices will be calculated and indicated automatically.</li>
@@ -235,63 +235,63 @@ color: gold;
         <li>Only level 1 items can be bought in the first store.</li>
         <li>Level 3 items are the highest level items.</li>
         
-        <h3><i class="arrow toggle-arrow" data-toggles="ability"></i>Types of Abilities</h3>
+        <h3 class="toggle-arrow" data-toggles="ability"><img class="arrow" src="assets/img/arrow.svg">Types of Abilities</h3>
 
         <div id=ability class="hidden">
           <hr>
-          <h4>Attack Power(AD)</h4>
+          <h5>Attack Power(AD)</h5>
           <ul>
             <li>Increases damage of basic attack and attack skills</li>
           </ul>
-          <h4>Magic Power(AP)</h4>
+          <h5>Magic Power(AP)</h5>
           <ul>
             <li>Increases damage of magic skills</li>
           </ul>
-          <h4>Attack Resistance(AR)</h4>
+          <h5>Attack Resistance(AR)</h5>
           <ul>
             <li>Reduces damage from basic attack and attack skills</li>
   
           </ul>
-          <h4>Attack Penetration(arP)</h4>
+          <h5>Attack Penetration(arP)</h5>
           <ul>
             <li>Ignores certain amount of opponent`s attack resistance</li>
           </ul>
-          <h4>Magic Resistance(MR)</h4>
+          <h5>Magic Resistance(MR)</h5>
           <ul>
             <li>Reduces damage from magic skills</li>
   
           </ul>
-          <h4>Magic Penetration(MP)</h4>
+          <h5>Magic Penetration(MP)</h5>
           <ul>
             <li>Ignores certain amount of opponent`s magic resistance</li>
           </ul>
           <li>Actual attack damage = attack power * (100/(100 + opponent`s attack resistance - attack penetration))</li>
           <li>Actual magic damage = magic power * (100/(100 + opponent`s magic resistance - magic penetration))</li>
-          <h4>Health regeneration per turn</h4>
+          <h5>Health regeneration per turn</h5>
           <ul>
             <li>Regenerate certain amount of health every turn (applies up to 30)</li>
           </ul>
-          <h4>Absorb </h4>
+          <h5>Absorb </h5>
           <ul>
             <li>Heals on attack proportional to the damage</li>
           </ul>
-          <h4>Basic Attack Range</h4>
+          <h5>Basic Attack Range</h5>
           <ul>
             <li>Increases range of basic attack (applies up to 5 squares)</li>
           </ul>
-          <h4>Ult haste</h4>
+          <h5>Ult haste</h5>
           <ul>
             <li>Reduces the cooltime of level 3 skill (applies up to 3 turns)</li>
           </ul>
-          <h4>Movement Speed</h4>
+          <h5>Movement Speed</h5>
           <ul>
             <li>Moves certain number more than dice number (applies up to 2)</li>
           </ul>
-          <h4>Adaptative Stat(adStat)</h4>
+          <h5>Adaptative Stat(adStat)</h5>
           <ul>
             <li>Added to higher stat between attack power and magic power</li>
           </ul>
-          <h4>Obstacle Resistance(obsR)</h4>
+          <h5>Obstacle Resistance(obsR)</h5>
           <ul>
             <li>Reduces damage from obstacle</li>
           </ul></div>
@@ -299,7 +299,7 @@ color: gold;
     </section><!-- End Our Services Section -->
 
     <!-- ======= Services Section ======= -->
-    <section class="services hidden">
+    <section class="services">
       <div class="container">
 
         <div class="row">

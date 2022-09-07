@@ -56,11 +56,11 @@
     text-decoration: underline;
   }
 
-  .widehr{
+  /* .widehr{
     border-top: 2px solid black;
     margin-top: 30px;
     margin-bottom: 30px;
-  }
+  } */
   table.redTable {
   background-color: white;
   width: 100%;
@@ -108,7 +108,7 @@ table.redTable thead th:first-child {
     <div class="container">
 
       <div class="logo float-left">
-        <h3 class="text-light"><a href="index.html"><span>Snakes-and-Ladders RPG Wiki</span></a></h3>
+        <h3 class="text-light"><a href="index.html"><span>SaL RPG Wiki</span></a></h3>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -117,10 +117,10 @@ table.redTable thead th:first-child {
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="tutorial.html">Tutorial</a></li>
-          <li class="active"><a href="game_design.html">Game Design</a></li>
           <li><a href="character.html">Characters</a></li>
           <li><a href="map.html">Maps</a></li>
           <li><a href="game_item.html">Game Items</a></li>
+          <li class="active"><a href="game_design.html">Game Design</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -135,6 +135,7 @@ table.redTable thead th:first-child {
 
      
           <h2>Game Design</h2>
+          <hr>
           <br>
           <h3>1. Luck and strategic factors </h3>
           <li>This game is designed to incorporate luck and strategic factors half each.<br></li>
@@ -159,8 +160,8 @@ table.redTable thead th:first-child {
               <li>However, players cannot use dice control after they pass the last store.</li>
               <li>Pro tip: dice selection and actual movement might defer depending on additional dice and status effects, which will be indicated before you throw dice.</li>
              </p>
-             <hr class="widehr">
              <h3>2. What happens Every turn </h3>
+             <hr>
              <li><strong>One turn: 1 cycle of player having their turn.</strong></li>
              <ol>
                <li>Dice button is shown to this turn`s player</li>
@@ -186,15 +187,16 @@ table.redTable thead th:first-child {
               <li>Goes to next turn</li>
               </ol>
             <li>These orders happen synchronously</li>
-            <hr class="widehr">
+            
               <h3>3. Balancing mechanics</h3>
+              <hr>
               <p>
                 <li>If a player fell behind too much, it will get <strong>additional dice </strong>depending on how much it left behind.</li>
                 <li>If a player dies too much without level up, <strong><a href=#effectlist>double dice effect</a></strong> effect will be given in order to follow up the opponent.
                 <br> This prevents high-level overpowered player killing weaker player over and over again.</li>
               </p>      
-              <hr class="widehr">
               <h3 id=statuseffect>4. Status Effects </h3>
+              <hr>
             <p>
              <li> Status effect affects the player in a unit of a turn. 
               <br>Ex)slow effect for 3 turn= dice -2 for 3 times.</li>
@@ -233,7 +235,7 @@ table.redTable thead th:first-child {
                     </tr>
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/3.png"></td>
-                      <td class="tg-0lax">Stun</td>
+                      <td class="tg-0lax">Root</td>
                       <td class="tg-0lax">can`t throw dice next turn</td>
                       <td class="tg-0lax"><a href="map.html#obs13" target='_blank'>Cobweb</a>, <a href="map.html#obs28" target='_blank'>Poison cobweb</a>
                         ,<a href="map.html#obs33" target='_blank'>Kidnapper</a> ,<a href="map.html#obs38" target='_blank'>Casino</a> ,<a href="map.html#obs35" target='_blank'>Jail</a> 
@@ -260,7 +262,7 @@ table.redTable thead th:first-child {
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/7.png"></td>
                       <td class="tg-0lax">Radiation</td>
-                      <td class="tg-0lax">Doubles every damage</td>
+                      <td class="tg-0lax">Doubles every incoming damage</td>
                       <td class="tg-0lax"><a href="map.html#obs32" target='_blank'>Radiation</a></td>
                     </tr>
                     <tr>
@@ -272,7 +274,7 @@ table.redTable thead th:first-child {
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/9.png"></td>
                       <td class="tg-0lax">Slavery</td>
-                      <td class="tg-0lax">-80HP for every turn, dies if you reach the end</td>
+                      <td class="tg-0lax">-80HP for every turn, dies if you reach the end(removed if you kill an enemy)</td>
                       <td class="tg-0lax"><a href="map.html#obs34" target='_blank'>Slavery</a></td>
                     </tr>
                     <tr>
@@ -290,7 +292,7 @@ table.redTable thead th:first-child {
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/12.png"></td>
                       <td class="tg-0lax">Blind</td>
-                      <td class="tg-0lax">Doesn`t perform basic attack</td>
+                      <td class="tg-0lax">Can`t perform basic attack</td>
                       <td class="tg-0lax"><a href="map.html#obs45" target='_blank'>Squid</a>, Ghost Lv1 skill</td>
                     </tr>
                     <tr>
@@ -302,7 +304,7 @@ table.redTable thead th:first-child {
                     <tr>
                       <td class="tg-0lax"><img src="assets/img/effects/14.png"></td>
                       <td class="tg-0lax">Invisibility</td>
-                      <td class="tg-0lax">Ignore every attack and obstacle</td>
+                      <td class="tg-0lax">Ignore harnful obstacles and becomes untargetable</td>
                       <td class="tg-0lax"><a href="map.html#obs51" target='_blank'>Dive</a>, Ghost Lv2 skill</td>
                     </tr>
                     <tr>
@@ -334,15 +336,15 @@ table.redTable thead th:first-child {
                   </ul>
               </div>   <!--effectlist-->
             </p>
-            <hr class="widehr">
-            <h3 id=playerlevel>5. Player Level </h3>
+            
+            <h3 id=playerlevel>5. Player Level </h3> <hr>
             <li>Every player starts with level 1</li>
              <li> If a player passes designated respawn points, <strong>it levels up, and its respawn point changes.</strong></li>
              <li> Player will learn more skills as they level up.</li>
              <li> Also, maximum HP, attack resistance, magic resistance and attack power will increase every level.</li>
              <li>Increase amount of attack resistance and magic resistance is proportional to total number of players.<br> This prevents excessive deaths in the late game.</li>
-             <hr class="widehr">
-             <h3 id=skill>6. Skills </h3>
+             
+             <h3 id=skill>6. Skills </h3> <hr>
              <li>Each skills have their own cooltime. Players must wait for few turns after you use a skill to use it again.</li>
              <li>Potion obstacle can reset all cooltime. (reduces by half for Lv3 skill)</li>
              <li>On/off skills doesn`t have a cooltime.</li>
@@ -370,8 +372,7 @@ table.redTable thead th:first-child {
                   <li>Player needs to predict where other players will arrive next turn</li>
                   <li>The projectile won`t be placed on store</li>
                 </ul>
-                <hr class="widehr">
-              <h3 id=basicattack>7. Basic attack (auto attack)</h3>
+              <h3 id=basicattack>7. Basic attack (auto attack)</h3> <hr>
               <p>
                 <li>A player will perform basic attack <strong>after every movement only in their turn.</strong>
               This will happen <strong>automatically.</strong> </li>
@@ -379,16 +380,16 @@ table.redTable thead th:first-child {
               <li>After that, other players that had been attacked will<strong> also attack back</strong> the player immediately.</li>
               <li>Player with blind effect won't perform basic attack.</li>
               <li>The damage is same with player's<strong> attack power.</strong></li>
-              </p><hr class="widehr">
-              <h3 id=projectile>8. Projectiles</h3>
+              </p>
+              <h3 id=projectile>8. Projectiles</h3> <hr>
               <p>
                <li> If a player places a projectile by non-target skill, it will remain on the square for 2~3turns.</li>
                <li> If a player other than the owner of the projectile steps on the projectile, it gets designated effect and the projectile disappears.</li>
                <li> The color of edge of projectile represents owner's <strong>turn color</strong>, and the icon represents the type of the projectile.</li>
                <li> If the owner of the projectile dies, it disappers.</li>
 
-              </p><hr class="widehr">
-              <h3 id=kda>9. Kill/Death/Assist</h3>
+              </p>
+              <h3 id=kda>9. Kill/Death/Assist</h3> <hr>
               <p><li>If a player kills other player, the killer will <strong>receive reward money</strong>, and gets <strong>one more chance to throw dice</strong> with speed effect.</li>
                 <li>The reward money increases if the player killed multiple other players without dying, <br>or if that kill stopped other player from multiple killing.</li>
                 <li> If a player dies, it will respawn at the <strong>last passed respawn point on their returning turn.</strong></li>
@@ -400,8 +401,8 @@ table.redTable thead th:first-child {
                <img class="bigimg" src="assets/img/tutorial/kill.jpg">
                <li>Player receiving one more chance of dice by kill</li>
                <img class="bigimg" src="assets/img/tutorial/death.jpg">
-              <li>Dead player waiting for respawn</li><hr class="widehr">
-              <h3 id=damagesystem>10. Damaging System and Order</h3>
+              <li>Dead player waiting for respawn</li>
+              <h3 id=damagesystem>10. Damaging System and Order</h3> <hr>
               <h4>Damage types</h4>
               <h5>Attack damage</h5>
               <ul>
