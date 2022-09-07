@@ -6,7 +6,15 @@
 */
 !(function($) {
   "use strict";
-
+  $(".toggle-arrow").click(function(){
+    let elemid=$(this).data("toggles")
+    $("#"+elemid).toggle()
+    $(this).toggleClass("up")
+  })
+  $(".toggler").click(function(){
+    let elemid=$(this).data("toggles")
+    $("#"+elemid).toggle()
+  })
   // Toggle .header-scrolled class to #header when page is scrolled
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
@@ -91,6 +99,8 @@
           $('.mobile-nav-overly').fadeOut();
         }
       }
+
+      
     });
   } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
     $(".mobile-nav, .mobile-nav-toggle").hide();
@@ -129,6 +139,7 @@
   // Initiate the venobox plugin
   $(window).on('load', function() {
     $('.venobox').venobox();
+    
   });
 
   // jQuery counterUp
@@ -176,5 +187,8 @@
     duration: 1000,
     easing: "ease-in-out-back"
   });
+
+
+ 
 
 })(jQuery);

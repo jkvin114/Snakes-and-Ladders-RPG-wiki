@@ -251,8 +251,8 @@
       <hr class="widehr">
       <br>
 
-      <h2>Some Recent Patch Lists</h2><button id="toggle-patch-notes-btn">Toggle</button><br>
-      <div id="patch-notes"> 
+      <h2><i class="arrow toggle-arrow" data-toggles="patch-notes"></i>Some Recent Patch Lists</h2>
+      <div id="patch-notes" class="hidden"> 
 
      
       <h2>2021-06-25</h2>
@@ -483,12 +483,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
-    $("#patch-notes").hide()
-    $("#toggle-patch-notes-btn").click(function(){
-      $("#patch-notes").toggle()
-    })
-  </script>
 </body>
 
 </html>

@@ -38,47 +38,15 @@
     display:none;
   }
 
- 
-  /* .obsimg img{
-    border:2px solid rgb(61, 0, 102);
-  } */
-  .good h4{
-    /* border:	#2fd524 4px solid; */
-    background-color:	#c5ffc1;
-  }
-  .fatal h4{
-    /* border:		#e11900 4px solid; */
-    background-color:		#ffd1cb;
 
-  }
-  .harmful h4{
-    /* border:	#7e00bf 4px solid; */
-    background-color:	rgb(244, 219, 255);
-
-  }
-  .strategic h4{
-    /* border:	#585858 4px solid; */
-    background-color:	#dfdfdf;
-
-  }
-
-  .obs{
-    background-color: rgb(240, 240, 240);
-    box-shadow: #bdbdbd 2px 2px 3px 3px ;
-    border-radius: 0;
-    border:none;
-    /* width: 200px; */
-    margin: 10px;
-    flex-grow: 1;
-}
   .breadcrumbs a{
     text-decoration: underline;
   }
-  .breadcrumbs li{
-    font-size: 18px;
-    line-height: 30px;
-    margin:20px;
-  }
+  /* .breadcrumbs li{
+    font-size: 14px;
+    line-height: 20px;
+    margin:10px;
+  } */
 
   #maptype img{
     /* width:50vw; */
@@ -96,21 +64,6 @@
     flex-wrap: wrap;
   }
 
-  .obs p{
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 15px;
-  }
-  .obs h4{
-    margin-left: 20px;
-    font-size: 25px;
-    font-weight: bold;
-    line-height: 100%;
-    display: inline-block;
-    text-align: center;
-    padding: 3px;
-    margin-top: 3px;
-  }
   .effimg{
     transform:scale(0.8);
     width: auto;
@@ -154,7 +107,10 @@
 
 
   .obs {
-  width: 200px;
+    background-color: rgb(240, 240, 240);
+    /* box-shadow: #bdbdbd 2px 2px 3px 3px ; */
+    margin: 10px;
+  width: 170px;
   height: fit-content;
   min-height: 80px;
   /* background: linear-gradient(to top, rgb(17, 17, 17, 0.7) 0%, rgba(95, 95, 95, 0.7) 100%); */
@@ -162,13 +118,12 @@
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
   display: grid;
-  grid-template-columns: 10px 80px auto ;
+  grid-template-columns: 5px 60px auto ;
   border-radius: 3px;
   /* border: 2px solid rgb(64, 189, 36); */
   box-shadow: 0 0 3px 1px rgba(46, 46, 46,0.8);
   text-align: center;
-  user-select: none;
-
+  /* user-select: none; */
 }
 .obs .obs_color{
   border-radius: 3px;
@@ -187,10 +142,10 @@
   border: 2px solid #ea4e2c;
 }
 .obs.bad{
-  background-color: #fce2db;
+  background-color: #fff0ec;
 }
 .obs.good{
-  background-color: #ddffe7;
+  background-color: #e8ffef;
 }
 .obs .obs_text{
   display: flex;
@@ -199,12 +154,13 @@
   text-align: left;
 }
 .obs p {
-  margin-top: 1px;
+  margin: 1px;
+  margin-right: 5px;
 
   font-size: 12px;
   /* color: rgb(219, 218, 218); */
   color: gray;
-
+  text-align: left;
   vertical-align: middle;
   word-break: keep-all;
   font-family: "nanumB";
@@ -232,8 +188,11 @@
   overflow: hidden;
   height: 50px;
   display: inline-block;
-  transform: scale(1.1);
+  transform: scale(0.9);
   vertical-align: bottom;
+}
+#obs-container{
+  display: none;
 }
 </style>
 <body>
@@ -270,21 +229,21 @@
           <h2>Maps</h2>
           <br>
 
-         
-       
-
-
-          <h3><strong>List of Obstacles</strong></h3><br>
+          <h3><i class="arrow toggle-arrow" data-toggles="obs-container"></i><strong>  List of Obstacles  </strong></h3>
           <!-- <li><b style="color: #2fd524;">Good obstacles are in green, </b><b style="color: #7e00bf;">harmful obstacles in purple, </b> 
             <b style="color: #e11900;">fatal obstacles in red, </b><b style="color: #585858;">strategic obstacles in gray</b>
            </li> -->
-          <li>Permanent effect <strong>doesn`t mean</strong> you will have that effect until the end of the game.<br>Remember that all effects disapper on death.</li>
-          <li><strong>Some obstacles are effective only in your turn:<a href=#obs21>god`s hand</a>, 
-            <a href=#obs33>Kidnapper</a>, <a href=#obs63>Threaten</a>, <a href=#obs67>Token store</a>, <a href=#obs38>Casino</a>
-            , <a href=#obs37>Death trial</a></strong></li>
-          <ul>
+       
+          <div id="obs-container">
+            <div id="obs"></div>
+
+            <li>Permanent effect <strong>doesn`t mean</strong> you will have that effect until the end of the game.<br>Remember that all effects disapper on death.</li>
+            <li><strong>Some obstacles are effective only in your turn:<a href=#obs21>god`s hand</a>, 
+              <a href=#obs33>Kidnapper</a>, <a href=#obs63>Threaten</a>, <a href=#obs67>Token store</a>, <a href=#obs38>Casino</a>
+              , <a href=#obs37>Death trial</a></strong></li>
+          </div>
+<!--
             <div id=obs>
-              <!--
               <div class="obs good">
               
                 <h4 id=obs1></h4>
@@ -932,14 +891,10 @@
 
               </div>
               
-      
-
-            -->
-
-              
-
-
             </div>
+
+          -->
+
             <hr class="widehr">
             <h3><strong>Structure of a Map</strong></h3><br>
             <ul>
@@ -953,9 +908,10 @@
             <hr class="widehr">
             <h3><strong>Types of Map</strong></h3><br>
             <div id=maptype>
-              <h4 id=map_d></h4><br><br>
-              <ul>
-              <h1>Default map</h1>
+              <h3><i class="arrow toggle-arrow" data-toggles="map-default"></i>Default map</h3>
+              <div id="map-default" class="hidden">
+
+              
               <img src="assets/img/map/map1.png">
               <li>Picture of a whole map </li>
               <img src="assets/img/map/map1store.jpg">
@@ -970,8 +926,13 @@
               <li>Players can also use store when they respawn at the last respawn position.</li>
               <li>There is casino, on which every player stops and turn roullete. The result is mostly beneficial.</li>
               <hr class="widehr">
-              <h4 id=map_o></h4><br><br>
-              <h1>Ocean map</h1>
+              <h4 id=map_o></h4><br>
+            </div>
+            <h3><i class="arrow toggle-arrow" data-toggles="map-ocean"></i>Ocean map</h3>
+            <div id="map-ocean"  class="hidden">
+
+           
+              
               <img src="assets/img/map/map2.png">
               <li>Picture of a whole map </li>
               <img src="assets/img/map/map2store.jpg">
@@ -993,8 +954,14 @@
               <li>If a player passes or stops at submarine, the player can<strong> move to any position within 16 square.</strong></li>
               <li>If submarine is used, it disappers and reappear on the returning turn.</li>
               <hr class="widehr">
-              <h4 id=map_c></h4><br><br>
-              <h1>Casino map</h1>
+              <h4 id=map_c></h4><br>
+
+            </div>
+            <h3><i class="arrow toggle-arrow" data-toggles="map-casino"></i>Casino map</h3>
+            <div id="map-casino" class="hidden">
+
+            
+              
               <img src="assets/img/map/map3.png">
               <li>Picture of a whole map </li>
               <img src="assets/img/map/map3store.jpg">
@@ -1028,12 +995,12 @@
               <li>If you have additional life, <strong>you will not go back to the respawn point on death.</strong> <br>But the kill/death/assist counts as normal. </li>
               <li>this provides something to buy for players who has full-item and lots of extra money: it is a price for players that successfully managed their money.</li>
               <li>Buying additional life is a good way to ignore  <a href=#obs34>Slavery</a> and  <a href=#obs74>Tollgate</a></li>
-              </ul>
-              </div>
+            </div>
+            </div>
 
 
 
-          </ul>
+          
 
      
       </div>

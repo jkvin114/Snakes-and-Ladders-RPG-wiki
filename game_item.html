@@ -30,6 +30,7 @@
   ======================================================== -->
 </head>
 <style>
+
     .icon-box{
     margin-left: 20px;
   }
@@ -63,8 +64,94 @@
 		overflow: hidden;
 		height: 100px;
 		display: inline-block;
-  }
+    transform: scale(0.5);
+    margin: -17px;
+    cursor: pointer;
 
+  }.toast_itemimg img,.inline-itemimg img{
+    width: auto;
+  }
+  .toast_itemimg:hover{
+    transform: scale(0.6);
+  }
+  .inline-itemimg{
+    width: 100px;
+		overflow: hidden;
+		height: 100px;
+		display: inline-block;
+    transform: scale(0.3);
+    margin: -37px;
+  }
+  .inline-itemimg.large{
+    transform: scale(0.5);
+    margin: -25px;
+  }
+  .inline-itemimg-container{
+    display: inline;
+    vertical-align: middle;
+  }
+  .tooltip-item-name{
+    line-height: 25px;
+  }
+#item-tooltip{
+  position: fixed;
+  z-index: 2;
+  width: 50%;
+  min-width: min(300px,80%);
+  /* width: max(50%,300px); */
+  /* height: 100px; */
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgb(57, 58, 69);
+  color: white;
+  border: 2px solid rgb(87, 87, 87);
+  padding: 6px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 1px rgba(46, 46, 46,0.8);
+  display: none;
+
+}
+#overlay{
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background-color: black;
+  opacity: 0.3;
+  display: none;
+}
+#item-tooltip .item-name{
+  color: aquamarine;
+}
+#item-tooltip .item-price{
+  float: right;
+  
+  margin-right: 5px;
+}
+.price{
+color: gold;
+
+}
+#item-tooltip  .ability_name{
+    color: #7bf0ff;
+  }
+  #item-tooltip  .unique_effect_name{
+    color: #ff4b4b;
+  }
+#item-tooltip hr{
+  border-top: 1px solid rgba(206, 206, 206, 0.9);
+}
+#close-tooltip{
+  position: absolute;
+  top:0;
+  right: 0;
+  font-size: 20px;
+  line-height: 16px;
+  cursor: pointer;
+}
 </style>
 <body>
 
@@ -94,18 +181,53 @@
   </header><!-- End Header -->
 
   <main id="main">
+    <div id="item-tooltip">
+      <!-- <div id="close-tooltip">&times;</div> -->
+      <b class="item-name">item name</b>
+      <b class="item-price price">$100</b>
+      <hr>
+      <div class="item-ability">
 
+      </div>
+      <hr>
+      <div class="item-build">
+      </div>
+      <div class="item-parents">
+      </div>
+    </div>
+    <div id="overlay">
+
+    </div>
     <!-- ======= Our Services Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
         <h2>Items and Stats</h2>
         <li>Players can buy items in the store</li>
-        <img class="bigimg" src="assets/img/sc (9).png">
-        <img class="bigimg" src="assets/img/sc (10).png">
+        <img src="assets/img/sc (9).png">
+        <img src="assets/img/sc (10).png">
+        <br>
+        <br>
+        <h3>List of Items</h3><hr>
+        <div id="items">
+          <h5>Level 1 Items</h5>
+          <div id="items-level1">
 
-        <h3>Item levels</h3>
-        <img class="sqimg" src="assets/img/items/level.jpg">
+          </div>
+          <h5>Level 2 Items</h5>
+          <div id="items-level2">
+
+          </div>
+          <h5>Level 3 Items</h5>
+          <div id="items-level3">
+
+          </div>
+        </div>
+      
+
+
+        <h3>Item levels</h3><hr>
+        <img src="assets/img/items/level.jpg">
         <li>Lower level items can be upgraded to certain upper level items.</li>
         <li>Price for upgrading is original item price discounted by lower level item prices.</li>
         <li>The prices will be calculated and indicated automatically.</li>
@@ -113,301 +235,67 @@
         <li>Only level 1 items can be bought in the first store.</li>
         <li>Level 3 items are the highest level items.</li>
         
-        <h3>Explanation of each stats</h3>
-        <br>
-        <h4>Attack Power</h4>
-        <ul>
-          <li>Increases damage of basic attack and attack skills</li>
-        </ul>
-        <h4>Magic Power</h4>
-        <ul>
-          <li>Increases damage of magic skills</li>
-        </ul>
-        <h4>Attack Resistance</h4>
-        <ul>
-          <li>Reduces damage from basic attack and attack skills</li>
+        <h3><i class="arrow toggle-arrow" data-toggles="ability"></i>Types of Abilities</h3>
 
-        </ul>
-        <h4>Attack Penetration</h4>
-        <ul>
-          <li>Ignores certain amount of opponent`s attack resistance</li>
-        </ul>
-        <h4>Magic Resistance</h4>
-        <ul>
-          <li>Reduces damage from magic skills</li>
+        <div id=ability class="hidden">
+          <hr>
+          <h4>Attack Power(AD)</h4>
+          <ul>
+            <li>Increases damage of basic attack and attack skills</li>
+          </ul>
+          <h4>Magic Power(AP)</h4>
+          <ul>
+            <li>Increases damage of magic skills</li>
+          </ul>
+          <h4>Attack Resistance(AR)</h4>
+          <ul>
+            <li>Reduces damage from basic attack and attack skills</li>
+  
+          </ul>
+          <h4>Attack Penetration(arP)</h4>
+          <ul>
+            <li>Ignores certain amount of opponent`s attack resistance</li>
+          </ul>
+          <h4>Magic Resistance(MR)</h4>
+          <ul>
+            <li>Reduces damage from magic skills</li>
+  
+          </ul>
+          <h4>Magic Penetration(MP)</h4>
+          <ul>
+            <li>Ignores certain amount of opponent`s magic resistance</li>
+          </ul>
+          <li>Actual attack damage = attack power * (100/(100 + opponent`s attack resistance - attack penetration))</li>
+          <li>Actual magic damage = magic power * (100/(100 + opponent`s magic resistance - magic penetration))</li>
+          <h4>Health regeneration per turn</h4>
+          <ul>
+            <li>Regenerate certain amount of health every turn (applies up to 30)</li>
+          </ul>
+          <h4>Absorb </h4>
+          <ul>
+            <li>Heals on attack proportional to the damage</li>
+          </ul>
+          <h4>Basic Attack Range</h4>
+          <ul>
+            <li>Increases range of basic attack (applies up to 5 squares)</li>
+          </ul>
+          <h4>Ult haste</h4>
+          <ul>
+            <li>Reduces the cooltime of level 3 skill (applies up to 3 turns)</li>
+          </ul>
+          <h4>Movement Speed</h4>
+          <ul>
+            <li>Moves certain number more than dice number (applies up to 2)</li>
+          </ul>
+          <h4>Adaptative Stat(adStat)</h4>
+          <ul>
+            <li>Added to higher stat between attack power and magic power</li>
+          </ul>
+          <h4>Obstacle Resistance(obsR)</h4>
+          <ul>
+            <li>Reduces damage from obstacle</li>
+          </ul></div>
 
-        </ul>
-        <h4>Magic Penetration</h4>
-        <ul>
-          <li>Ignores certain amount of opponent`s magic resistance</li>
-        </ul>
-        <li>Actual attack damage = attack power * (100/(100 + opponent`s attack resistance - attack penetration))</li>
-        <li>Actual magic damage = magic power * (100/(100 + opponent`s magic resistance - magic penetration))</li>
-        <h4>Health regeneration per turn</h4>
-        <ul>
-          <li>Regenerate certain amount of health every turn (applies up to 30)</li>
-        </ul>
-        <h4>Absorb by every damage </h4>
-        <ul>
-          <li>Heals on attack proportional to the damage</li>
-        </ul>
-        <h4>Skill damage reduction</h4>
-        <ul>
-          <li>Reduces damage from attack and magic skills (applies up to 75%)</li>
-        </ul>
-        <h4>Additional Magic damage</h4>
-        <ul>
-          <li>When attacking opponent, deals additional magic damage proportional to opponent`s maximum health</li>
-        </ul>
-        <h4>Basic Attack Range</h4>
-        <ul>
-          <li>Increases range of basic attack (applies up to 5 squares)</li>
-        </ul>
-        <h4>Skill haste</h4>
-        <ul>
-          <li>Reduces the cooltime of level 3 skill (applies up to 3 turns)</li>
-        </ul>
-        <h4>Movement Speed</h4>
-        <ul>
-          <li>Moves certain number more than dice number (applies up to 2)</li>
-        </ul>
-        <h4>Adaptative Stat</h4>
-        <ul>
-          <li>Added to higher stat between attack power and magic power</li>
-        </ul>
-        <h4>Obstacle Resistance</h4>
-        <ul>
-          <li>Reduces damage from obstacle</li>
-        </ul>
-        <p>&#8251; actual price can be differ from the pictures.</p>
-        <h3>Defensive Items (Level 3)</h3>
-        <img class="sqimg" src="assets/img/items/armor.jpg">
-        <h2>Epic Armor</h2>
-          <ul>
-            <li>Price:300</li>
-            <li>Maximum health +90</li>
-            <li>Magic resistance +80</li>
-            <li>Obstacle resistance +10</li>
-          </ul>
-        
-        <img class="sqimg" src="assets/img/items/shield.jpg">
-        <h2>Epic Shield</h2>
-          <ul>
-            <li>Price:300</li>
-            <li>Maximum health +80</li>
-            <li>Attack resistance +60</li>
-            <li>Obstacle resistance +10</li>
-          </ul>
-        <img class="sqimg" src="assets/img/items/ga.jpg">
-        <h2>Guardian Angel</h2>
-          <ul>
-            <li>Price:350</li>
-            <li>Maximum health +60</li>
-            <li>Attack resistance +25</li>
-            <li>Magic resistance +35</li>
-            <li>Skill Haste +1</li>
-            <li>Unique passive: revive when dies (cooltime 15 turn)</li>
-          </ul>
-        <img class="sqimg" src="assets/img/items/fruit.jpg">
-        <h2>Epic Fruit</h2>
-          <ul>
-            <li>Price:360</li>
-            <li>Maximum health +100</li>
-            <li>Health regeneration per turn: 30</li>
-            <li>Unique passive: additionally regenerate 5% of max HP every turn</li>
-          </ul>
-        <img class="sqimg" src="assets/img/items/nature.jpg">
-        <h2>Power of Mother Nature</h2>
-          <ul>
-            <li>Price:300</li>
-            <li>Maximum health +40</li>
-            <li>Skill damage reduction +25%</li>
-            <li>Skill Haste +1</li>
-          </ul>
-
-        <h3>Offensive Items (Level 3) </h3>
-        <img class="sqimg" src="assets/img/items/sword.jpg">
-        <h2>Epic Sword</h2>
-          <ul>
-            <li>Price:300</li>
-            <li>Attack Power +80</li>
-            <li>Attack penetration +15</li>
-          </ul>
-        <img class="sqimg" src="assets/img/items/marble.jpg">
-        <h2>Epic Marble</h2>
-          <ul>
-            <li>Price:320</li>
-            <li>Magic Power +120</li>
-            <li>Magic Penetration +20</li>
-          </ul>
-        <img class="sqimg" src="assets/img/items/bloodsword.jpg">
-        <h2>Sword of Blood</h2>
-          <ul>
-            <li>Price:250</li>
-            <li>Attack power+30</li>
-            <li>Absorb by every damage +12%</li>
-          </ul>
-        <img class="sqimg" src="assets/img/items/spear.jpg">
-        <h2>Ancient Spear</h2>
-        <ul>
-          <li>Price:300</li>
-          <li>Adaptative stat +30</li>
-          <li>Additional Magic damage +15% of opponent`s Health</li>
-          <li>Skill haste +1</li>
-        </ul>
-        <img class="sqimg" src="assets/img/items/whip.jpg">
-        <h2>Epic Whip</h2>
-          <ul>
-            <li>Price:340</li>
-            <li>Adaptative stat +80</li>
-            <li>Basic attack range +2</li>
-          </ul>
-        <img class="sqimg" src="assets/img/items/crossbow.jpg">
-        <h2>Crossbow of Piercing</h2>
-        <ul>
-          <li>Price:330</li>
-          <li>Adaptative stat +20</li>
-          <li>Additional Magic damage +10% of opponent`s Health</li>
-          <li>Unique passive: ignore opponent`s attack and magic resistance by 40%</li>
-        </ul>
-        <h3>Utility Items</h3>
-        <img class="sqimg" src="assets/img/items/boots.jpg">
-        <h2>Boots of Haste (Level 3)</h2>
-        <ul>
-          <li>Price:300</li>
-          <li>Movement speed +1</li>
-          <li>Skill Haste +1</li>
-          <li>Unique passive: ignore slow effect</li>
-        </ul><br><br>
-        <h2>Boots (Level 2)</h2>
-        <ul>
-          <li>Price:120</li>
-          <li>Unique passive: movement speed  +1 when fell behind</li>
-        </ul>
-        <h3>Level 2 Items</h3>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-100px'; > </div>
-        <h2>Rare Sword</h2>
-        <ul>
-          <li>Price:80</li>
-          <li>Attack Power +30</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-400px'; > </div>
-        <h2>Rare Marble</h2>
-        <ul>
-          <li>Price:120</li>
-          <li>Magic Power +50</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-700px'; > </div>
-        <h2>Rare Shield</h2>
-        <ul>
-          <li>Price:80</li>
-          <li>Maximum health +30</li>
-          <li>Attack resistance +20</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1000px'; > </div>
-        <h2>Rare Fruit</h2>
-        <ul>
-          <li>Price:120</li>
-          <li>Maximum health +40</li>
-          <li>Health regeneration per turn +15</li>
-        </ul> 
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1300px'; > </div>
-        <h2>Rare Armor</h2>
-        <ul>
-          <li>Price:100</li>
-          <li>Maximum health +30</li>
-          <li>Magic resistance +30</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1600px'; > </div>
-        <h2>Bloodsucker</h2>
-        <ul>
-          <li>Price:140</li>
-          <li>Absorb by every damage +12%</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1900px'; > </div>
-        <h2>Power of Nature</h2>
-        <ul>
-          <li>Price:70</li>
-          <li>Skill damage reduction +10%</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2100px'; > </div>
-        <h2>Diamond Crystal</h2>
-        <ul>
-          <li>Price:50</li>
-          <li>Maximum health +40</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2400px'; > </div>
-        <h2>Rare Whip</h2>
-        <ul>
-          <li>Price:145</li>
-          <li>Basic attack range +1</li>
-        </ul>        
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2500px'; > </div>
-        <h2>Rare Magic Axe</h2>
-        <ul>
-          <li>Price:135</li>
-          <li>Adaptative stat +50</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2700px'; > </div>
-        <h2>Bamboo Spear</h2>
-        <ul>
-          <li>Price:60</li>
-          <li>Additional Magic damage +5% of opponent`s health</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3000px'; > </div>
-        <h2>Medieval Bow</h2>
-        <ul>
-          <li>Price:120</li>
-          <li>Attack Penetration +15</li>
-          <li>Magic Penetration +15</li>
-        </ul>
-
-        <h3>Level 1 Items</h3>
-        <div class="toast_itemimg popup" ><img src='assets/img/items/items.png' style='margin-left:-200px'; > </div>
-        <h2>Common Sword</h2>
-        <ul>
-          <li>Price:30</li>
-          <li>Attack power +10</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-500px'; > </div>
-        <h2>Common Marble</h2>
-        <ul>
-          <li>Price:40</li>
-          <li>Magic power +20</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-800px'; > </div>
-        <h2>Common Shield</h2>
-        <ul>
-          <li>Price:30</li>
-          <li>Maximum health +10</li>
-          <li>Attack resistance +7</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1100px'; > </div>
-        <h2>Common Fruit</h2>
-        <ul>
-          <li>Price:40</li>
-          <li>Health regeneration per turn +5</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1400px'; > </div>
-        <h2>Common Armor</h2>
-        <ul>
-          <li>Price:40</li>
-          <li>Maximum health +10</li>
-          <li>Magic resistance +10</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2000px'; > </div>
-        <h2>Light of Nature</h2>
-        <ul>
-          <li>Price:30</li>
-          <li>Skill damage reduction +3%</li>
-        </ul>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2600px'; > </div>
-        <h2>Common Magic Axe</h2>
-        <ul>
-          <li>Price:35</li>
-          <li>Adaptative stat +10</li>
-        </ul>
-      </div>
     </section><!-- End Our Services Section -->
 
     <!-- ======= Services Section ======= -->
@@ -494,7 +382,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/items.js"></script>
 </body>
 
 </html>

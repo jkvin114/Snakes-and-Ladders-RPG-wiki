@@ -61,7 +61,7 @@
 
   .skimg {
     display: inline;
-    width: 60px;
+    width: 6vw;
     margin-left: 1vw;
     margin-top: 1vw;
   }
@@ -142,29 +142,35 @@
     ;
   }
 
+  .skillinfowindow-container{
+    display: none;
+  }
   .skillinfowindow {
-    background-color: rgb(37, 37, 37);
-    padding: 10px;
+    background-color: #3e3a51;
+    padding: 5px;
     font-family: "nanumB";
     display: grid;
-    grid-template-columns: 100px auto;
+    grid-template-columns: min(8vw,100px) auto;
+    max-width: 800px;
+    border-radius: 5px;
+    
   }
 
   .skillinfowindow .skillinfo {
     /* color: #e0c9ff; */
     color: rgb(153, 153, 153);
-    font-size: 1.5vw;
+    font-size: min(1.5vw,15px);
     opacity: 1.0;
     margin-bottom: 20px;
     font-weight: normal;
     font-family: "nanumB";
-    line-height: 2vw;
+    line-height: min(2.5vw,20px);;
     word-break: keep-all;
   }
 
   .skillinfo>img {
     display: inline;
-    height: 2vw;
+    height: min(2vw,20px);;
     margin: 0;
     vertical-align: bottom;
     border: 1px solid gray;
@@ -172,8 +178,8 @@
 
   .skillinfo>i img {
     display: inline;
-    height: 2vw;
-    width: 2vw;
+    height: min(2vw,20px);;
+    width: min(2vw,20px);;
     margin: 0;
     vertical-align: bottom;
     clear: both;
@@ -195,7 +201,7 @@
   }
 
   .skillinfo>i.skill_name {
-    font-size: 1.7vw;
+    font-size:  min(1.7vw,17px);;;
     font-family: "cookierun";
     color: rgb(226, 211, 0);
 
@@ -291,11 +297,26 @@
   }
 
   .skilltitleimg {
-    width: 70px;
-    height: 70px;
+    width: min(7vw,70px);
     opacity: 1.0;
     margin: 5px;
     /* border: 2px solid #e0c9ff; */
+  }
+  .character{
+    background-color: #3e3a51;
+    max-width: 800px;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+  .character > img{
+    width: min(10vw,100px);
+    padding: 6px;
+  }
+  .character > b{
+    color: rgb(190, 192, 203);
+    font-size: 20px;
+    font-style: normal;
   }
 </style>
 
@@ -334,9 +355,13 @@
         <div class="d-flex justify-content-between align-items-center">
 
         </div>
-        <div style="display: inline;"></div>
-        <h3>Reaper [Warrior]</h3>
-        <img class="sqimg" src="assets/img/character/reaper.png">
+        <div class="character toggler" data-toggles="skill1">
+          <img src="assets/img/character/reaper.png">
+          <b>Reaper [Warrior]</b>
+        </div>
+        <div class="skillinfowindow-container" id="skill1">
+
+        
         <div class="skillinfowindow">
           <img class=skilltitleimg src='assets/img/character/skills/1-1.jpg'>
           <div class="skillinfo">
@@ -374,13 +399,15 @@
             Damage decreases by <b>30</b>% if the target is <i class='emphasize_simple'>in front</i> of you.
           </div>
         </div>
+        </div>
 
 
 
-
-
-        <h3>Knight [Tanker]</h3>
-        <img class="sqimg" src="assets/img/character/knight.png">
+        <div class="character toggler" data-toggles="skill2">
+          <img src="assets/img/character/knight.png">
+          <b>Knight [Tanker]</b>
+        </div>
+        <div class="skillinfowindow-container" id="skill2">
         <div class="skillinfowindow">
           <img class=skilltitleimg src='assets/img/character/skills/2-1.jpg'>
           <div class="skillinfo">
@@ -394,7 +421,7 @@
                 src='assets/img/character/skillinfo/target.svg'>target</i> and heals <i class='heal'><img
                 src='assets/img/character/skillinfo/heal.png'><b>10</b></i> HP
             , If the target has <i class='emphasize_simple'>mark</i> of <i class='skill_name_desc'><img
-                class='info_skillimg' src='assets/img/character/skills/2-2.jpg'>Curse of Ivory</i>, <i
+                class='info_skillimg' src='assets/img/character/skills/2-2.jpg'>Taunt</i>, <i
               class='range'>&ensp;<img src='assets/img/character/skillinfo/range.png'>Range: <b>7</b> </i>
             and deals additional <i class='tdmg'><img src='assets/img/character/skillinfo/fdamage.png'><i
                 class='scaled_value' value=w_qdamage><b></b></i> fixed damage</i>
@@ -426,15 +453,17 @@
                 src='assets/img/character/skillinfo/up.png'>
               increases by <b>80</b></i>, gains <i class='shield'><img src='assets/img/character/skillinfo/shield.svg'>
               <b>62</b></i> shield,and heal amount of <i class='skill_name_desc'><img class='info_skillimg'
-                src='assets/img/character/skills/2-1.jpg'>Tusk Attack</i> <i class='up'><img
+                src='assets/img/character/skills/2-1.jpg'>Mace Attack</i> <i class='up'><img
                 src='assets/img/character/skillinfo/up.png'>doubles</i>
           </div>
         </div>
+        </div>
+        <div class="character toggler" data-toggles="skill3">
+          <img src="assets/img/character/ghost.png">
+          <b>Ghost [Mage]</b>
+        </div>
 
-
-        <h3>Ghost [Mage]</h3>
-        <img class="sqimg" src="assets/img/character/ghost.png">
-
+        <div class="skillinfowindow-container" id="skill3">
         <div class="skillinfowindow">
           <img class=skilltitleimg src='assets/img/character/skills/3-1.jpg'>
           <div class="skillinfo">
@@ -474,12 +503,15 @@
               class='emphasize'><img src='assets/img/character/skillinfo/duration.png'><b>3</b> turns</i>.
           </div>
         </div>
+        </div>
 
 
-
-        <h3>Dinosaur [Warrior]</h3>
-        <img class="sqimg" src="assets/img/character/dinosaur.png">
-        <div class="skillinfowindow">
+        <div class="character toggler" data-toggles="skill4">
+          <img src="assets/img/character/dinosaur.png">
+          <b>Dinosaur [Warrior]</b>
+        </div>
+        <div class="skillinfowindow-container" id="skill4">
+        <div class="skillinfowindow" >
           <img class=skilltitleimg src='assets/img/character/skills/4-1.jpg'>
           <div class="skillinfo">
             <i class='skill_name'>[Claw Strike]&emsp; </i> <i class='cooltime'><img
@@ -521,13 +553,16 @@
               the Stake</i> <i class='emphasize_simple'>resets</i> if you killed the enemy.
           </div>
         </div>
+        </div>
 
 
+        <div class="character toggler" data-toggles="skill5">
+          <img src="assets/img/character/sniper.png">
+          <b>Sniper [Warrior]</b>
+        </div>
 
-
-        <h3>Sniper [Warrior]</h3>
-        <img class="sqimg" src="assets/img/character/sniper.png">
-        <div class="skillinfowindow">
+        <div class="skillinfowindow-container" id="skill5">
+        <div class="skillinfowindow" >
           <img class=skilltitleimg src='assets/img/character/skills/5-1.jpg'>
           <div class="skillinfo">
             <i class='skill_name'>[Gunfire]&emsp; </i> <i class='cooltime'><img
@@ -570,14 +605,17 @@
             After use, you gains <i class='goodeffect info_effect' value='10'>Rapidness
           </div>
         </div>
+        </div>
 
 
 
 
-
-        <h3>Magician [Mage]</h3>
-        <img class="sqimg" src="assets/img/character/magician.png">
-        <div class="skillinfowindow">
+        <div class="character toggler" data-toggles="skill6">
+          <img src="assets/img/character/magician.png">
+          <b>Magician [Mage]</b>
+        </div>
+        <div class="skillinfowindow-container" id="skill6">
+        <div class="skillinfowindow" id="skill6">
           <img class=skilltitleimg src='assets/img/character/skills/6-1.jpg'>
           <div class="skillinfo">
             <i class='skill_name'>[Chain Lightning]&emsp; </i> <i class='cooltime'><img
@@ -619,12 +657,16 @@
               class='emphasize_simple'><b>3</b> times</i>.
           </div>
         </div>
+        </div>
 
 
 
-        <h3>Kraken [Tanker]</h3>
-        <img class="sqimg" src="assets/img/character/kraken.png">
+        <div class="character toggler" data-toggles="skill7">
+          <img src="assets/img/character/kraken.png">
+          <b>Kraken [Tanker]</b>
+        </div>
 
+        <div class="skillinfowindow-container" id="skill7">
         <div class="skillinfowindow">
           <img class=skilltitleimg src='assets/img/character/skills/7-1.jpg'>
           <div class="skillinfo">
@@ -661,9 +703,14 @@
                 src='assets/img/character/skillinfo/up.png'>increases by <b>50</b></i> if you killed the target.
           </div>
         </div>
-        <h3>Bird [Mage,Warrior]</h3>
-        <img class="sqimg" src="assets/img/character/bird.png">
+        </div>
+        
+        <div class="character toggler" data-toggles="skill8">
+          <img src="assets/img/character/bird.png">
+          <b>Bird [Mage,Warrior]</b>
+        </div>
 
+        <div class="skillinfowindow-container" id="skill8">
         <div class="skillinfowindow">
           <img class=skilltitleimg src='assets/img/character/skills/8-1.jpg'>
           <div class="skillinfo">
@@ -711,10 +758,13 @@
             they receive <i class='badeffect info_effect' value='12'>Ignite <b>2</b> turns </i>
           </div>
         </div>
+        </div>
+        <div class="character toggler" data-toggles="skill9">
+          <img src="assets/img/character/tree.png">
+          <b>Tree [Mage,Supporter]</b>
+        </div>
 
-        <h3>Tree [Mage,Supporter]</h3>
-        <img class="sqimg" src="assets/img/character/tree.png">
-
+        <div class="skillinfowindow-container" id="skill9">
         <div class="skillinfowindow">
           <img class=skilltitleimg src='assets/img/character/skills/9-1.jpg'>
           <div class="skillinfo">
@@ -771,6 +821,7 @@
                 src='assets/img/character/skillinfo/up.png'><b>20</b>%</i>,
             Also, all <i class='emphasize_simple'>Plant monster</i>s move toward a target.
           </div>
+        </div>
         </div>
 
       </div>
