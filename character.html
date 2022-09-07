@@ -159,18 +159,18 @@
   .skillinfowindow .skillinfo {
     /* color: #e0c9ff; */
     color: rgb(153, 153, 153);
-    font-size: min(1.5vw,15px);
+    font-size: clamp(10px,1.5vw,15px);
     opacity: 1.0;
     margin-bottom: 20px;
     font-weight: normal;
     font-family: "nanumB";
-    line-height: min(2.5vw,20px);;
+    line-height: clamp(13px,2.5vw,20px);
     word-break: keep-all;
   }
 
   .skillinfo>img {
     display: inline;
-    height: min(2vw,20px);;
+    height: clamp(13px,2vw,20px);;
     margin: 0;
     vertical-align: bottom;
     border: 1px solid gray;
@@ -178,8 +178,8 @@
 
   .skillinfo>i img {
     display: inline;
-    height: min(2vw,20px);;
-    width: min(2vw,20px);;
+    height: clamp(13px,2vw,20px);;
+    width: clamp(13px,2vw,20px);;
     margin: 0;
     vertical-align: bottom;
     clear: both;
@@ -201,7 +201,7 @@
   }
 
   .skillinfo>i.skill_name {
-    font-size:  min(1.7vw,17px);;;
+    font-size:  clamp(14px,1.7vw,17px);;
     font-family: "cookierun";
     color: rgb(226, 211, 0);
 
