@@ -35,8 +35,21 @@
 <style>
   #sal_img {
     width: min(90%,600px);
+    display: inline;
   }
-
+  .sal{
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    background:linear-gradient(to left,#FF416C,#FF4B2B);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .sal p{
+    font-size: 15px;
+  }
 
   .icon-box {
     margin-left: 20px;
@@ -49,9 +62,9 @@
   }
 
   .breadcrumbs p {
-    font-size: 28px;
-    line-height: 30px;
-    margin: 30px;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 20px;
   }
 
   .toast_itemimg {
@@ -107,27 +120,31 @@
 
   }
   iframe{
-    max-width: 90%;;
+    max-width: 90vw;;
+    max-height: 50vw;
   }
   .gridimg-img{
     background-size: cover;
-    height: 250px;
+    height: 225px;
     
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
 
-  @media (max-width: 0px){
+  @media (max-width: 800px){
     .gridimg{
-      width: 200px;
+      width: 300px;
 
     }
     .gridimg-img{
-      height: 120px;
+      height: 160px;
     }
     .gridimg a{
-      font-size: 12px;
+      font-size: 13px;
     }
+    .sal{
+    grid-template-columns: auto;
+  }
   }
   .toast_itemimg{
     margin: 30px;
@@ -148,6 +165,9 @@
   display: inline-block;
   transform: scale(0.9);
   vertical-align: bottom;
+  background-color: #ced9e9;
+  border-radius: 4px;
+ 
 }
 .character{
   position: relative;
@@ -186,6 +206,37 @@
   .character > img{
     width: 70px;
     padding: 6px;
+  }
+  .character-container{
+    
+    /* text-align: center; */
+    background:linear-gradient(to left,#4e54c8,#8f94fb);
+    color: white;
+    padding: 15px;
+    padding-top: 25px;
+    padding-bottom  : 25px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .item-container{
+    background:linear-gradient(to right,#20e3b2,#29ffc6);
+
+    color: white;
+    padding: 15px;
+    padding-top: 25px;
+    padding-bottom  : 25px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .obs-container{
+    background:linear-gradient(to right,#83a4d4,#b6fbff);
+
+    color: white;
+    padding: 15px;
+    padding-top: 25px;
+    padding-bottom  : 25px;
+    border-radius: 10px;
+    margin-bottom: 10px;
   }
 </style>
 
@@ -282,8 +333,24 @@
 
         <div class="d-flex justify-content-between align-items-center">
         </div>
-        <p></p>
-        <h3>In-game screenshots(as of August 2022)</h3>
+        <div class="">
+          <div class="sal">
+            <img id="sal_img" src="https://miro.medium.com/max/2500/1*Rpgz5awj07UpKRuDSzWk-Q.jpeg">
+            <div>
+              <h4>Comparison with traditional Snakes-and-Ladders</h4>
+              <p>
+                In Snakes-and-Ladders RPG, there is <b>kill</b> ,which gives one more chance to throw dice, instead of
+                <b>Ladders</b>,
+                and there is <b>death</b>, which sends the player back to designated respawn(revival) square, instead
+                of <b>snakes.</b> <br><br>
+              The main difference is that these factors are determined by not only luck, but also the rpg-style battle
+                between players.</p>
+            </div>
+            
+          </div>
+      
+        </div>
+        <h3>In-game screenshots(as of August 2022)</h3><hr>
         <div class=img_grid>
           
           <div class="gridimg reveal">
@@ -346,30 +413,20 @@
         </div> -->
         <div class="gridimg reveal">
           <div class="gridimg-img" style="background:url('assets/img/sc (11).png') no-repeat center;background-size: cover;"></div>
-          <a>Simulation results</a>
+          <a>Game result database</a>
         </div>
-      </div>
-      <hr>
-      <iframe class="reveal" width="700" height="365" src="https://www.youtube.com/embed/oFcqx63MZU4" title="YouTube video player"
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-      <hr>
+      </div><br>
       <div class="reveal">
-        <h4>Comparison with traditional Snakes-and-Ladders game</h4><hr>
-      <img id="sal_img" src="https://miro.medium.com/max/2500/1*Rpgz5awj07UpKRuDSzWk-Q.jpeg">
-      <p>
-        <li>
-          In Snakes-and-Ladders RPG, there is <b>kill</b> ,which gives one more chance to throw dice, instead of
-          <b>Ladders</b>,
-          and there is <b>death</b>, which sends the player back to designated respawn(revival) square, instead
-          of <b>snakes.</b> </li>
-        <li>The main difference is that these factors are determined by not only luck, but also the rpg-style battle
-          between players.</li>
-      </p>
-  
+        <h3>Demo Video</h3>
+        <hr>
+        <iframe  width="700" height="365" src="https://www.youtube.com/embed/oFcqx63MZU4" title="YouTube video player"
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
-      <div class="reveal">
-        <h4>9 Unique characters<a href="character.html" class="more">More > </a></h4><hr>
+      
+      
+      <div class="reveal character-container">
+        <h4>9 Unique Characters<a href="character.html" class="more">More > </a></h4><hr>
         <div class="character">
           <img src="assets/img/character/reaper.png">
           <div class="character-cover"><b>Reaper</b></div>
@@ -410,10 +467,50 @@
           <div class="character-cover"><b>Bird</b></div>
 
         </div>
+        <div class="character">
+          <img src="assets/img/character/sniper.png">
+          <div class="character-cover"><b>Sniper</b></div>
+
+        </div>
       </div>
       <br>
+      <div class="reveal item-container">
+        <h4>40 Unique Items<a href="game_item.html" class="more black">More > </a></h4>
+        <hr>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:0px'; ></div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1000px'; ></div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-200px'; ></div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2000px'; ></div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3000px'; ></div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-400px'; ></div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1600px'; ></div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2200px'; ></div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2700px'; ></div>
+        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3700px'; ></div>
+      </div>
+      <br>
+      <div class="reveal obs-container">
+        <h4>70+ obstacles<a href="map.html" class="more black">More > </a></h4><hr>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-300px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-2200px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1300px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-600px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-450px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1450px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1550px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1750px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1000px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-650px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-2450px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1950px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-2750px'; > </div>
+        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1800px'; > </div>
+
+      </div>
       <div class="reveal">
-        <h4>Game store<a href="game_item.html" class="more">More > </a></h4><hr>
+        <h4>Game store<a href="game_item.html" class="more black">More > </a></h4><hr>
+  
+        <br>
         <div class=img_grid>
           
           <div class="gridimg ">
@@ -424,18 +521,11 @@
             <div class="gridimg-img" style="background:url('assets/img/sc (10).png') no-repeat center;background-size: cover;"></div>
             <a>Store(Item recipe)</a>
           </div> 
-          </div>
-        <br>
-        <h5>40 unique items</h5><hr>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:0px'; ></div>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1000px'; ></div>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-200px'; ></div>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2000px'; ></div>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3000px'; ></div>
-
+        </div>
       </div>
+      <br>
       <div class="reveal">
-        <h4>3 Different maps<a href="map.html" class="more">More > </a></h4><hr>
+        <h4>3 Different maps<a href="map.html" class="more black">More > </a></h4><hr>
         <div class=img_grid>
           <div class="gridimg">
             <div class="gridimg-img" style="background:url('assets/img/sc (4).png') no-repeat center;background-size: cover;"></div>
@@ -454,19 +544,9 @@
           </div>
         </div>
         <br>
-        <h5>70+ obstacles</h5><hr>
-        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-300px'; > </div>
-        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-2000px'; > </div>
-        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1300px'; > </div>
-        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-600px'; > </div>
-        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-450px'; > </div>
-        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1450px'; > </div>
-        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1550px'; > </div>
-        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1750px'; > </div>
-        <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1000px'; > </div>
-
-
+    
       </div>
+      <br>
       <div class="reveal">
         <h4>Detailed statistic page</h4><hr>
         <div class=img_grid>
@@ -559,9 +639,9 @@
       <li>Added feature in the statistics page to drag and drop statistics file to see any past statistics you want.
       </li>
       <li>Added item images to statistics page to see what items each player bought</li>
-      <img class="screenshot_img" src="assets/img/patch2.jpg">
+      <img class="largeimg" src="assets/img/patch2.jpg">
       <li>Added team play</li>
-      <img class="screenshot_img" src="assets/img/patch1.jpg">
+      <img class="largeimg" src="assets/img/patch1.jpg">
       <ul>
         <li>You can choose teams between blue and red team after you select character and add AI or other players</li>
         <li>Team play is avaliable only if there is 4 players. (can include AI)</li>

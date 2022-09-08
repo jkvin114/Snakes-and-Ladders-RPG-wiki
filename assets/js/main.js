@@ -34,6 +34,11 @@ function reveal() {
     let elemid=$(this).data("toggles")
     $("#"+elemid).toggle()
   })
+  $(".hover-toggler").hover(function(){
+    let elemid=$(this).data("toggles")
+    $("#"+elemid).toggle()
+  })
+
   // Toggle .header-scrolled class to #header when page is scrolled
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {

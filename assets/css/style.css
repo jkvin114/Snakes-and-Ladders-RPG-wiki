@@ -329,7 +329,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   top: 0;
   width: 130%;
   height: 95%;
-  background: linear-gradient(to right, rgba(30, 67, 86, 0.9), rgba(30, 67, 86, 0.9)), url("../img/hero-bg.PNG") center top no-repeat;
+  background: linear-gradient(to right, rgba(30, 67, 86, 0.7), rgba(30, 67, 86, 0.7)), url("../img/hero-bg.PNG") center top no-repeat;
   z-index: 0;
   border-radius: 0 0 50% 50%;
   transform: translateX(-50%) rotate(0deg);
@@ -2242,7 +2242,15 @@ section {
   float: right;
   padding: 2px;
   /* border: 1px solid black; */
-  background-color: gainsboro;
+  /* background-color: gainsboro; */
   border-radius: 3px;
-  color: black;
+  color: white;
+}
+.more.black{
+ color: black; 
+   /* background-color: gainsboro; */
+}
+.smalltext{
+  font-size: 12px;
+  margin: 3px;
 }

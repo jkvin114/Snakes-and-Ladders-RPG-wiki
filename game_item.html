@@ -96,8 +96,9 @@
 #item-tooltip{
   position: fixed;
   z-index: 2;
-  width: 50%;
-  min-width: min(300px,80%);
+  width: fit-content;
+  
+  min-width:300px;
   /* width: max(50%,300px); */
   /* height: 100px; */
   top:50%;
@@ -208,7 +209,7 @@ color: gold;
         <img class='largeimg'src="assets/img/sc (10).png">
         <br>
         <br>
-        <h3>List of Items</h3><hr>
+        <h3>List of Items</h3><p class="smalltext">Click on item to show detail</p><hr>
         <div id="items">
           <h5>Level 1 Items</h5>
           <div id="items-level1">
