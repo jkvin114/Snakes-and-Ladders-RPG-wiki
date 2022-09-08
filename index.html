@@ -41,7 +41,7 @@
     text-align: center;
     display: grid;
     grid-template-columns: auto auto;
-    background:linear-gradient(to left,#FF416C,#FF4B2B);
+    background:linear-gradient(to right,#dd7b13,#dd5313);
     color: white;
     padding: 5px;
     border-radius: 10px;
@@ -153,9 +153,9 @@
 		height: 100px;
 		display: inline-block;
     transform: scale(0.5);
-    margin: -17px;
+    margin: -23px;
     cursor: pointer;
-    transition: transform 0.3s;
+    /* transition: transform 0.3s; */
   }
   .toast_obsimg{
   /* margin: -35p; */
@@ -210,7 +210,7 @@
   .character-container{
     
     /* text-align: center; */
-    background:linear-gradient(to left,#4e54c8,#8f94fb);
+    background:linear-gradient(to right,#4e54c8,#8f94fb);
     color: white;
     padding: 15px;
     padding-top: 25px;
@@ -219,7 +219,7 @@
     margin-bottom: 10px;
   }
   .item-container{
-    background:linear-gradient(to right,#20e3b2,#29ffc6);
+    background:linear-gradient(to right,#2C3E50,#4CA1AF);
 
     color: white;
     padding: 15px;
@@ -237,6 +237,24 @@
     padding-bottom  : 25px;
     border-radius: 10px;
     margin-bottom: 10px;
+  }
+  #play{
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius:10px ;
+    box-shadow: 0 0 6px 2px rgba(46, 46, 46,0.8);
+    padding: 4px;
+    /* border: 2px solid #ffb341 ; */
+    background:linear-gradient(to left,#FF416C,#FF4B2B);  
+  }
+  #play:hover{
+    filter: brightness(0.9);
+  }
+  .playbtn-container{
+    text-align:center;
+    padding: 40px;
   }
 </style>
 
@@ -333,6 +351,10 @@
 
         <div class="d-flex justify-content-between align-items-center">
         </div>
+        <div class="playbtn-container" >
+          <button id="play">PLAY NOW</button>
+        </div>
+        
         <div class="">
           <div class="sal">
             <img id="sal_img" src="https://miro.medium.com/max/2500/1*Rpgz5awj07UpKRuDSzWk-Q.jpeg">
@@ -799,6 +821,11 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    $("#play").click(()=>{
+      window.location.href='http://34.202.98.227:4000'
+    })
+  </script>
 </body>
 
 </html>

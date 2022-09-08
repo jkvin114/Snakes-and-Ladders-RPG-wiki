@@ -111,7 +111,7 @@
     /* box-shadow: #bdbdbd 2px 2px 3px 3px ; */
     margin: 10px;
   width: 170px;
-  height: fit-content;
+  /* height: fit-content; */
   min-height: 80px;
   /* background: linear-gradient(to top, rgb(17, 17, 17, 0.7) 0%, rgba(95, 95, 95, 0.7) 100%); */
   /* background: linear-gradient(to top, rgba(252, 252, 252, 0.7) rgba(181, 181, 181, 0.7) 100%); */
@@ -123,9 +123,14 @@
   /* border: 2px solid rgb(64, 189, 36); */
   box-shadow: 0 0 3px 1px rgba(46, 46, 46,0.8);
   text-align: center;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  align-items: self-start;
   /* user-select: none; */
 }
+
 .obs .obs_color{
+  height: 60px;
   border-radius: 3px;
   margin: 6px;
   width: 2px;
@@ -445,7 +450,7 @@ OBSTACLES.forEach((obs,i)=>{
   if(obs.val>0) type="good"
   if(obs.val<0) type="bad"
 
-  str+=`<div class="obs ${type} reveal">
+  str+=`<div class="obs ${type}">
           <div class="obs_color"></div>
           <div class=obs_img>
             <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:${-1 * (i+1) * 50}px'; > </div>

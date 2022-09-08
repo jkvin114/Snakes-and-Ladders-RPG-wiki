@@ -73,7 +73,7 @@ const OBSTACLES=[
       },
       {
         "name": "Cobweb",
-        "desc": "Stun",
+        "desc": "root 1 turn",
         "val": -2,
         "idx": 13
       },
@@ -163,7 +163,7 @@ const OBSTACLES=[
       },
       {
         "name": "Poison cobweb",
-        "desc": "stun and slowness",
+        "desc": "root and slowness",
         "val": -3,
         "idx": 28
       },
@@ -193,7 +193,7 @@ const OBSTACLES=[
       },
       {
         "name": "Kidnapper",
-        "desc": "choose between -300 HP and stun for 2 turns",
+        "desc": "choose between -300 HP and root for 2 turns",
         "val": -5,
         "idx": 33
       },
@@ -205,7 +205,7 @@ const OBSTACLES=[
       },
       {
         "name": "Jail",
-        "desc": "speed effect after stun for 3 turns",
+        "desc": "speed effect after root for 3 turns",
         "val": -5,
         "idx": 35
       },
@@ -241,7 +241,7 @@ const OBSTACLES=[
       },
       {
         "name": "Net",
-        "desc": "stun 1 turn",
+        "desc": "root 1 turn",
         "val": -2,
         "idx": 41
       },
@@ -378,7 +378,7 @@ const OBSTACLES=[
         "idx": 63
       },
       {
-        "name": "Private loan",
+        "name": "Debt",
         "desc": "Can`t earn money, can`t sell tokens for 2 turns ",
         "val": -4,
         "idx": 64
