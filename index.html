@@ -238,20 +238,23 @@
     border-radius: 10px;
     margin-bottom: 10px;
   }
-  #play{
-    font-size: 35px;
+  #play,  #tech{
+    font-size: 25px;
     font-weight: bold;
+    text-decoration: underline;
     color: white;
     border: none;
     border-radius:10px ;
-    box-shadow: 0 0 6px 2px rgba(46, 46, 46,0.8);
+    /* box-shadow: 0 0 6px 2px rgba(46, 46, 46,0.8); */
     padding: 4px;
     /* border: 2px solid #ffb341 ; */
-    background:linear-gradient(to left,#FF416C,#FF4B2B);  
-    transition: transform 0.5s;
+    /* background:linear-gradient(to left,#FF416C,#FF4B2B);   */
+    background: transparent;
+    /* transition: transform 0.5s; */
   }
-  #play:hover,#tech:hover{
-    transform: translateY(-10px);
+  #play:focus,#tech:focus{
+    outline: none;
+    /* transform: translateY(-10px); */
   }
   
   .btn-container{
@@ -261,7 +264,7 @@
   .btn-container button{
     margin: 20px;
   }
-  #tech{
+  #tech3{
     transition: transform 0.5s;
 
     font-size: 30px;
@@ -273,18 +276,6 @@
     padding: 3px;
     /* border: 2px solid #ffb341 ; */
     background:linear-gradient(to right,#4e54c8,#8f94fb);
-  }
-  #github{
-    width: 50px;
-    cursor: pointer;
-    /* font-weight: bold; */
-    /* color: white; */
-    border: none;
-    border-radius:5px ;
-    box-shadow: 0 0 6px 2px rgba(46, 46, 46,0.8);
-    padding: 3px;
-    /* border: 2px solid #ffb341 ; */
-    background:black;
   }
 </style>
 
@@ -339,6 +330,9 @@
               Snakes-and-Ladders RPG is a tabletop role-playing game that combined traditional dice
               game(snakes-and-ladders) and RPG game.
             </p>
+            <button id="play" onclick="ref('http:\/\/34.202.98.227:4000')"> &#9654;PLAY NOW</button>
+            <button id="tech" onclick="ref('tech.html')"> &#9654;Technical Overview</button>
+
           </div>
         </div>
 
@@ -381,31 +375,8 @@
 
         <div class="d-flex justify-content-between align-items-center">
         </div>
-        <div class="btn-container" >
-          <button id="play" onclick="ref('http:\/\/34.202.98.227:4000')"> &#9654;PLAY NOW</button>
-          <button id="tech" onclick="ref('tech.html')"> &#9654;Technical Overview</button>
-          <img id="github" onclick="ref('https:\/\/github.com/jkvin114/salr-server-ts')" src="assets/img/github.svg">
-        </div>
-        <div class="btn-container">
-        </div>
 
-        <div class="">
-          <div class="sal">
-            <img id="sal_img" src="https://miro.medium.com/max/2500/1*Rpgz5awj07UpKRuDSzWk-Q.jpeg">
-            <div>
-              <h4>Comparison with traditional Snakes-and-Ladders</h4>
-              <p>
-                In Snakes-and-Ladders RPG, there is <b>kill</b> ,which gives one more chance to throw dice, instead of
-                <b>Ladders</b>,
-                and there is <b>death</b>, which sends the player back to designated respawn(revival) square, instead
-                of <b>snakes.</b> <br><br>
-              The main difference is that these factors are determined by not only luck, but also the rpg-style battle
-                between players and obstacles on the map.</p>
-            </div>
-            
-          </div>
-      
-        </div>
+     
         <h3>In-game screenshots(as of August 2022)</h3><hr>
         <div class=img_grid>
           
@@ -424,6 +395,11 @@
 
             <a>Casino map</a>
           </div> -->
+          <div class="gridimg reveal">
+            <div class="gridimg-img" style="background:url('assets/img/sc (2).png') no-repeat center;background-size: cover;"></div>
+
+            <a>Matching</a>
+          </div>
           <div class="gridimg reveal">
             <div class="gridimg-img" style="background:url('assets/img/sc (7).png') no-repeat center;background-size: cover;"></div>
             <a>Selecting Skill Target</a>
@@ -445,11 +421,7 @@
 
             <a>Lobby</a>
           </div> -->
-          <div class="gridimg reveal">
-            <div class="gridimg-img" style="background:url('assets/img/sc (2).png') no-repeat center;background-size: cover;"></div>
-
-            <a>Matching</a>
-          </div>
+         
           <div class="gridimg reveal">
             <div class="gridimg-img" style="background:url('assets/img/sc (3).png') no-repeat center;background-size: cover;"></div>
 
@@ -472,14 +444,30 @@
           <a>Game result database</a>
         </div>
       </div><br>
-      <div class="reveal">
+      <div class="">
         <h3>Demo Video</h3>
         <hr>
         <iframe  width="700" height="365" src="https://www.youtube.com/embed/oFcqx63MZU4" title="YouTube video player"
           frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
-      
+      <div class="">
+        <div class="sal">
+          <img id="sal_img" src="https://miro.medium.com/max/2500/1*Rpgz5awj07UpKRuDSzWk-Q.jpeg">
+          <div>
+            <h4>Comparison with traditional Snakes-and-Ladders</h4>
+            <p>
+              In Snakes-and-Ladders RPG, there is <b>kill</b> ,which gives one more chance to throw dice, instead of
+              <b>Ladders</b>,
+              and there is <b>death</b>, which sends the player back to designated respawn(revival) square, instead
+              of <b>snakes.</b> <br><br>
+            The main difference is that these factors are determined by not only luck, but also the rpg-style battle
+              between players and obstacles on the map.</p>
+          </div>
+          
+        </div>
+    
+      </div>
       
       <div class="reveal character-container">
         <h4>9 Unique Characters<a href="character.html" class="more">More > </a></h4><hr>

@@ -45,10 +45,10 @@
 
   .breadcrumbs img{
     /* width:50vw; */
-    display:block;
+    /* display:block; */
     /* border:rgb(114, 159, 255) 4px solid; */
 
-    box-shadow: 0 0 3px 1px rgba(46, 46, 46,0.8);    
+    /* box-shadow: 0 0 3px 1px rgba(46, 46, 46,0.8);     */
     margin-top:3vw;
     margin-bottom:3vw;
   }
@@ -62,6 +62,22 @@
     margin-top:40px;
     /* font-size: 3vw; */
   
+  }
+  #github{
+    width: 50px;
+    cursor: pointer;
+    /* font-weight: bold; */
+    /* color: white; */
+    border: none;
+    border-radius:5px ;
+    box-shadow: 0 0 6px 2px rgba(46, 46, 46,0.8);
+    padding: 3px;
+    /* border: 2px solid #ffb341 ; */
+    background:black;
+  }
+  .stack-img{
+    height: 150px;
+    display: inline;
   }
 </style>
 <body>
@@ -99,6 +115,8 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Technical overview</h2>          
         </div>
+        <img id="github" onclick="ref('https:\/\/github.com/jkvin114/salr-server-ts')" src="assets/img/github.svg">
+
         <h3><strong><strong>Tech Stack</strong></strong></h3><div class="page-body">
         </p><h3 id="bf8a9348-b11b-4605-b831-30a56b83b659" class="">Dev Environment</h3><ul id="a291e9f6-44ed-446f-9fc3-8cbea580e81c" class="bulleted-list"><li style="list-style-type:disc">OS: Window 10 64bit</li></ul><ul id="35fd3803-4ccf-46a9-b561-bce22aaabc14" class="bulleted-list"><li style="list-style-type:disc">IDE: Visual Studio Code </li></ul><ul id="1725520f-7a13-487d-b73f-1599301cf100" class="bulleted-list"><li style="list-style-type:disc">Google Chrome </li></ul>
         <ul id="e056e13f-9ce2-4e8a-b5c7-4c9799a6fbe5" class="bulleted-list">
@@ -106,32 +124,43 @@
           <ul id="51b3c52d-974a-4e2f-9e69-96c24473684e" class="bulleted-list">
             <li style="list-style-type:disc">Github, Github desktop</li></ul>
             <h3 id="d21ffd22-fc00-4227-97de-d8275577b7e6" class="">Client</h3>
+            <img class="stack-img" src="assets/img/tech/stack (1).png"> 
+            <img class="stack-img" src="assets/img/tech/stack (2).png"> 
+            <img class="stack-img" src="assets/img/tech/stack (6).png"> 
+            <img class="stack-img" src="assets/img/tech/jquery.jpg"> 
+
             <ul id="70e89114-6692-43e3-b497-5fae5f9c851d" class="bulleted-list">
               <li style="list-style-type:disc">HTML 5</li></ul>
               <ul id="f463efb7-b99c-4ffe-9f70-a66deb1e2980" class="bulleted-list">
                 <li style="list-style-type:disc">CSS 3</li></ul>
                 <ul id="feb53a96-a732-4576-94ea-7ab24525fa16" class="bulleted-list">
                   <li style="list-style-type:disc">Javascript(ECMAScript)<ul id="0feec0f5-51ea-41d6-9677-e25d6ab158b0" class="bulleted-list">
-                    <li style="list-style-type:circle">Fabric.js 3.6.2</li></ul>
+                    <li style="list-style-type:circle">Fabric.js</li></ul>
                     <ul id="85257d8f-759d-495c-bf18-a9ad0406e095" class="bulleted-list">
-                      <li style="list-style-type:circle">JQuery 3.6.0</li></ul>
+                      <li style="list-style-type:circle">JQuery</li></ul>
                       <ul id="e5f35de8-79db-4287-b42c-bd84f0ce6e5b" class="bulleted-list">
-                        <li style="list-style-type:circle">Socket.io 4.4.1</li></ul></li></ul>
+                        <li style="list-style-type:circle">Socket.io</li></ul></li></ul>
                         <h3 id="51cdc7a0-0a07-4782-9f65-9737c21aaa75" class="">Server</h3>
+                        <img class="stack-img" src="assets/img/tech/stack (3).png"> 
+                        <img class="stack-img" src="assets/img/tech/stack (5).png"> 
+                        <img class="stack-img" src="assets/img/tech/stack (1).jpg"> 
+
                         <ul id="f9e49d51-2861-4ca0-b809-3e856b1fb9f2" class="bulleted-list">
-                          <li style="list-style-type:disc">Typescript 4.4.4</li></ul>
+                          <li style="list-style-type:disc">Typescript</li></ul>
                           <ul id="95d822ce-dbbf-4cd9-845d-3fff42dd7cc8" class="bulleted-list">
-                            <li style="list-style-type:disc">Node.js (ts-node) 10.3.0<ul id="10ec9fb2-7825-4245-a58d-31ee86fd85e7" class="bulleted-list">
-                              <li style="list-style-type:circle">npm 6.14.15</li></ul>
-                              <ul id="a8d004ea-6c31-4430-a72e-326eec2ab438" class="bulleted-list"><li style="list-style-type:circle">Socket.io 3.0.2</li></ul>
-                              <ul id="39178c3a-555e-454d-afa1-d5b43e1c58dd" class="bulleted-list"><li style="list-style-type:circle">Express 4.17.13</li></ul>
-                            </li></ul><ul id="0bded892-fef1-4dcf-b1c7-f7bd4e21c2db" class="bulleted-list"><li style="list-style-type:disc">MongoDB 5.0.6</li>
+                            <li style="list-style-type:disc">Node.js (ts-node)<ul id="10ec9fb2-7825-4245-a58d-31ee86fd85e7" class="bulleted-list">
+                              <li style="list-style-type:circle">npm</li></ul>
+                              <ul id="a8d004ea-6c31-4430-a72e-326eec2ab438" class="bulleted-list"><li style="list-style-type:circle">Socket.io </li></ul>
+                              <ul id="39178c3a-555e-454d-afa1-d5b43e1c58dd" class="bulleted-list"><li style="list-style-type:circle">Express </li></ul>
+                            </li></ul><ul id="0bded892-fef1-4dcf-b1c7-f7bd4e21c2db" class="bulleted-list"><li style="list-style-type:disc">MongoDB</li>
                             </ul><p id="fa333992-a471-487b-87ce-e6ad6dd472da" class="">
         </p><h3 id="9134ab2e-e914-4811-aa60-b251be428d11" class="">Cloud</h3>
+        <img class="stack-img" src="assets/img/tech/stack (4).png"> 
+
         <ul id="c9ed1b50-e9f4-4395-8361-b6bfdf13d928" class="bulleted-list">
           <li style="list-style-type:disc">MongoDB Atlas</li></ul><ul id="56d4bd95-5274-49ea-8118-394615d24537" class="bulleted-list">
             <li style="list-style-type:disc">AWS EC2<ul id="1e302a22-aae7-4b7c-9f5a-f38732786e65" class="bulleted-list">
-              <li style="list-style-type:circle">Ubuntu Linux</li></ul><p id="0f961a5a-b6e4-429a-a6c6-8d02fc4b1dd8" class="">
+              <li style="list-style-type:circle">Ubuntu</li></ul><p id="0f961a5a-b6e4-429a-a6c6-8d02fc4b1dd8" class="">
         </p></li></ul></div>
         <h4>Gameloop Flowchart</h4>
         <img class="largeimg" src="assets/img/flow.jpg">
