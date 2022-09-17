@@ -4,7 +4,9 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-
+function ref(link){
+  window.location.href=link
+}
 function reveal() {
   console.log("reveal")
   let reveals = document.querySelectorAll(".reveal");
