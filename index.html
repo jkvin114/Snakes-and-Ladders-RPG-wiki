@@ -18,6 +18,9 @@
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
     rel="stylesheet">
   <!-- Vendor CSS Files -->
+  
+  <!-- <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet"> -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
   <!-- Template Main CSS File -->
@@ -165,13 +168,14 @@
   display: inline-block;
   transform: scale(0.9);
   vertical-align: bottom;
-  background-color: #ced9e9;
+  background-color: #6698b3;
   border-radius: 4px;
- 
+ margin: 3px;
 }
 .character{
   position: relative;
-    background-color: #3e3a51;
+    /* background-color: #3e3a51; */
+    background-color: #406478;
     /* max-width: 800px; */
     border-radius: 5px;
     margin: 5px;
@@ -186,7 +190,7 @@
   .character-cover
   {
     border-radius: 5px;
-
+    font-size: 12px;
     transition: all 0.5s;
     display: none;
     position: absolute;
@@ -210,38 +214,41 @@
   .character-container{
     
     /* text-align: center; */
-    background:linear-gradient(to right,#4e54c8,#8f94fb);
+    /* background:linear-gradient(to right,#4e54c8,#8f94fb); */
+    background-color: #1e4356;
     color: white;
     padding: 15px;
     padding-top: 25px;
     padding-bottom  : 25px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin-bottom: 10px;
   }
   .item-container{
-    background:linear-gradient(to right,#2C3E50,#4CA1AF);
+    text-align: center;
+    /* background:linear-gradient(to right,#2C3E50,#4CA1AF); */
+    background-color: #1e4356;
 
     color: white;
     padding: 15px;
     padding-top: 25px;
     padding-bottom  : 25px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin-bottom: 10px;
   }
   .obs-container{
-    background:linear-gradient(to right,#83a4d4,#b6fbff);
-
+    /* background:linear-gradient(to right,#83a4d4,#b6fbff); */
+    background-color: #1e4356;
     color: white;
     padding: 15px;
     padding-top: 25px;
     padding-bottom  : 25px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin-bottom: 10px;
   }
   #play,  #tech{
     font-size: 25px;
     font-weight: bold;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: white;
     border: none;
     border-radius:10px ;
@@ -276,6 +283,21 @@
     padding: 3px;
     /* border: 2px solid #ffb341 ; */
     background:linear-gradient(to right,#4e54c8,#8f94fb);
+  }
+  .why-us{
+    margin-top: 20px;
+  }
+  @media (min-width: 1400px){
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+      max-width: 1320px;
+  }
+  .container{
+    padding: 10px;
+  }
+  
+}
+.portfolio-item{
+    background: transparent;
   }
 </style>
 
@@ -330,8 +352,9 @@
               Snakes-and-Ladders RPG is a tabletop role-playing game that combined traditional dice
               game(snakes-and-ladders) and RPG game.
             </p>
-            <button id="play" onclick="ref('http:\/\/34.202.98.227:4000')"> &#9654;PLAY NOW</button>
-            <button id="tech" onclick="ref('tech.html')"> &#9654;Technical Overview</button>
+            
+            <button id="play" class="btn-get-started animate__animated animate__fadeInUp" onclick="ref('http:\/\/34.202.98.227:4000')"> &#9654;PLAY NOW</button>
+            <button id="tech" class="btn-get-started animate__animated animate__fadeInUp" onclick="ref('tech.html')"> Technical Overview</button>
 
           </div>
         </div>
@@ -369,22 +392,68 @@
     </section>
 
     <!-- ======= Our Services Section ======= -->
-    <section class="breadcrumbs">
+    <section class="breadcrumbs"><h2 style="text-align: center;">In-game screenshots</h2>
+    </section>
+        <!-- <div class="d-flex justify-content-between align-items-center">
+        </div> -->
 
-      <div class="container">
+        <section class="portfolio">
+          <div class="container">
+              
 
-        <div class="d-flex justify-content-between align-items-center">
-        </div>
-
-     
-        <h3>In-game screenshots(as of August 2022)</h3><hr>
-        <div class=img_grid>
-          
-          <div class="gridimg reveal">
-            <div class="gridimg-img" style="background:url('assets/img/sc (4).png') no-repeat center;background-size: cover;"></div>
-
-            <a>The map</a>
+            <div class="row portfolio-container">
+              <div class="col-lg-4 col-md-6 portfolio-wrap  filter-app reveal">
+                <div class="portfolio-item">
+                  <img src="assets/img/sc (2).png" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 portfolio-wrap  filter-app reveal">
+                <div class="portfolio-item">
+                  <img src="assets/img/sc (4).png" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 portfolio-wrap  filter-app reveal">
+                <div class="portfolio-item">
+                  <img src="assets/img/sc (5).png" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 portfolio-wrap  filter-app reveal">
+                <div class="portfolio-item">
+                  <img src="assets/img/sc (7).png" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 portfolio-wrap   filter-app reveal">
+                <div class="portfolio-item">
+                  <img src="assets/img/sc (8).png" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 portfolio-wrap  filter-app reveal">
+                <div class="portfolio-item">
+                  <img src="assets/img/sc (9).png" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 portfolio-wrap  filter-app reveal">
+                <div class="portfolio-item">
+                  <img src="assets/img/sc (10).png" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 portfolio-wrap  filter-app reveal">
+                <div class="portfolio-item">
+                  <img src="assets/img/sc (13).png" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 portfolio-wrap  filter-app reveal">
+                <div class="portfolio-item">
+                  <img src="assets/img/stat.png" class="img-fluid">
+                </div>
+              </div>
+              
+            </div>
           </div>
+        </section>
+        <div class=hidden>
+          
+          
           <!-- <div class="gridimg reveal"> -->
             <!-- <div class="gridimg-img" style="background:url('assets/img/sc (5).png') no-repeat center;background-size: cover;"></div>
 
@@ -395,16 +464,16 @@
 
             <a>Casino map</a>
           </div> -->
-          <div class="gridimg reveal">
+          <div class="col-lg-4 col-md-6 reveal">
             <div class="gridimg-img" style="background:url('assets/img/sc (2).png') no-repeat center;background-size: cover;"></div>
 
             <a>Matching</a>
           </div>
-          <div class="gridimg reveal">
+          <div class="col-lg-4 col-md-6 reveal">
             <div class="gridimg-img" style="background:url('assets/img/sc (7).png') no-repeat center;background-size: cover;"></div>
             <a>Selecting Skill Target</a>
           </div>
-          <div class="gridimg reveal">
+          <div class="col-lg-4 col-md-6 reveal">
             <div class="gridimg-img" style="background:url('assets/img/sc (8).png') no-repeat center;background-size: cover;"></div>
             <a>Skill description</a>
           </div>
@@ -443,33 +512,42 @@
           <div class="gridimg-img" style="background:url('assets/img/sc (11).png') no-repeat center;background-size: cover;"></div>
           <a>Game result database</a>
         </div>
-      </div><br>
-      <div class="">
-        <h3>Demo Video</h3>
-        <hr>
-        <iframe  width="700" height="365" src="https://www.youtube.com/embed/oFcqx63MZU4" title="YouTube video player"
-          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-      <div class="">
-        <div class="sal">
-          <img id="sal_img" src="https://miro.medium.com/max/2500/1*Rpgz5awj07UpKRuDSzWk-Q.jpeg">
-          <div>
-            <h4>Comparison with traditional Snakes-and-Ladders</h4>
-            <p>
-              In Snakes-and-Ladders RPG, there is <b>kill</b> ,which gives one more chance to throw dice, instead of
-              <b>Ladders</b>,
-              and there is <b>death</b>, which sends the player back to designated respawn(revival) square, instead
-              of <b>snakes.</b> <br><br>
-            The main difference is that these factors are determined by not only luck, but also the rpg-style battle
-              between players and obstacles on the map.</p>
-          </div>
-          
+        </div><br>
+     
+      <section class="why-us section-bg " >
+
+        <div class="container reveal">
+          <h3>Demo Video</h3>
+          <hr>
+          <iframe  width="700" height="365" src="https://www.youtube.com/embed/oFcqx63MZU4" title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </div>
+        <br>
+        <div class="container reveal">
+          <div class="row">
+            <div class="col-lg-6">
+  
+              <img id="sal_img" src="https://miro.medium.com/max/2500/1*Rpgz5awj07UpKRuDSzWk-Q.jpeg">
+            </div>
+            <div class="col-lg-6">
+              <h4>Comparison with traditional Snakes-and-Ladders</h4>
+              <p>
+                In Snakes-and-Ladders RPG, there is <b>kill</b> ,which gives one more chance to throw dice, instead of
+                <b>Ladders</b>,
+                and there is <b>death</b>, which sends the player back to designated respawn(revival) square, instead
+                of <b>snakes.</b> <br><br>
+              The main difference is that these factors are determined by not only luck, but also the rpg-style battle
+                between players and obstacles on the map.</p>
+            </div>
+            
+          </div>
+        </div>
+        
     
-      </div>
+      </section>
       
-      <div class="reveal character-container">
+      <div class="reveal character-container hidden">
         <h4>9 Unique Characters<a href="character.html" class="more">More > </a></h4><hr>
         <div class="character">
           <img src="assets/img/character/reaper.png">
@@ -518,7 +596,200 @@
         </div>
       </div>
       <br>
-      <div class="reveal item-container">
+      <div class="service-details">
+
+      
+        <div class="container">
+          <div class="row">
+            
+            <div class="col-md-6 d-flex align-items-stretch aos-init aos-animate reveal" data-aos="fade-up">
+              <div class="card">
+                <div class="card-img"> 
+                  <div class="character-container">
+                    <div class="character">
+                      <img src="assets/img/character/reaper.png">
+                      <div class="character-cover"><b>Reaper</b></div>
+                    </div>
+                    <div class="character">
+                      <img src="assets/img/character/knight.png">
+                      <div class="character-cover"><b>Knight</b></div>
+            
+                    </div>
+                    <div class="character">
+                      <img src="assets/img/character/ghost.png">
+                      <div class="character-cover"><b>Ghost</b></div>
+            
+                    </div>
+                    <div class="character">
+                      <img src="assets/img/character/dinosaur.png">
+                      <div class="character-cover"><b>Dinosaur</b></div>
+            
+                    </div>
+                    <div class="character">
+                      <img src="assets/img/character/tree.png">
+                      <div class="character-cover"><b>Tree</b></div>
+            
+                    </div>
+            
+                    <div class="character">
+                      <img src="assets/img/character/kraken.png">
+                      <div class="character-cover"><b>Kraken</b></div>
+            
+                    </div>
+                    <div class="character">
+                      <img src="assets/img/character/magician.png">
+                      <div class="character-cover"><b>Magician</b></div>
+            
+                    </div>
+                     <div class="character">
+                      <img src="assets/img/character/bird.png">
+                      <div class="character-cover"><b>Bird</b></div>
+            
+                    </div>
+                    <div class="character">
+                      <img src="assets/img/character/sniper.png">
+                      <div class="character-cover"><b>Sniper</b></div>
+            
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a>9 Characters</a>
+                  </h5>
+                  <p class="card-text"> Each characters have their unique concepts and 3 skills, which makes the game more aboundant and fun.</p>
+                  <div class="read-more">
+                    <a href="character.html">
+                      <i class="bi bi-arrow-right"></i> Read More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-stretch aos-init aos-animate reveal" data-aos="fade-up">
+              <div class="card">
+                <div class="card-img"> 
+                  <img src="assets/img/sc (12).png" alt="...">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a>Game statistics</a>
+                  </h5>
+                  <p class="card-text"> The statistics page provides detailed statistics for each game. </p>
+                  <div class="read-more">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-stretch aos-init aos-animate reveal" data-aos="fade-up">
+              <div class="card">
+                <div class="card-img"> 
+                  <div class="obs-container">
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-300px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-2200px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1300px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-600px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-450px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1450px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1550px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1750px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1000px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-650px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-2450px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1950px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-2750px'; > </div>
+                    <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1800px'; > </div>
+            
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a>70+ obstacles</a>
+                  </h5>
+                  <p class="card-text"> Obstacles on the map affects the player by both beneficial and harmful way, which adds the game more variables. Strategic obstacles can be utilized to change the tide of the game. </p>
+                  <div class="read-more">
+                    <a href="map.html">
+                      <i class="bi bi-arrow-right"></i> Read More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-stretch aos-init aos-animate reveal" data-aos="fade-up">
+              <div class="card">
+                <div class="card-img"> 
+                  <div class="item-container">
+                    <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:0px'; ></div>
+                    <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1000px'; ></div>
+                    <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-200px'; ></div>
+                    <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2000px'; ></div>
+                    <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3000px'; ></div>
+                    <br>
+                    <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-400px'; ></div>
+                    <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-1600px'; ></div>
+                    <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2200px'; ></div>
+                    <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2700px'; ></div>
+                    <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3700px'; ></div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a>40 different items</a>
+                  </h5>
+                  <p class="card-text">Players can choose to buy items that they need in various situations, for both offence and defence. </p>
+                  <div class="read-more">
+                    <a href="game_item.html">
+                      <i class="bi bi-arrow-right"></i> Read More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-stretch aos-init aos-animate reveal" data-aos="fade-up">
+              <div class="card">
+                <div class="card-img"> 
+                  <img src="assets/img/sc (5).png" alt="...">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a>3 kinds of map</a>
+                  </h5>
+                  <p class="card-text"> Each map has their own concepts and playstyles </p>
+                  <div class="read-more">
+                    <a href="map.html">
+                      <i class="bi bi-arrow-right"></i> Read More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-stretch aos-init aos-animate reveal" data-aos="fade-up">
+              <div class="card">
+                <div class="card-img"> 
+                  <img src="assets/img/sc (9).png" alt="...">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a>In-game store</a>
+                  </h5>
+                  <p class="card-text">The store helps a player to naviagte through and buy items to increase their strength by upgrading abilities.</p>
+                  <div class="read-more">
+                    <a href="game_item.html">
+                      <i class="bi bi-arrow-right"></i> Read More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal item-container hidden">
         <h4>40 Unique Items<a href="game_item.html" class="more black">More > </a></h4>
         <hr>
         <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:0px'; ></div>
@@ -533,7 +804,7 @@
         <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3700px'; ></div>
       </div>
       <br>
-      <div class="reveal obs-container">
+      <div class="reveal obs-container hidden">
         <h4>70+ obstacles<a href="map.html" class="more black">More > </a></h4><hr>
         <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-300px'; > </div>
         <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-2200px'; > </div>
@@ -551,7 +822,7 @@
         <div class=toast_obsimg><img src='assets/img/map/obstacles.png' style='margin-left:-1800px'; > </div>
 
       </div>
-      <div class="reveal">
+      <div class="reveal hidden">
         <h4>Detailed statistic page</h4><hr>
         <div class=img_grid>
           
@@ -568,7 +839,7 @@
           </div>
           
       </div><br>
-      <div class="reveal">
+      <div class="reveal hidden">
         <h4>Game store<a href="game_item.html" class="more black">More > </a></h4><hr>
   
         <br>
@@ -585,7 +856,7 @@
         </div>
       </div>
       <br>
-      <div class="reveal">
+      <div class="reveal hidden">
         <h4>3 Different maps<a href="map.html" class="more black">More > </a></h4><hr>
         <div class=img_grid>
           <div class="gridimg">
@@ -613,7 +884,7 @@
       <br>
 
       <h2 class="toggle-arrow" data-toggles="patch-notes"><img class="arrow" src="assets/img/arrow.svg">Some Recent Patch Lists(as of June 2021)</h2>
-      <div id="patch-notes" class="hidden"> 
+      <div id="patch-notes" class="hidden container"> 
 
      
       <h4>2021-06-25</h4>
@@ -757,10 +1028,10 @@
       <li>If player enters nothing for room name or nickname, they are randomly selected</li>
       <!-- <p> .... and much more before. (see history page)</p> -->
       </div>
-      </div>
+      
 
 
-    </section><!-- End Our Services Section -->
+    <!-- End Our Services Section -->
 
     <!-- ======= Services Section ======= -->
     <section class="services">

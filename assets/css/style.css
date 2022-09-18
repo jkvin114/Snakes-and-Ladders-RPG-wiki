@@ -640,6 +640,7 @@ section {
 .why-us .container {
   box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
   background: #fff;
+  padding: 20px;
 }
 
 .why-us .icon-box + .icon-box {
@@ -1007,7 +1008,7 @@ section {
   border-radius: 0;
 }
 
-.service-details .card-img img {
+.service-details .card-img > img {
   max-width: 100%;
   transition: all 0.3s ease-in-out;
 }
@@ -1018,7 +1019,7 @@ section {
   border-top: 4px solid #fff;
   padding: 30px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  margin-top: -60px;
+  margin-top: -30px;
   transition: 0.3s;
 }
 
@@ -1049,7 +1050,7 @@ section {
   color: #68A4C4;
 }
 
-.service-details .card:hover img {
+.service-details .card:hover .card-img>img {
   transform: scale(1.1);
 }
 
@@ -1212,7 +1213,7 @@ section {
 }
 
 .portfolio .portfolio-item {
-  background: #1e4356;
+  /* background: #1e4356; */
   overflow: hidden;
   min-height: 200px;
   position: relative;
