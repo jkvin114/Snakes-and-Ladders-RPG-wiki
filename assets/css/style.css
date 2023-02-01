@@ -2211,7 +2211,8 @@ section {
 }
 .largeimg{
   box-shadow: 0 0 3px 1px rgba(46, 46, 46,0.8);
-  width: min(90%,800px);
+  width: min(90%,500px);
+  margin: 20px;
 }
 .dropdown{
   background-color: #123649;

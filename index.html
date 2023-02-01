@@ -393,15 +393,22 @@
     </section>
 
     <!-- ======= Our Services Section ======= -->
-    <section class="breadcrumbs"><h2 style="text-align: center;">In-game screenshots</h2>
-    </section>
+    
+    
         <!-- <div class="d-flex justify-content-between align-items-center">
         </div> -->
 
         <section class="portfolio">
           <div class="container">
-              
-
+            <h5>Made by Yejoon Jung<br>email:<a>jkvin114@gmail.com</a></h5>
+            <h4 style="text-align: center;">Shortcuts</h4>
+            <ul id="portfolio-flters">
+              <li><a href="#screenshots">Screenshots</a></li>
+              <li><a href="#demovideo">Demo Video</a></li>
+              <li><a href="#elements">Elements</a></li>
+              <li><a href="#update-history">Update History</a></li>
+            </ul>
+            <section class="breadcrumbs" id="screenshots"><h2 style="text-align: center;">In-game screenshots</h2></section>
             <div class="row portfolio-container">
               <div class="col-lg-4 col-md-6 portfolio-wrap  filter-app reveal">
                 <div class="portfolio-item">
@@ -514,7 +521,7 @@
           <a>Game result database</a>
         </div>
         </div><br>
-     
+     <div id="demovideo"></div>
       <section class="why-us section-bg " >
 
         <div class="container reveal">
@@ -543,7 +550,7 @@
         
     
       </section>
-      
+      <div id="elements"></div>
       <div class="reveal character-container hidden">
         <h4>9 Unique Characters<a href="character.html" class="more">More > </a></h4><hr>
         <div class="character">
@@ -673,6 +680,12 @@
                     <a>Game statistics</a>
                   </h5>
                   <p class="card-text"> The statistics page provides detailed statistics for each game. </p>
+                  <ul>
+                    <li>kill and death count</li>
+                    <li>Item purchase record</li>
+                    <li>total damage dealt/taken</li>
+                    <li>and more..</li>
+                  </ul>
                   <div class="read-more">
                   </div>
                 </div>
@@ -879,153 +892,468 @@
       <br>
      
       <hr>
+      <div id="update-history"></div>
       <br>
+      <div class="container">
+      <h2>Recent Update History(as of January 2023)</h2>
+      <div id="patch-notes" class=" container"> 
+        <br><h3 class="toggle-arrow" data-toggles="patch-23-1"><img class="arrow" src="assets/img/arrow.svg">Q1 2023</h3><hr>
+        <div id="patch-23-1" class="hidden">
+          <ul>
+            <li>Added 4 new Items: Mystic Wand, Charged Dagger, Thunderbolt Staff, Energized Flail of Reach</li>
+            <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-4000px' ;> </div>
+            <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-4100px' ;> </div>
+            <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-4200px' ;> </div>
+            <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3900px' ;> </div>
 
-      <h2 class="toggle-arrow" data-toggles="patch-notes"><img class="arrow" src="assets/img/arrow.svg">Some Recent Patch Lists(as of June 2021)</h2>
-      <div id="patch-notes" class="hidden container"> 
+            <li>Improved design for tooltips</li>
+            <img class="largeimg" src="assets/img/updates/u (2).png">
 
-     
-      <h4>2021-06-25</h4>
-      <a href="https://github.com/jkvin114/SALR_Server/commit/5854894bc5e2ed4894a5d2468717f0ab59cb100c"> Github
-        Commit(server)</a>
-      <br><a href="https://github.com/jkvin114/SALR-android-webview/commit/01227f5c07689f10234b8e299ffd4cd47b7a2c69">
-        Github Commit(client)</a>
+            <li>Improved player interface and button placement</li>
+            <img class="largeimg" src="assets/img/updates/u (3).png">
+            <img class="largeimg" src="assets/img/updates/u (1).png">
+            <li>Fixed memory leak problem for simulation</li>
+          </ul>
+        </div>
+        <br><h3 class="toggle-arrow" data-toggles="patch-22-4"><img class="arrow" src="assets/img/arrow.svg">Q4 2022</h3><hr> 
+        <div id="patch-22-4" class="hidden">
+          <ul>
+            <li>Stablized player matching system
+            <ul>
+              <li>player turn&nbsp;can be shuffled now</li>
+            </ul>
+            </li>
+            <li>More mobile-friendly layout for the statistic page</li>
+            <img class="largeimg" src="assets/img/updates/u1 (4).png">
+            <li>Added death information window
+            <ul>
+              <li>On death, displays damage source and types during previous 3 turns</li>
+            </ul>
+            </li>
+            <li><strong>Added new character: Hacker</strong></li>
+            <img src="assets/img/updates/u1 (5).jpg">
 
-      <li>Added simulation feature.</li>
-      <ul>
-        <li>Simulate multiple AIs playing the game</li>
-        <li>Can repeat the game multiple times.</li>
-        <li>Statistics for every game are saved. </li>
-      </ul>
-      <li>Added AI for Sniper and Magician</li>
-      <li>Improved AI item buying algorithm</li>
-      <ul>
-        <li>Before: If AI try to buy an item but don`t have enough money, AI still buy its sub item, even if AI have
-          that sub item. </li>
-        <li>After: AI don`t buy sub item if the AI have that sub item</li>
-      </ul>
-      <li>AI can now buy additional life on the casino map if AI have no more items to buy</li>
-      <li>If the statistics file contains multiple games, you can select and see the statistics of each game in
-        statistics page</li>
+            <img class="largeimg" src="assets/img/updates/u1 (3).png">
+            <li><strong>Post board updates</strong></li>
+            <ul>
+              <li>Added user page with user settings</li>
+              <li>Can set user profile image</li>
+              <li>Friend/follow functionality between users</li>
+            </ul>
+            <img class="largeimg" src="assets/img/updates/u1 (1).png">
+            <img class="largeimg" src="assets/img/updates/u1 (2).png">
+            <img class="largeimg" src="assets/img/updates/u1 (6).png">
 
-      <hr class="widehr">
-      <h4>2021-06-22</h4>
-      <a href="https://github.com/jkvin114/SALR_Server/commit/79d3933bf8a799b4a05cb2f930b033895c3655df"> Github
-        Commit(server)</a>
-      <br> <a href="https://github.com/jkvin114/SALR-android-webview/commit/65a5fc4dba92d6638354e5527a5effd00fed7c09">
-        Github Commit(client)</a>
-      <li>Added two items for countering tank characters</li>
-      <ul>
-        <li>Medieval Bow: gives armor and magic penetration</li>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3000px' ;> </div>
-        <li>Crossbow of Piercing: gives additional magic damage, adaptative stat, and percent armor and magic
-          penetration</li>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3100px' ;> </div>
-      </ul>
-      <li>Kill/death/assist no longer counts if the player revives from death </li>
-      <li>Added graphic effect for revival</li>
-      <li>Added Activeitem attribute on Player class for future addition of items that has cooltime</li>
-      <li>Guardian Angel now has unique passive:revive when dies (cooldown 15 turns) </li>
-      <hr class="widehr">
-      <h4>2021-06-19</h4>
-      <li>Added shield indication bar under the health bar</li>
-      <li>Fixed bug that AI not buying items on store</li>
-      <li>Buffed the effect of Commision obsatacle</li>
-      <ul>
-        <li>Before: obtain 2$ each for every player`s total tokens</li>
-        <li>After:take away and obtain 5% of money + 2$ per coins of every player</li>
-      </ul>
-      <hr class="widehr">
-      <h4>2021-06-18</h4>
-      <a href="https://github.com/jkvin114/SALR_Server/commit/79d3933bf8a799b4a05cb2f930b033895c3655df"> Github
-        Commit(server)</a>
-      <br> <a href="https://github.com/jkvin114/SALR-android-webview/commit/06c7863f1de22b8d4899b217d7276036a8834932">
-        Github Commit(client)</a>
-      <li>Add timeout for every pending player actions such as selecting skill, selecting target, thworing dice, and
-        etc.</li>
-      <li>Used setTimeout() and clearTimeout() functions to automatically skip the player turn if there is no player
-        input for certain period.</li>
-      <li>Added progress bar for timeout on the game screen</li>
-      <li>Added cooltime of the skill in the skill description</li>
-      <hr class="widehr">
-      <h4>2021-06-15</h4>
-      <li>Fixed a bug that statistics not saving to .txt file after game finishes</li>
-      <li>Added feature in the statistics page to drag and drop statistics file to see any past statistics you want.
-      </li>
-      <li>Added item images to statistics page to see what items each player bought</li>
-      <img class="largeimg" src="assets/img/patch4.jpg">
-      <li>Added team play</li>
-      <img class="largeimg" src="assets/img/patch1.jpg">
-      <ul>
-        <li>You can choose teams between blue and red team after you select character and add AI or other players</li>
-        <li>Team play is avaliable only if there is 4 players. (can include AI)</li>
-        <li>Host can also decide AI`s teams, guest can only choose his team.</li>
-        <li>Can start the game unless every players are on the same team</li>
-        <li>This means 1:3 or 3:1 games are also avaliable</li>
-      </ul>
-      <hr class="widehr">
-      <h4>2021-06-14</h4>
-      <li>Improved Dinosaur`s AI</li>
-      <li>Maximum health growth on level up is now differ from each character</li>
-      <li>Changed unique passive effect of Boots item</li>
-      <li>Added two language options in the client</li>
-      <li>Fixed respawn position bug</li>
-      <hr class="widehr">
-      <h4>2021-06-13</h4>
-      <a href="https://github.com/jkvin114/SALR_Server/commit/5ed0cc5c065a618445a9c4a6d5143f42c86d0d21"> Github
-        Commit(server)</a>
-      <br> <a href="https://github.com/jkvin114/SALR-android-webview/commit/293bbb55724b581e77df4b50f6201349a0ebc941">
-        Github Commit(client)</a>
+          </ul>
+          
+          <p>&nbsp;</p>
+          
+        </div>
+        <br><h3 class="toggle-arrow" data-toggles="patch-22-3"><img class="arrow" src="assets/img/arrow.svg">Q3 2022</h3><hr> 
+        <div id="patch-22-3" class="hidden">
+          <ul>
+            <li><strong>Added post board with the following functionalities using REST APIs and MongoDB</strong>
+            <ul>
+              <li>Write, read, edit, and delete posts</li>
+              <li>Can attach an image for posts</li>
+              <li>view counter for posts</li>
+              <li>Write, read, and delete comments and comment replies</li>
+              <li>like or dislike posts, comments, and comment replies</li>
+              <li>group posts and comments for each user
+              <ul>
+                <li>sort comments by posted date or likes</li>
+              </ul>
+              </li>
+            </ul>
 
-      <li>Nerfed Potion obstacle: Lv3 skill`s colltime now 50% decreased instead of reset</li>
-      <li>Added skill haste to the Ancient Spear and Power of Mother Nature items</li>
-      <li>The character in the board become half transparent if it has invisibility effect</li>
-      <li>Indicates the dice number modification every time before throwing dice</li>
-      <li>Some balancings to lv3 skills</li>
-      <li>Added new passive ablity to Ghost`s lv2 skill</li>
-      <li>Fixed bug with mine obstacles</li>
-      <li>Added two movement speed items</li>
-      <ul>
-        <li>Boots: gives conditional movement speed</li>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2800px' ;> </div>
-        <li>Boots of haste: can ignore slow effect for faster movement</li>
-        <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2900px' ;> </div>
-      </ul>
-      <hr class="widehr">
-      <h4>2021-06-12</h4>
-      <li>Added obstacle resistance stat</li>
-      <li>Replaced stat: heal on basic attack with heal on every damage</li>
-      <li>Nerfed attack resistance and magic resistance items</li>
-      <li>Player now gets more gold on kill on multiple kills or stopping other players from multiple kills</li>
-      <li>Added indication for how many multiple kill the player has done</li>
-      <li>Added detailed skill description</li>
-      <li>When placing a projectile, now it shows the range of the projectile</li>
-      <li>Added kill/death/assist indicator window</li>
-      <li>Increased bonus dice number on fell behind</li>
-      <li>Ignite effect now remembers the source of the effect</li>
-      <li>Added various status effect for character skills</li>
-      <ul>
-        <li>Ignite on Magician`s lv2 skill</li>
-        <li>Backdice effect on Sniper`s lv2 skill</li>
-        <li>Curse effect for Elephant`s lv2 skill</li>
-      </ul>
-      <hr class="widehr">
-      <h4>2021-06-03</h4>
-      <li>The player now receives speed effect on kill</li>
-      <li>Change and Summon obstacles now include invulnerable or invisible players</li>
-      <li>Moving a player via god`s hand now can be count as assist if the player dies</li>
-      <li>Fixed error on damage dealt statistics</li>
-      <hr class="widehr">
-      <h4>2021-05-29</h4>
-      <li>Player nickname indicated on the board over the character</li>
-      <li>Fixed bug where the game stops if the host kicks the player between other two players on player matching</li>
-      <hr class="widehr">
-      <h4>2021-05-28</h4>
-      <li>Added sound effect for Lv3 skill and some obstacles</li>
-      <li>Added checking process to prevent having same room names</li>
-      <li>If player enters nothing for room name or nickname, they are randomly selected</li>
-      <!-- <p> .... and much more before. (see history page)</p> -->
-      </div>
+            </li>
+            <img class="largeimg" src="assets/img/updates/u2 (2).png">
+            <img class="largeimg" src="assets/img/updates/u2 (3).png">
+            <img class="largeimg" src="assets/img/updates/u2 (4).png">
+
+            <li>Added a small health bar for each player</li>
+            <li>Improved first page and matching page interface design</li>
+            <img class="largeimg" src="assets/img/sc (2).png">
+            <li>Statistics page design overhaul</li>
+            <img class="largeimg" src="assets/img/sc (12).png">
+            <img class="largeimg" src="assets/img/sc (13).png">
+            <img class="largeimg" src="assets/img/stat.png">
+            <li><strong>Added replay feature</strong>
+            <ul>
+              <li>recording of a game that can be viewed later</li>
+              <li>records every game event in the database and can be viewed by &quot;view replay&quot; button on the statistics page</li>
+              <li>can control speed or pause it using the control panel</li>
+            </ul>
+            </li>
+            <img class="largeimg" src="assets/img/updates/u2 (1).png">
+            <img class="largeimg" src="assets/img/serverclient.jpg">
+            <li><strong>Added new map: Rapid Intense Battle</strong></li>
+            <img class="largeimg" src="assets/img/updates/u2 (5).png">
+            <img class="largeimg" src="assets/img/updates/u2 (6).png">
+
+          </ul>
+          
+          <p>&nbsp;</p>
+          
+        </div>
+        <br><h3 class="toggle-arrow" data-toggles="patch-22-2"><img class="arrow" src="assets/img/arrow.svg">Q2 2022</h3><hr> 
+        <div id="patch-22-2" class="hidden">
+          <ul>
+            <li>Code refactoring for AI agent
+            <ul>
+              <li>Agent for each character overrides methods of its parent class AIAgent
+              <ul>
+                <li>each character has its own decision algorithm for the order of using skills, where to place projectiles, and which target it should attack.</li>
+              </ul>
+              </li>
+            </ul>
+            </li>
+            <li>Added basic attack button
+            <ul>
+              <li>basic attack no longer happens automatically but is invoked using the button</li>
+              <li>displays available basic attack count</li>
+            </ul>
+            <img class="largeimg" src="assets/img/updates/u3 (2).png">
+
+            </li>
+            <li><strong>Game cycle refactoring using state pattern</strong></li>
+            <img class="largeimg" src="assets/img/flow.jpg">
+            <img class="largeimg" src="assets/img/state.jpg">
+            <li>Improved visual effects for some skill attacks</li>
+            <img class="largeimg" src="assets/img/updates/u3 (3).png">
+
+            <li>Improved design for roulette</li>
+            <img class="largeimg" src="assets/img/updates/u3 (4).png">
+
+            <li>Responsive interface for mobile device</li>
+            <img class="largeimg" src="assets/img/updates/u3 (1).jpg">
+
+            <li>Added new item: Time Warp Potion</li>
+            <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3800px' ;> </div>
+
+            <li>Added active item indicator</li>
+            <img class="largeimg" src="assets/img/updates/u3 (5).png">
+
+            <li>Improved design for consecutive kill indicator</li>
+            <img class="largeimg" src="assets/img/updates/u3 (6).png">
+            <img class="largeimg" src="assets/img/updates/u3 (7).png">
+
+            <li>Improved interface for store
+            <ul>
+              <li>toggle between grid and list views for items</li>
+            </ul>
+            <img class="largeimg" src="assets/img/updates/u3 (8).png">
+
+            </li>
+            <li><strong>Multithreading for simulation</strong>
+            <ul>
+              <li>​​​​​​​Starting a simulation creates&nbsp;new worker-thread</li>
+              <li>No longer blocks other tasks while simulation is running</li>
+            </ul>
+            </li>
+          </ul>
+          
+        </div>
+        <br><h3 class="toggle-arrow" data-toggles="patch-22-1"><img class="arrow" src="assets/img/arrow.svg">Q1 2022</h3><hr> 
+        <div id="patch-22-1" class="hidden">
+          <ul>
+            <li>
+            <p><strong>Game statistics are now stored using MongoDB</strong></p>
+            </li>
+            <li>
+            <p>Split functionality of player class as multiple components</p>
+            </li>
+            <li>
+            <p>Added game setting feature</p>
+            </li>            
+            <img class="largeimg" src="assets/img/updates/u4 (4).png">
+
+            <li>
+            <p>Added simulation selection page</p>
+            </li><img class="largeimg" src="assets/img/updates/u4 (1).png">
+            <li>
+            <p>Added new items: Card of Deception, Boots of Protection, Boots of Preservation</p>
+            </li>            
+            <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3700px' ;> </div>
+
+            <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3600px' ;> </div>
+
+            <li>
+            <p>Improved statistic page interface design</p>
+            </li><img class="largeimg" src="assets/img/updates/u4 (2).png">
+            <img class="largeimg" src="assets/img/updates/u4 (3).png">
+            <li>
+            <p>Improved design for board squares</p>
+            </li>
+            <li>
+            <p><strong>Refactoring for the status effect</strong></p>
+            <ul>
+              <li>
+              <p>Group various status effects by functionality</p>
+              </li>
+            </ul>
+            </li>
+            <li>
+            <p><strong>Improved sign-in and sign-up features using session</strong></p>
+            </li>
+            <li>
+            <p><strong>Added new character: Tree</strong></p>
+            </li><img src="assets/img/updates/u4 (1).jpg">
+            <li>
+            <p>Skill description window design update</p>
+            </li>
+            <img class="largeimg" src="assets/img/sc (8).png">
+            <li>
+            <p><strong>Refactoring for player interactions using mediator pattern</strong></p>
+          
+            <ul>
+              <li>
+              <p>EntityMediator - handles every interaction between players and entities such as attacks.</p>
+              </li>
+              <li>
+              <p>EntityFilter - A helper class to select entities by customizable settings</p>
+              </li>
+            </ul>
+            <img class="largeimg" src="assets/img/attacks.jpg">
+            </li>
+            <li>
+            <p>Skill and item cooltime display using gradient</p>
+            </li>
+            <img class="largeimg" src="assets/img/updates/u3 (1).png">
+          </ul>
+          
+          <p>&nbsp;</p>
+          
+        </div>
+        <br><h3 class="toggle-arrow" data-toggles="patch-21-4"><img class="arrow" src="assets/img/arrow.svg">Q4 2021</h3><hr> 
+        <div id="patch-21-4" class="hidden">
+
+          <ul>
+            <li>
+            <p>Statistic page design update</p>
+            </li>
+            <li>
+            <p>Optimized client graphics using chrome developer tools</p>
+            </li>
+            <li>
+            <p>simultaneous attacks are now displayed in clients with certain intervals</p>
+            </li>
+            <li>
+            <p>Added visual effects for death and revival</p>
+            </li>
+            <li>
+            <p>Refactored client code</p>
+          
+            <ul>
+              <li>
+              <p>split codes into multiple singleton classes by their functionality such as game logic, interface buttons and indicators,&nbsp;websocket connections, board graphics, and store logic.</p>
+              </li>
+            </ul>
+            </li>
+            <li>
+            <p><strong>Migrated server code to typescript</strong></p>
+          
+            <ul>
+              <li>
+              <p>For better structuring of the code and future maintenance</p>
+              </li>
+            </ul>
+            </li>
+            <li>
+            <p><strong>Added new character: Bird</strong></p>
+            </li><img src="assets/img/updates/u5 (1).jpg">
+            <li>
+            <p>Casino Map rework</p>
+          
+            <ul>
+              <li>
+              <p>added new system: subway</p>
+              </li>
+              <li>
+              <p>changed obstacle and respawn positions</p>
+              </li>
+              <li>
+              <p>changed some obstacle images</p>
+              </li>
+            </ul>
+            <img class="largeimg" src="assets/img/updates/u5 (1).png">
+            </li>
+            <li>
+            <p>Interface updates</p>
+            </li>
+            <img class="largeimg" src="assets/img/updates/u5 (4).png">
+            <img class="largeimg" src="assets/img/updates/u5 (5).png">
+
+            <li>
+            <p>New design for dice control system</p>
+            </li>
+            <li>
+            <p>Added obstacle randomization feature</p>
+            </li>
+            <li>
+            <p>In-Game store interface design overhaul</p>
+          
+            <ul>
+              <li>
+              <p>sorted items with category and item levels</p>
+              </li>
+              <li>
+              <p>item tree display for better navigation between upper and lower-level items</p>
+              </li>
+            </ul>
+            <img class="largeimg" src="assets/img/updates/u5 (3).png">
+            <img class="largeimg" src="assets/img/sc (10).png">
+            </li>
+          </ul>
+          
+        </div>
+        <br><h3 class="toggle-arrow" data-toggles="patch-21-2"><img class="arrow" src="assets/img/arrow.svg">Q2 2021</h3><hr>
+        <div id="patch-21-2" class="hidden">
+
+        
+          <h4>2021-06-25</h4>
+          <a href="https://github.com/jkvin114/SALR_Server/commit/5854894bc5e2ed4894a5d2468717f0ab59cb100c"> Github
+            Commit(server)</a>
+          <br><a href="https://github.com/jkvin114/SALR-android-webview/commit/01227f5c07689f10234b8e299ffd4cd47b7a2c69">
+            Github Commit(client)</a>
+
+          <li>Added simulation feature.</li>
+          <ul>
+            <li>Simulate multiple AIs playing the game</li>
+            <li>Can repeat the game multiple times.</li>
+            <li>Statistics for every game are saved. </li>
+          </ul>
+          <li>Added AI for Sniper and Magician</li>
+          <li>Improved AI item buying algorithm</li>
+          <ul>
+            <li>Before: If AI try to buy an item but don`t have enough money, AI still buy its sub item, even if AI have
+              that sub item. </li>
+            <li>After: AI don`t buy sub item if the AI have that sub item</li>
+          </ul>
+          <li>AI can now buy additional life on the casino map if AI have no more items to buy</li>
+          <li>If the statistics file contains multiple games, you can select and see the statistics of each game in
+            statistics page</li>
+
+          <hr class="widehr">
+          <h4>2021-06-22</h4>
+          <a href="https://github.com/jkvin114/SALR_Server/commit/79d3933bf8a799b4a05cb2f930b033895c3655df"> Github
+            Commit(server)</a>
+          <br> <a href="https://github.com/jkvin114/SALR-android-webview/commit/65a5fc4dba92d6638354e5527a5effd00fed7c09">
+            Github Commit(client)</a>
+          <li>Added two items for countering tank characters</li>
+          <ul>
+            <li>Medieval Bow: gives armor and magic penetration</li>
+            <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3000px' ;> </div>
+            <li>Crossbow of Piercing: gives additional magic damage, adaptative stat, and percent armor and magic
+              penetration</li>
+            <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-3100px' ;> </div>
+          </ul>
+          <li>Kill/death/assist no longer counts if the player revives from death </li>
+          <li>Added graphic effect for revival</li>
+          <li>Added Activeitem attribute on Player class for future addition of items that has cooltime</li>
+          <li>Guardian Angel now has unique passive:revive when dies (cooldown 15 turns) </li>
+          <hr class="widehr">
+          <h4>2021-06-19</h4>
+          <li>Added shield indication bar under the health bar</li>
+          <li>Fixed bug that AI not buying items on store</li>
+          <li>Buffed the effect of Commision obsatacle</li>
+          <ul>
+            <li>Before: obtain 2$ each for every player`s total tokens</li>
+            <li>After:take away and obtain 5% of money + 2$ per coins of every player</li>
+          </ul>
+          <hr class="widehr">
+          <h4>2021-06-18</h4>
+          <a href="https://github.com/jkvin114/SALR_Server/commit/79d3933bf8a799b4a05cb2f930b033895c3655df"> Github
+            Commit(server)</a>
+          <br> <a href="https://github.com/jkvin114/SALR-android-webview/commit/06c7863f1de22b8d4899b217d7276036a8834932">
+            Github Commit(client)</a>
+          <li>Add timeout for every pending player actions such as selecting skill, selecting target, thworing dice, and
+            etc.</li>
+          <li>Used setTimeout() and clearTimeout() functions to automatically skip the player turn if there is no player
+            input for certain period.</li>
+          <li>Added progress bar for timeout on the game screen</li>
+          <li>Added cooltime of the skill in the skill description</li>
+          <hr class="widehr">
+          <h4>2021-06-15</h4>
+          <li>Fixed a bug that statistics not saving to .txt file after game finishes</li>
+          <li>Added feature in the statistics page to drag and drop statistics file to see any past statistics you want.
+          </li>
+          <li>Added item images to statistics page to see what items each player bought</li>
+          <img class="largeimg" src="assets/img/patch4.jpg">
+          <li>Added team play</li>
+          <img class="largeimg" src="assets/img/patch1.jpg">
+          <ul>
+            <li>You can choose teams between blue and red team after you select character and add AI or other players</li>
+            <li>Team play is avaliable only if there is 4 players. (can include AI)</li>
+            <li>Host can also decide AI`s teams, guest can only choose his team.</li>
+            <li>Can start the game unless every players are on the same team</li>
+            <li>This means 1:3 or 3:1 games are also avaliable</li>
+          </ul>
+          <hr class="widehr">
+          <h4>2021-06-14</h4>
+          <li>Improved Dinosaur`s AI</li>
+          <li>Maximum health growth on level up is now differ from each character</li>
+          <li>Changed unique passive effect of Boots item</li>
+          <li>Added two language options in the client</li>
+          <li>Fixed respawn position bug</li>
+          <hr class="widehr">
+          <h4>2021-06-13</h4>
+          <a href="https://github.com/jkvin114/SALR_Server/commit/5ed0cc5c065a618445a9c4a6d5143f42c86d0d21"> Github
+            Commit(server)</a>
+          <br> <a href="https://github.com/jkvin114/SALR-android-webview/commit/293bbb55724b581e77df4b50f6201349a0ebc941">
+            Github Commit(client)</a>
+
+          <li>Nerfed Potion obstacle: Lv3 skill`s colltime now 50% decreased instead of reset</li>
+          <li>Added skill haste to the Ancient Spear and Power of Mother Nature items</li>
+          <li>The character in the board become half transparent if it has invisibility effect</li>
+          <li>Indicates the dice number modification every time before throwing dice</li>
+          <li>Some balancings to lv3 skills</li>
+          <li>Added new passive ablity to Ghost`s lv2 skill</li>
+          <li>Fixed bug with mine obstacles</li>
+          <li>Added two movement speed items</li>
+          <ul>
+            <li>Boots: gives conditional movement speed</li>
+            <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2800px' ;> </div>
+            <li>Boots of haste: can ignore slow effect for faster movement</li>
+            <div class=toast_itemimg><img src='assets/img/items/items.png' style='margin-left:-2900px' ;> </div>
+          </ul>
+          <hr class="widehr">
+          <h4>2021-06-12</h4>
+          <li>Added obstacle resistance stat</li>
+          <li>Replaced stat: heal on basic attack with heal on every damage</li>
+          <li>Nerfed attack resistance and magic resistance items</li>
+          <li>Player now gets more gold on kill on multiple kills or stopping other players from multiple kills</li>
+          <li>Added indication for how many multiple kill the player has done</li>
+          <li>Added detailed skill description</li>
+          <li>When placing a projectile, now it shows the range of the projectile</li>
+          <li>Added kill/death/assist indicator window</li>
+          <li>Increased bonus dice number on fell behind</li>
+          <li>Ignite effect now remembers the source of the effect</li>
+          <li>Added various status effect for character skills</li>
+          <ul>
+            <li>Ignite on Magician`s lv2 skill</li>
+            <li>Backdice effect on Sniper`s lv2 skill</li>
+            <li>Curse effect for Elephant`s lv2 skill</li>
+          </ul>
+          <hr class="widehr">
+          <h4>2021-06-03</h4>
+          <li>The player now receives speed effect on kill</li>
+          <li>Change and Summon obstacles now include invulnerable or invisible players</li>
+          <li>Moving a player via god`s hand now can be count as assist if the player dies</li>
+          <li>Fixed error on damage dealt statistics</li>
+          <hr class="widehr">
+          <h4>2021-05-29</h4>
+          <li>Player nickname indicated on the board over the character</li>
+          <li>Fixed bug where the game stops if the host kicks the player between other two players on player matching</li>
+          <hr class="widehr">
+          <h4>2021-05-28</h4>
+          <li>Added sound effect for Lv3 skill and some obstacles</li>
+          <li>Added checking process to prevent having same room names</li>
+          <li>If player enters nothing for room name or nickname, they are randomly selected</li>
+          <!-- <p> .... and much more before. (see history page)</p> -->
+        </div>
+    </div>
+  </div>
       
 
 
