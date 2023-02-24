@@ -159,13 +159,13 @@ function reveal() {
   $('.back-to-top').click(function() {
     $('html, body').animate({
       scrollTop: 0
-    }, 1500, 'easeInOutExpo');
+    }, 700);
     return false;
   });
 
   // Initiate the venobox plugin
   $(window).on('load', function() {
-    $('.venobox').venobox();
+    // $('.venobox').venobox();
     
   });
 
