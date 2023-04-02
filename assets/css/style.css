@@ -2260,3 +2260,12 @@ section {
   font-size: 12px;
   margin: 3px;
 }
+.portfolio-item-desc{
+  position: absolute;
+  bottom: 9%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  padding: 3px;
+}
