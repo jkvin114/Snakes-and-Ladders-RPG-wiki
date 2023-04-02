@@ -367,7 +367,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 #hero h2 {
   color: #fff;
   margin-bottom: 30px;
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 700;
 }
 
@@ -2195,7 +2195,7 @@ section {
   -webkit-transform: rotate(0deg);
 }
 .arrow{
-  width: 50px;
+  width: 30px;
   /* border: solid black;
   border-width: 0 7px 7px 0; */
   display: inline-block;
