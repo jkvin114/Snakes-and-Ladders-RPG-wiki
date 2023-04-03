@@ -167,7 +167,32 @@ function reveal() {
   $(window).on('load', function() {
     // $('.venobox').venobox();
     
-  });
+    $(".largeimg,.img-fluid").click(function(){
+      console.log("imageclick")
+      let winratio=window.innerHeight/window.innerWidth
+      let imgratio=$(this).height()/$(this).width()
+      $("body").append(`
+        <div id="imageview">
+          <img src="${$(this).attr("src")}">
+        </div>
+      `)
+      if(winratio < imgratio){
+        $("#imageview img").css("height","100%")
+        $("#imageview img").css("width","auto")
+      }
+      
+      $("html").css("overflow","hidden")
+
+      $("#imageview").click(function(){
+        $("#imageview").remove()
+        $("html").css("overflow","auto")
+      })
+    });
+
+
+    })
+    
+ 
 
   // jQuery counterUp
   $('[data-toggle="counter-up"]').counterUp({
@@ -217,7 +242,6 @@ function reveal() {
     duration: 1000,
     easing: "ease-in-out-back"
   });
-
 
  
 
