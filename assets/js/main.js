@@ -8,7 +8,7 @@ function ref(link){
   window.location.href=link
 }
 function reveal() {
-  console.log("reveal")
+  // console.log("reveal")
   let reveals = document.querySelectorAll(".reveal");
 
   for (let i = 0; i < reveals.length; i++) {
@@ -219,8 +219,10 @@ function reveal() {
 
   // Porfolio isotope and filter
   $(window).on('load', function() {
+    
     var portfolioIsotope = $('.portfolio-container').isotope({
       layoutMode: 'fitRows'
+
     });
 
     $('#portfolio-flters li').on('click', function() {
@@ -243,7 +245,7 @@ function reveal() {
     easing: "ease-in-out-back"
   });
 
+  
  
 
 })(jQuery);
-

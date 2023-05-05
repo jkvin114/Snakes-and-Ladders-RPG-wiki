@@ -807,7 +807,14 @@ const ITEMS=[
 	}
 ]
 
+async function fetchjson(){
+	console.log("fetch")
+	const data=await(await fetch("https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/res/map.json")).json()
+	console.log(data)
+}
+  
 $(document).ready(function(){
+	// fetchjson()
     let lvl1=""
     let lvl2=""
     let lvl3=""
