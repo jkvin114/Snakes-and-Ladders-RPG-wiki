@@ -809,17 +809,21 @@ const ITEMS=[
 
 async function fetchjson(){
 	console.log("fetch")
-	const data=await(await fetch("https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/res/map.json")).json()
-	console.log(data)
+	const data=await(await fetch("https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/res/item_new.json")).json()
+	return data
 }
   
-$(document).ready(function(){
+$(document).ready(async function(){
 	// fetchjson()
+	const imagepath="https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/public/res/img/store/items.png"
     let lvl1=""
     let lvl2=""
     let lvl3=""
-    for(const item of ITEMS){
-        let txt=`<div class=toast_itemimg data-itemid=${item.id}><img src='assets/img/items/items.png' style='margin-left:${-1*100*item.id}px'; > </div>`
+	const items=(await fetchjson()).items
+	const itemlocales=(await(await fetch("https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/public/res/locale/game/en.json")).json()).item
+    // console.log(itemlocales)
+	for(const item of items){
+        let txt=`<div class=toast_itemimg data-itemid=${item.id}><img src='${imagepath}' style='margin-left:${-1*100*item.id}px'; > </div>`
         if(item.itemlevel===1){
             lvl1+=txt
         }
@@ -836,8 +840,8 @@ $(document).ready(function(){
     $(".toast_itemimg").click(function(){
         $("#overlay").show()
         $("#item-tooltip").show()
-        const item=ITEMS[$(this).data("itemid")]
-
+        const item=items[$(this).data("itemid")]
+		const locale=itemlocales[$(this).data("itemid")]
         let ability=""
         for (let a of item.ability) {
             let ab = "<a class=ability_name>" + a.type + "</a> +" + a.value
@@ -848,17 +852,17 @@ $(document).ready(function(){
             ability += ab
             ability += "<br>"
         }
-        if (item.unique_effect != null) {
+        if (locale.unique_effect != null) {
             ability += `<b class=unique_effect_name>[Unique Passive]</b>:
-                 ${item.unique_effect}`
+                 ${locale.unique_effect}`
             if(item.active_cooltime!=null){
                 ability+=`(cooltime ${item.active_cooltime} turns)`
             }
         }
         $(".item-name").html(`
         <div class=inline-itemimg-container>
-                  <div class='inline-itemimg large'><img src='assets/img/items/items.png' style='margin-left:${-1*100*item.id}px'; > </div>
-        </div>`+item.name)
+                  <div class='inline-itemimg large'><img src='${imagepath}' style='margin-left:${-1*100*item.id}px'; > </div>
+        </div>`+locale.name)
 
         $(".item-price").html("$"+item.price)
         $(".item-ability").html(ability)
@@ -872,7 +876,7 @@ $(document).ready(function(){
                 <div class=inline-itemimg-container>
                   <div class=inline-itemimg><img src='assets/img/items/items.png' style='margin-left:${-1*100*c}px'; > </div>
                 </div> +`
-                priceLeft-=ITEMS[c].price
+                priceLeft-=items[c].price
             }
             $(".item-build").html("Recipe:"+childs+"<b class=price>$"+priceLeft+"</b>")
         }
