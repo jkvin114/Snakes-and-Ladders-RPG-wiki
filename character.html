@@ -153,23 +153,12 @@
     padding: 5px;
     font-family: "nanumB";
     display: grid;
-    grid-template-columns: min(8vw,100px) auto;
+    grid-template-columns: clamp(50px,8vw,100px) auto;
     max-width: 800px;
     border-radius: 5px;
     
   }
 
-  .skillinfowindow .skillinfo {
-    /* color: #e0c9ff; */
-    color: rgb(153, 153, 153);
-    font-size: clamp(10px,1.5vw,15px);
-    opacity: 1.0;
-    margin-bottom: 20px;
-    font-weight: normal;
-    font-family: "nanumB";
-    line-height: clamp(13px,2.5vw,20px);
-    word-break: keep-all;
-  }
 
 
   .skillinfo>hr {
@@ -180,7 +169,7 @@
   }
 
   .skilltitleimg {
-    width: min(7vw,70px);
+    width: clamp(40px,7vw,70px);
     opacity: 1.0;
     margin: 5px;
     /* border: 2px solid #e0c9ff; */

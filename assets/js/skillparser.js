@@ -190,7 +190,7 @@ class SkillParser {
 
 		desc = desc.replace(/\^{(.+?)}/g, "<i class='emphasize_simple'>$1</i>")
 		desc = desc.replace(/\+{(.+?)}/g, "<i class='up'><img src='" + this.IconPath + "up.png'>$1</i>")
-		desc = desc.replace(/\-{(.+?)}/g, "<i class='down'><img src='" + this.IconPath + "lower.png'>$1</i>")
+		desc = desc.replace(/\-{(.+?)}/g, "<i class='down'><img src='" + this.IconPath + "down.png'>$1</i>")
 		desc = desc.replace("{active}", `<br><i class='braket'>[${this.chooseLang("Active", "사용시")}]</i>`)
 		desc = desc.replace("{passive}", `<i class='braket'>[${this.chooseLang("Passive", "기본 지속 효과")}]</i>`)
 		desc = desc.replace(/{skillvalue:(.+)}/g, `<i class='skillvalue_$1'></i>`)
