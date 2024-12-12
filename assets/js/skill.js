@@ -1,6 +1,6 @@
 (async function initskill(){
-    await SkillParser.init("https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/public/res/locale/game/",
-    "https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/res/skill.json","en")
+    await SkillParser.init("https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/refs/heads/master/frontend/public/res/locale/game/",
+    "https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/res/skill.json","ko")
     SkillParser.MODE="novalue"
     SkillParser.IconPath='assets/img/character/skillinfo/'
     SkillParser.SkillImagePath='assets/img/character/skills/'
