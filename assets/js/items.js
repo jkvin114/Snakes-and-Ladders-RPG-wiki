@@ -815,12 +815,12 @@ async function fetchjson(){
   
 $(document).ready(async function(){
 	// fetchjson()
-	const imagepath="https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/public/res/img/store/items.png"
+	const imagepath="https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/frontend/public/res/img/store/items.png"
     let lvl1=""
     let lvl2=""
     let lvl3=""
 	const items=(await fetchjson()).items
-	const itemlocales=(await(await fetch("https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/public/res/locale/game/en.json")).json()).item
+	const itemlocales=(await(await fetch("https://raw.githubusercontent.com/jkvin114/snakes-and-ladders-RPG/master/frontend/public/res/locale/game/ko.json")).json()).item
     // console.log(itemlocales)
 	for(const item of items){
         let txt=`<div class=toast_itemimg data-itemid=${item.id}><img src='${imagepath}' style='margin-left:${-1*100*item.id}px'; > </div>`
